@@ -26,7 +26,7 @@ We have set up this script for you. What you need to do is to create a run.sh in
 
 ```
 ln -s /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz  . 
-sbatch /projects/ec146/scripts/run_hifiadaptfilt.sh
+sbatch /cluster/projects/nn9984k/scripts/run_hifiadaptfilt.sh
 ```  
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
 
