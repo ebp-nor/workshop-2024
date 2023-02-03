@@ -56,5 +56,5 @@ You can do it on the command line, or put it in a small script. Adjust for possi
 
 
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/08_Merqury.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/10_Rapid_curation.md)|
+|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/08_Merqury.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/10_Rapid_curation.md)|
 |---|---|
