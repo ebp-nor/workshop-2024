@@ -7,12 +7,12 @@ When choosing an assembler, you need to keep your data in mind. Since we want to
 ```
 #!/bin/bash
 #SBATCH --job-name=hifiasm
-#SBATCH --account=ec146
+#SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
 #SBATCH --mem-per-cpu=20G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/fp/projects01/ec146/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
 
 conda activate hifiasm
 
@@ -26,14 +26,13 @@ awk '/^S/{print ">"$2"\n"$3}' $1.hic.hap1.p_ctg.gfa | fold > $1.hic.hap1.p_ctg.f
 awk '/^S/{print ">"$2"\n"$3}' $1.hic.hap2.p_ctg.gfa | fold > $1.hic.hap2.p_ctg.fa
 ```
 
-
-We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/projects/ec146/work/<username>/hifiasm`) with this content (with nano for instance): 
+We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/hifiasm`) with this content (with nano for instance): 
  
 ```
-sbatch /projects/ec146/scripts/run_hifiasm.sh gsMetZobe \
-/fp/projects01/ec146/data/genomic_data/hic/ERR9503460_1_60x.fastq.gz \
-/fp/projects01/ec146/data/genomic_data/hic/ERR9503460_2_60x.fastq.gz \
-/fp/projects01/ec146/data/genomic_data/pacbio/gsMetZobe_pacbio.fastq.gz
+sbatch /cluster/projects/nn9984k/scripts/run_hifiasm.sh iyAthRosa \
+/cluster/projects/nn9984k/data/genomic_data/hic/ERR9503460_1_60x.fastq.gz \
+/cluster/projects/nn9984k/data/genomic_data/hic/ERR9503460_2_60x.fastq.gz \
+/cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz 
 ```
 This script contain the unfiltered HiFi reads. Please replace the reads with the filtered reads you created with HiFiAdapterFilt.
 
