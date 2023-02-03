@@ -68,5 +68,5 @@ scp -r <username>@fox.educloud.no:/projects/ec146/work/<username>/smudgeplot/"*.
 ```
 
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/01_GenomeScope2.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/03_HiFiAdapterFilt.md)|
+|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/01_GenomeScope2.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/03_HiFiAdapterFilt.md)|
 |---|---|
