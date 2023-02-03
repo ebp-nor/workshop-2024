@@ -156,5 +156,5 @@ And now you are left with a complete, curated, haplotype resolved whole-genome a
 ![leo_gif](https://user-images.githubusercontent.com/110542053/206199166-141c2f3b-2f9c-42a4-913f-62e3913511fa.gif)
 
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/10_Rapid_curation.md)|
+|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/10_Rapid_curation.md)|
 |---|
