@@ -9,14 +9,14 @@ When choosing an assembler, you need to keep your data in mind. Since we want to
 #SBATCH --job-name=hifiasm
 #SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
-#SBATCH --mem-per-cpu=20G
-#SBATCH --ntasks-per-node=5
+#SBATCH --mem-per-cpu=10G
+#SBATCH --ntasks-per-node=10
 
 eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
 
 conda activate hifiasm
 
-hifiasm -o $1 -t5  \
+hifiasm -o $1 -t10  \
 --h1 $2 \
 --h2 $3 \
 $4 \
