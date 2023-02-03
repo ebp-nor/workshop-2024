@@ -50,5 +50,5 @@ You should have similar content.
 
 
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/02_Smudgeplot.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/04_hifiasm.md)|
+|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/02_Smudgeplot.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/04_hifiasm.md)|
 |---|---|
