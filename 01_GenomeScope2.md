@@ -53,7 +53,7 @@ The peak on the extreme left are all the kmers that are the result of sequencing
 What have you learned about your reads from the k-mer profile plot you created? To look at the plots you created, open a new terminal window, and navigate to a directory where you want to place your files. When you have found the place where you want to save them, use this command to copy them to your local computer:
 
 ```
-scp -r <username>@fox.educloud.no:/cluster/projects/nn9984k/work/<username>/genomescope/output_ploidy2/"*.png" .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/genomescope/output_ploidy2/"*.png" .
 ```
 
 What is the estimated genome size of *Athalia rosae*? 
