@@ -11,23 +11,22 @@ After attending the workshop you should:
 
 ## Our dataset
 
-*Metschnikowia zobellii* is a yeast found in arctic coastal climates. It was first discovered as a water flea parasite, but have since been found in a wide range of organisms, including plants and other arthropods. *Metschnikowia zobellii* has a small genome, with only five chromosomes. You can read more about it [here](https://www.darwintreeoflife.org/news_item/9-species-our-scientists-are-excited-about-sequencing-in-2022/) (scroll down a bit).
+The coleseed or turnip sawfly, *Athalia rosae* is a sawfly found in Europe, Asia, North America and Africa. It is often considered a pest, feeding on plants of the brassica family, such as rapeseed, turnip, mustard and cabbage. 
 
-[Darwin Tree of Life](https://www.darwintreeoflife.org) has sequenced the yeast, but not published a genome not for it yet. Fortunately for us, they allow everyone to play with the data anyhow, so we will do that. DToL has some interesting webpages where they list several quality measures for the sequencing (some of which we will do in this workshop) [here](https://tolqc.cog.sanger.ac.uk/darwin/fungi/Metschnikowia_zobellii/). It can be worth a look. We downloaded the data from [ENA](https://www.ebi.ac.uk/ena/browser/view/GCA_939531405.1) and subsampled it to get it to the coverages we expect/plan for. 
+[Darwin Tree of Life](https://www.darwintreeoflife.org) has sequenced the coleseed sawfly, but not published a genome not for it yet. Fortunately for us, they allow everyone to play with the data anyhow, so we will do that. DToL has some interesting webpages where they list several quality measures for the sequencing (some of which we will do in this workshop) [here](https://tolqc.cog.sanger.ac.uk/darwin/insects/Athalia_rosae/). It can be worth a look. We downloaded the data from [ENA](https://www.ebi.ac.uk/ena/browser/view/GCA_917208135) and subsampled it to get it to the coverages we expect/plan for. 
 
-The genome itself is 14 Mbp, and the PacBio data was almost 17 Gbp, more than 1000x coverage. It was subsampled with [seqtk](https://github.com/lh3/seqtk) like this:
+The genome itself is around 170 Mbp, and the PacBio data was about 18 Gbp, more than 100x coverage. It was subsampled with [seqtk](https://github.com/lh3/seqtk) like this:
 ```
-seqtk sample ERR9588940.fastq.gz 40000 |gzip > ERR9588940_30x.fastq.gz
+seqtk sample ERR6548410.fastq.gz  410000 |gzip > ERR6548410_30x.fastq.gz
 ```
-to get about 30x coverage with PacBio data. For the exact data you are working with, we also added a surprise which you will discover later in the workshop.
-
+to get about 30x coverage with PacBio data. 
 
 
 ## Why do we use a combination of HiFi and Hi-C reads? 
 
-HiFi sequencing creates highly accurate circularized consensus reads. How are these reads generated? By ligating hairpin adapters, the DNA fragment that is being sequenced becomes a circle. This means that the machine can du multiple passes over the same DNA-sequence, to weed out any misread nucleotides. This is how HiFi reads can be so long, while remaining over 99.9% accurate. 
+HiFi sequencing creates highly accurate circularized consensus reads. How are these reads generated? By ligating hairpin adapters, the DNA fragment that is being sequenced becomes a circle. This means that the machine can do multiple passes over the same DNA sequence, to weed out any misread nucleotides. This is how HiFi reads can relatively long, while remaining over 99.9% accurate. 
 
-Hi-C sequencing is done to capture how the chromatin is folded within the cell nucleus. By ligating the folded DNA-strands, we can capture which loci are found in close proximity, and thus which parts of the DNA are found within the same chromosomes.
+Hi-C sequencing is done to capture how the chromatin is folded within the cell nucleus. By ligating the folded DNA strands, we can capture which loci are found in close proximity, and thus which parts of the DNA are found within the same chromosomes.
 
 When combining these two, we can create haplotype resolved assemblies, meaning we can separate reads by maternal and paternal origin, without having access to parental data. In diploid, or polyploid organisms, this adds another level of information, and creates more accurate assemblies than a primary and alternate assembly would. 
 
