@@ -11,7 +11,7 @@ After attending the workshop you should:
 
 ## Our dataset
 
-The coleseed or turnip sawfly, *Athalia rosae* is a sawfly found in Europe, Asia, North America and Africa. It is often considered a pest, feeding on plants of the brassica family, such as rapeseed, turnip, mustard and cabbage. 
+The coleseed or turnip sawfly, *Athalia rosae*, is a sawfly found in Europe, Asia, North America and Africa. It is often considered a pest, feeding on plants of the brassica family, such as rapeseed, turnip, mustard and cabbage. 
 
 [Darwin Tree of Life](https://www.darwintreeoflife.org) has sequenced the coleseed sawfly, but not published a genome not for it yet. Fortunately for us, they allow everyone to play with the data anyhow, so we will do that. DToL has some interesting webpages where they list several quality measures for the sequencing (some of which we will do in this workshop) [here](https://tolqc.cog.sanger.ac.uk/darwin/insects/Athalia_rosae/). It can be worth a look. We downloaded the data from [ENA](https://www.ebi.ac.uk/ena/browser/view/GCA_917208135) and subsampled it to get it to the coverages we expect/plan for. 
 
