@@ -70,5 +70,5 @@ UC Davis Bioinformatics Core has a genome assembly workshop they held in 2020, w
 
 
 
-|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/01_GenomeScope2.md)|
+|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/01_GenomeScope2.md)|
 |---|
