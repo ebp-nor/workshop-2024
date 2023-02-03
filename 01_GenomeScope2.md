@@ -39,7 +39,7 @@ sbatch /cluster/projects/nn9984k/scripts/run_genomescope.sh /cluster/projects/nn
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
 
-This should finish in a handful of minutes (when testing it ran for 2 minutes). You can monitor the progress with `squeue -u <username>`.
+This should finish in a handful of minutes (when testing it ran for 5 minutes). You can monitor the progress with `squeue -u <username>`.
 
 
 ## Interpreting your k-mer profile plot
