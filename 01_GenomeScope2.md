@@ -31,10 +31,10 @@ genomescope2 -i reads.histo -o output_ploidy4 -k $k -p 4 1> genomescope_ploidy4.
 
 ```
 
-We have set up this script for you. What you need to do is to create a `run.sh` in your working folder (`/projects/ec146/work/<username>/genomescope`) with this content (with nano for instance):
+We have set up this script for you. What you need to do is to create a `run.sh` in your working folder (`/cluster/projects/nn9984k/work/<username>/genomescope`) with this content (with `nano` for instance):
 
 ```
-sbatch /projects/ec146/scripts/run_genomescope.sh /fp/projects01/ec146/data/genomic_data/pacbio/gsMetZobe_pacbio.fastq.gz
+sbatch /cluster/projects/nn9984k/scripts/run_genomescope.sh /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz  
 ````
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
@@ -50,14 +50,14 @@ A typical k-mer profile plot will look like this (this is the k-mer profile plot
 
 The peak on the extreme left are all the kmers that are the result of sequencing errors. The largest peak to the right indicates the homozygous parts of the genomes that account for identical k-mers between the two haplotypes. The smaller peak to the left are the heterozygous kmers, that differentiate the two haplotypes.
 
-What have you learned about your reads from the k-mer profile plot you created? To look at the plots you created, open a new terminal window, and navigate to a directory where you want to place your files. When you have found the place where you want to save them, use this code to copy them to your local computer:
+What have you learned about your reads from the k-mer profile plot you created? To look at the plots you created, open a new terminal window, and navigate to a directory where you want to place your files. When you have found the place where you want to save them, use this command to copy them to your local computer:
 
 ```
-scp -r <username>@fox.educloud.no:/projects/ec146/work/<username>/genomescope/output_ploidy2/"*.png" .
+scp -r <username>@fox.educloud.no:/cluster/projects/nn9984k/work/<username>/genomescope/output_ploidy2/"*.png" .
 ```
 
-What is the estimated genome size of *Metschnikowia zobellii*? 
+What is the estimated genome size of *Athalia rosae*? 
 
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/00_introduction.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/02_Smudgeplot.md)|
+|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/00_introduction.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/02_Smudgeplot.md)|
 |---|---|
