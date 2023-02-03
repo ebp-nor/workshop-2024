@@ -30,8 +30,8 @@ We have set up this script for you. What you need to do is to create a run.sh in
  
 ```
 sbatch /cluster/projects/nn9984k/scripts/run_hifiasm.sh iyAthRosa \
-/cluster/projects/nn9984k/data/genomic_data/hic/ERR9503460_1_60x.fastq.gz \
-/cluster/projects/nn9984k/data/genomic_data/hic/ERR9503460_2_60x.fastq.gz \
+/cluster/projects/nn9984k/data/genomic_data/hic/ERR6054981_1_60x.fastq.gz \
+/cluster/projects/nn9984k/data/genomic_data/hic/ERR6054981_2_60x.fastq.gz \
 /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz 
 ```
 This script contain the unfiltered HiFi reads. Please replace the reads with the filtered reads you created with HiFiAdapterFilt.
