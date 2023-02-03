@@ -7,12 +7,12 @@ The creators of GenomeScope2 created another way to visualize and estimate the p
 ```
 #!/bin/bash
 #SBATCH --job-name=smudgeplot
-#SBATCH --account=ec146
+#SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
 #SBATCH --mem-per-cpu=2G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/fp/projects01/ec146/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
 
 conda activate smudgescope
 
@@ -40,10 +40,10 @@ smudgeplot.py hetkmers -o kmcdb_L"$L"_U"$U" < kmcdb_L"$L"_U"$U".dump
 smudgeplot.py plot kmcdb_L"$L"_U"$U"_coverages.tsv
 ```
 
-We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/projects/ec146/work/<username>/smudgeplot`) with this content (with nano for instance): 
+We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/smudgeplot`) with this content (with nano for instance): 
  
 ```
-sbatch /projects/ec146/scripts/run_smudgeplot.sh /fp/projects01/ec146/data/genomic_data/pacbio/gsMetZobe_pacbio.fastq.gz
+sbatch /cluster/projects/nn9984k/scripts/run_smudgeplot.sh /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz  
 ```
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
@@ -64,7 +64,7 @@ Here we see that based on the coverage of the heterozygous kmer pairs, the most 
 Which is the most representet haplotype for *Metschnikowia zobellii*? To look at the plots you created, open a new terminal window, and navigate to a directory where you want to place your files. When you have found the place where you want to save them, use this code to copy them to your local computer:
 
 ```
-scp -r <username>@fox.educloud.no:/projects/ec146/work/<username>/smudgeplot/"*.png" .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/smudgeplot/"*.png" .
 ```
 
 
