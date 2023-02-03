@@ -126,5 +126,5 @@ TMP_DIR=.
 ```
 
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/09_FCS_GX.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/11_PretextView.md)|
+|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/09_FCS_GX.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/11_PretextView.md)|
 |---|---|
