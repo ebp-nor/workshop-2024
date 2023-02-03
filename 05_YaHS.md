@@ -60,5 +60,5 @@ This should finish in a handful of minutes (when testing it ran for 6 minutes). 
 Here we have simplified matters a bit and only proposes to scaffold one of the assemblies. Usually, we filter the Hi-C data based on unique k-mers in the two assemblies. This would lead to the reads used to scaffold hap1 would not contain reads with k-mers that are unique to hap2, and vice versa. 
 
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/04_hifiasm.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2022/blob/main/06_gfastats.md)|
+|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/04_hifiasm.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/06_gfastats.md)|
 |---|---|
