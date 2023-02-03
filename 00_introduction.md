@@ -36,49 +36,28 @@ Administrating the different programs that are needed in project can be a hassle
 
 To load conda, do this:
 ```
-eval "$(/fp/projects01/ec146/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
 ```
 
 There are some of the different programs that are not available through conda. For most of these we use [Singularity containers](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html). 
 
 We mostly set up scripts and arranged data so it is ready to run, but ask you to modify them in some cases. We have backups of everything, but please be careful so you don't delete something you shouldn't.
 
-
-
 ## Infrastructure
 
-For the different analyses we are doing, we will use [Educloud](https://www.uio.no/english/services/it/research/platforms/edu-research/). To use it, you need an account which you can get here: [https://research.educloud.no/register](https://research.educloud.no/register). The project we are using in this course is ec146, so please ask for access to that one, and we will let you in. 
+For the different analyses we are doing, we will use [Saga](https://documentation.sigma2.no/hpc_machines/saga.html). Everything should be set up properly by now. The project we have at Saga is called nn9984k, and the working folder is `/cluster/projects/nn9984k`. 
 
-We will do the work in this course at `/projects/ec146/work` on [Fox](https://www.uio.no/english/services/it/research/platforms/edu-research/help/fox/) which is the HPC part of Educloud. After creating an account, you can log in using `ssh <educloud-username>@fox.educloud.no`. You will be prompted for a One-Time Code for a 2-factor authenticator app (Microsoft Authenticator) and your Fox/Educloud password.
+On Saga we will submit jobs/analyses as job scripts. This is for a system called SLURM. Basically, this is instructions to the system for what kind of analysis we are running, or more concretely, how much memory and computing power we need. 
 
-On Fox we will submit jobs/analyses as job scripts. This is for a system called SLURM. Basically, this is instructions to the system for what kind of analysis we are running, or more concretely, how much memory and computing power we need. 
-
-A generic job script might look like this (copied from [Job Scripts on Fox](https://www.uio.no/english/services/it/research/platforms/edu-research/help/fox/jobs/job-scripts.md)):
+A generic job script might look like this (copied from [Saga](https://documentation.sigma2.no/hpc_machines/saga.html)):
 ```
-#!/bin/bash
+#SBATCH --account=MyProject
+#SBATCH --job-name=MyJob
+#SBATCH --time=1-0:0:0
+#SBATCH --mem-per-cpu=3G
+#SBATCH --ntasks=16
 
-# Job name:
-#SBATCH --job-name=YourJobname
-#
-# Project:
-#SBATCH --account=ecXXX
-#
-# Wall time limit:
-#SBATCH --time=DD-HH:MM:SS
-#
-# Other parameters:
-#SBATCH ...
-
-## Set up job environment:
-set -o errexit  # Exit the script on any error
-set -o nounset  # Treat any unset variables as an error
-
-module --quiet purge  # Reset the modules to the system default
-module load SomeProgram/SomeVersion
-module list
-
-## Do some work:
-YourCommands
+Some commands.
 ```
 ## Other resources about assembly
 
