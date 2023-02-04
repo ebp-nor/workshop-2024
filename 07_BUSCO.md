@@ -1,6 +1,6 @@
 # BUSCO tutorial
 
-How do you measure how “complete” your assembly is? Since we know our yeast assemblies are about the expected size (which we estimated using GenomeScope2), and that our assembly statistics are good (which we found out by using gfastats), we now want to know that the genes we expect to find are there. **BUSCO** is a tool that can be used to compare your assemblies to lists of near universal orthologous genes (i.e. genes with common ancestry and function), to find out if you have managed to assemble them correctly. The assumption is that if you use the correct lineage dataset (based on what organism you are assembling), you´ll be able to find most of the genes within your assembly. If you want to read more about BUSCO, click [*here.*](https://busco.ezlab.org/busco_userguide.html)
+How do you measure how “complete” your assembly is? Since we know our sawfly assemblies are about the expected size (which we estimated using GenomeScope2), and that our assembly statistics are good (which we found out by using gfastats), we now want to know that the genes we expect to find are there. **BUSCO** is a tool that can be used to compare your assemblies to lists of near universal orthologous genes (i.e. genes with common ancestry and function), to find out if you have managed to assemble them correctly. The assumption is that if you use the correct lineage dataset (based on what organism you are assembling), you´ll be able to find most of the genes within your assembly. If you want to read more about BUSCO, click [*here.*](https://busco.ezlab.org/busco_userguide.html)
 
 
 ## Running BUSCO
@@ -10,12 +10,12 @@ This is the script we use to run BUSCO:
 ```
 #!/bin/bash
 #SBATCH --job-name=busco
-#SBATCH --account=ec146
+#SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
 #SBATCH --mem-per-cpu=1G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/fp/projects01/ec146/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
 
 conda activate busco
 
