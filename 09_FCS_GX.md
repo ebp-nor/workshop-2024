@@ -25,14 +25,14 @@ python3 /cluster/projects/nn9984k/opt/fcs/run_fcsgx.py --fasta $1 \
 As we have done earlier, we have set up this script for you. Create a run.sh in your working folder (`/projects/ec146/work/<username>/fcsgx`) with this content (with `nano` for instance):
 
 ```
-sbatch /cluster/projects/nn9984k/cripts/run_gcsgx.sh assembly.fasta \
+sbatch /cluster/projects/nn9984k/scripts/run_fcsgx.sh assembly.fasta \
 taxonomy_id
 ```
-You have to modify the run.sh script based on your assembly file and you have to find the taxonomy ID for *Athalia rosae* and input that.
+You have to modify the run.sh script based on your assembly file and you have to find the NCBI taxonomy ID for *Athalia rosae* and input that.
 
-Unfortunately this program requires a lot of memory to run (["approximately 470 GiB"](https://github.com/ncbi/fcs/wiki/FCS-GX)). If it is given unsufficient memory, the running time can increase by a factor of 10000x. On Saga, there are not that [many nodes](https://www.uio.no/english/services/it/research/platforms/edu-research/help/fox/system-overview.md) with a lot of memory. The normal nodes have 501 GiB RAM, while the GPU accelerated nodes have up to 1006 GiB. Ideally, the job should have been allocated a bit more memory than what it strictly needs, but that is not easy here. Luckily, it should run in a handful of minutes if configured properly (1-30 minutes when tested). 
+Unfortunately this program requires a lot of memory to run (["approximately 470 GiB"](https://github.com/ncbi/fcs/wiki/FCS-GX)). If it is given unsufficient memory, the running time can increase by a factor of 10000x. On Saga, there are not that [many nodes](https://documentation.sigma2.no/hpc_machines/saga.html) with a lot of memory. There are 8 so-called bigmem nodes, which should be abel to handle multiple jobs each of the script above. However, these are quite heavily used, so it is not certain that we will be able to run our jobs here. If configured properly, it is quite quick (1-30 minutes when testing). 
 
-We should coordinate this, so only a couple people submit to the cluster. Let us know when you are at this point, and we can coordinate this.
+We should coordinate this, so only a couple people submit to the cluster. Let us know when you are at this point, and we coordinate.
 
 After running the decontamination script, which foreign contaminants did you find?
 
@@ -40,7 +40,7 @@ If you were unable to run it, you can take a look at the results of a previous r
 
 To remove contamination, you can do something like this:
 ```
-eval "$(/fp/projects01/ec146/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
 
 conda activate seqtk
 
