@@ -48,7 +48,7 @@ sbatch /cluster/projects/nn9984k/scripts/run_smudgeplot.sh /cluster/projects/nn9
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
  
-This should finish in a handful of minutes (when testing it ran for 1.5 minutes). You can monitor the progress with `squeue -u <username>`.
+This ran for a bit more than an hour when testing, so you should continue with the next exercise and come back to this later. You can monitor the progress with `squeue -u <username>`.
 
 Smudgeplot produces several files in addition to the plot itself. You can for instance look at `smudgeplot_verbose_summary.txt` which contain the same information as the plot, but in text.
 
