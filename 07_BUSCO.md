@@ -36,6 +36,8 @@ ln -s ../yahs/iyAthRosa_scaffolds_final.fa .
 sbatch /cluster/projects/nn9984k/scripts/run_busco.sh iyAthRosa_scaffolds_final.fa
 ```
 
+You can also run the script in the `hifiasm` and/or `yahs` folder directly. The script will make a subfolder with the results (look at the file called `busco.out` in the subfolder.
+
 When you have done this, you can submit to the cluster by typing `sh run.sh`. If you scaffolded both haplotypes, repeat the process for both assemblies.
 
 
