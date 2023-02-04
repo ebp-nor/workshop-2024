@@ -27,7 +27,7 @@ f=$(basename $1)
 j=${f%.fastq.gz}
 meryl k=21 threads=10 memory=8g count output $j.meryl $f
 
-merqury.sh $j.meryl $2 $3 > $4_merqury.out 2> $4_merqury.err
+merqury.sh $j.meryl $2 $3 $4 > $4_merqury.out 2> $4_merqury.err
 ```
 
 Create a run.sh script with the following content (modify so it corresponds to what you have):
