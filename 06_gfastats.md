@@ -36,7 +36,7 @@ Gap N50 |
 
 Why do you think each of these metrics are important for evaluating the quality of your assemblies? Discuss with the person sitting next to you.
 
-When everything is done (hifiasm + YaHS), you can run gfastats on all the different assemblies (iyAthRosa.hic.hap1.p_ctg.fa, iyAthRosa.hic.hap2.p_ctg.fa and iyAthRosa).
+When everything is done (hifiasm + YaHS), you can run gfastats on all the different assemblies (iyAthRosa.hic.hap1.p_ctg.fa, iyAthRosa.hic.hap2.p_ctg.fa and iyAthRosa_scaffolds_final) and compare then against each other.
 
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/05_YaHS.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/07_BUSCO.md)|
