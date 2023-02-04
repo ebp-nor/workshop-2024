@@ -51,6 +51,10 @@ Before you start reviewing your results, look at the [list of lineages](https://
 
 2. What do you think it means for the assembly quality if the number of fragmented, missing or duplicated BUSCO genes are high? Discuss with the people on your table. 
 
+We have also downloaded more lineages than what is used in the script above. Take a look in `/cluster/projects/nn9984k/opt/busco_downloads/lineages/`. What do these different lineages mean? Can it be useful to use a less specific lineage in BUSCO?
+
+(Hint: `busco  --list-datasets` shows all possible datasets/lineages and their hierarchy.) 
+
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/06_gfastats.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/08_Merqury.md)|
 |---|---|
