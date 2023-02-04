@@ -38,7 +38,7 @@ This script contain the unfiltered HiFi reads. Please replace the reads with the
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
  
-This should finish in a handful of minutes (when testing it ran for 25 minutes). You can monitor the progress with `squeue -u <username>`.
+This will run for a while. When testing it ran for 3.2 hours. When next needing the assembly, we will use one which is already done. You can monitor the progress with `squeue -u <username>`.
 
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/03_HiFiAdapterFilt.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/05_YaHS.md)|
