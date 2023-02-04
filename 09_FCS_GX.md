@@ -13,13 +13,18 @@ Contaminants can end up in your assemblies in various different ways. Maybe some
 #SBATCH --mem-per-cpu=50G
 #SBATCH --ntasks-per-node=10
 
-export SHM_LOC=/cluster/projects/nn9984k/opt/fcs
+mkdir /dev/shm/fcs   #make directory. 
+rsync -av /cluster/projects/nn9984k/opt/fcs/gxdb /dev/shm/fcs
+
+export SHM_LOC=/dev/shm/fcs/gxdb
+
+#export SHM_LOC=/cluster/projects/nn9984k/opt/fcs
 
 echo "GX_NUM_CORES=10" > env.txt
 
 python3 /cluster/projects/nn9984k/opt/fcs/run_fcsgx.py --fasta $1 \
---gx-db  "${SHM_LOC}/gxdb/all" --split-fasta --tax-id $2 \
---gx-db-disk "${SHM_LOC}/gxdb/all.gxi" \
+--gx-db  "${SHM_LOC}/all" --split-fasta --tax-id $2 \
+--gx-db-disk "${SHM_LOC}/all.gxi" \
 --container-engine singularity --image /cluster/projects/nn9984k/opt/fcs/fcsgx.sif
 ```
 
