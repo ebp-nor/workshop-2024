@@ -30,20 +30,20 @@ sbatch /cluster/projects/nn9984k/scripts/run_hifiadaptfilt.sh
 ```  
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
 
-This should finish in a handful of minutes (when testing it ran for 12 minutes). You can monitor the progress with `squeue -u <username>`.
+This should finish in a handful of minutes (when testing it ran for about 20 minutes). You can monitor the progress with `squeue -u <username>`.
 
 HiFiAdapterFilt creates several files, for instance the filtered file and a statistics file: 
 
 ```
-Started on Wed Dec  7 11:31:02 CET 2022
-For the gsMetZobe_pacbio dataset:
+Started on Sat Feb  4 08:58:25 CET 2023
+For the iyAthRosa_pacbio dataset:
 Removing reads containing adapters a minimum of 44 bp in length and 97% match.
 
-Number of ccs reads: 41700
-Number of adapter contaminated ccs reads: 12 (0.028777% of total)
-Number of ccs reads retained: 41688 (99.9712% of total)
+Number of ccs reads: 410000
+Number of adapter contaminated ccs reads: 205 (0.05% of total)
+Number of ccs reads retained: 409795 (99.95% of total)
 
-Finished on Wed Dec  7 11:31:48 CET 2022
+Finished on Sat Feb  4 09:18:25 CET 2023
 ```
 
 You should have similar content.
