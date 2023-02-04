@@ -7,12 +7,12 @@ Congratulations, you have created your yeast assembly! But now you have to combi
 ```
 #!/bin/bash
 #SBATCH --job-name=yahs
-#SBATCH --account=ec146
+#SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
 #SBATCH --mem-per-cpu=20G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/fp/projects01/ec146/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
 
 conda activate yahs
 
@@ -42,15 +42,15 @@ fi
 
 ```
 
-As we did with hifiasm, we have set up this script for you. Create a run.sh in your working folder (`/projects/ec146/work/<username>/yahs`) with this content (with `nano` for instance):
+As we did with hifiasm, we have set up this script for you. Create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/yahs`) with this content (with `nano` for instance):
 
 ```
-ln -s ../hifiasm/gsMetZobe.hic.hap1.p_ctg.fa .
+ln -s ../hifiasm/iyAthRosa.hic.hap1.p_ctg.fa .
 
-sbatch /projects/ec146/scripts/run_yahs.sh gsMetZobe.hic.hap1.p_ctg.fa \
-gsMetZobe \
-/fp/projects01/ec146/data/genomic_data/hic/ERR9503460_1_60x.fastq.gz \
-/fp/projects01/ec146/data/genomic_data/hic/ERR9503460_2_60x.fastq.gz 
+sbatch /cluster/projects/nn9984k/scripts/run_yahs.sh iyAthRosa.hic.hap1.p_ctg.fa \
+iyAthRosa \
+/cluster/projects/nn9984k/data/genomic_data/hic/ERR6054981_1_60x.fastq.gz \
+/cluster/projects/nn9984k/data/genomic_data/hic/ERR6054981_2_60x.fastq.gz
 ```
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
