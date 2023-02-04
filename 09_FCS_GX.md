@@ -7,30 +7,30 @@ Contaminants can end up in your assemblies in various different ways. Maybe some
 ```
 #!/bin/bash
 #SBATCH --job-name=fcsgx
-#SBATCH --account=ec146
+#SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
 #SBATCH --mem-per-cpu=48G
 #SBATCH --ntasks-per-node=10
 
-export SHM_LOC=/fp/projects01/ec146/opt/fcs
+export SHM_LOC=/cluster/projects/nn9984k/opt/fcs
 
 echo "GX_NUM_CORES=10" > env.txt
 
-python3 /fp/projects01/ec146/opt/fcs/run_fcsgx.py --fasta $1 \
+python3 /cluster/projects/nn9984k/opt/fcs/run_fcsgx.py --fasta $1 \
 --gx-db  "${SHM_LOC}/gxdb/all" --split-fasta --tax-id $2 \
 --gx-db-disk "${SHM_LOC}/gxdb/all.gxi" \
---container-engine singularity --image /fp/projects01/ec146/opt/fcs/fcsgx.sif
+--container-engine singularity --image /cluster/projects/nn9984k/opt/fcs/fcsgx.sif
 ```
 
 As we have done earlier, we have set up this script for you. Create a run.sh in your working folder (`/projects/ec146/work/<username>/fcsgx`) with this content (with `nano` for instance):
 
 ```
-sbatch /projects/ec146/scripts/run_gcsgx.sh assembly.fasta \
+sbatch /cluster/projects/nn9984k/cripts/run_gcsgx.sh assembly.fasta \
 taxonomy_id
 ```
-You have to modify the run.sh script based on your assembly file and you have to find the taxonomy ID for *Metschnikowia zobellii* and input that.
+You have to modify the run.sh script based on your assembly file and you have to find the taxonomy ID for *Athalia rosae* and input that.
 
-Unfortunately this program requires a lot of memory to run (["approximately 470 GiB"](https://github.com/ncbi/fcs/wiki/FCS-GX)). If it is given unsufficient memory, the running time can increase by a factor of 10000x. On Fox, there are not that [many nodes](https://www.uio.no/english/services/it/research/platforms/edu-research/help/fox/system-overview.md) with a lot of memory. The normal nodes have 501 GiB RAM, while the GPU accelerated nodes have up to 1006 GiB. Ideally, the job should have been allocated a bit more memory than what it strictly needs, but that is not easy here. Luckily, it should run in a handful of minutes if configured properly (1-30 minutes when tested). 
+Unfortunately this program requires a lot of memory to run (["approximately 470 GiB"](https://github.com/ncbi/fcs/wiki/FCS-GX)). If it is given unsufficient memory, the running time can increase by a factor of 10000x. On Saga, there are not that [many nodes](https://www.uio.no/english/services/it/research/platforms/edu-research/help/fox/system-overview.md) with a lot of memory. The normal nodes have 501 GiB RAM, while the GPU accelerated nodes have up to 1006 GiB. Ideally, the job should have been allocated a bit more memory than what it strictly needs, but that is not easy here. Luckily, it should run in a handful of minutes if configured properly (1-30 minutes when tested). 
 
 We should coordinate this, so only a couple people submit to the cluster. Let us know when you are at this point, and we can coordinate this.
 
