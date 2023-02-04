@@ -25,15 +25,15 @@ mkdir -p busco_${prefix}
 origdir=$PWD
 cd busco_${prefix}
 
-busco -c 5 -i ${origdir}/$1 -l /fp/projects01/ec146/opt/busco_downloads/lineages/fungi_odb10 -o assembly -m genome  --offline > busco.out 2> busco.err
+busco -c 5 -i ${origdir}/$1 -l /cluster/projects/nn9984k/opt/busco_downloads/lineages/hymenoptera_odb10 -o assembly -m genome  --offline > busco.out 2> busco.err
 
 ``` 
 
 Create a new directory in your work area named `busco`. Make a new `run.sh` file with `nano run.sh`, and copy the code below into that file:
 
 ```
-ln -s ../yahs/gsMetZobe_scaffolds_final.fa .
-sbatch /projects/ec146/scripts/run_busco.sh gsMetZobe_scaffolds_final.fa
+ln -s ../yahs/iyAthRosa_scaffolds_final.fa .
+sbatch /cluster/projects/nn9984k/scripts/run_busco.sh iyAthRosa_scaffolds_final.fa
 ```
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`. If you scaffolded both haplotypes, repeat the process for both assemblies.
