@@ -55,7 +55,7 @@ iyAthRosa \
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
 
-This should finish in a handful of minutes (when testing it ran for 6 minutes). You can monitor the progress with `squeue -u <username>`.
+When testing, this ran for 1.6 hours. You can monitor the progress with `squeue -u <username>`.
 
 Here we have simplified matters a bit and only proposes to scaffold one of the assemblies. Usually, we filter the Hi-C data based on unique k-mers in the two assemblies. This would lead to the reads used to scaffold hap1 would not contain reads with k-mers that are unique to hap2, and vice versa. 
 
