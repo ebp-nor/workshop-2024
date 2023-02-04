@@ -30,7 +30,7 @@ sbatch /cluster/projects/nn9984k/scripts/run_hifiadaptfilt.sh
 ```  
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
 
-This should finish in a handful of minutes (when testing it ran for 1 minute). You can monitor the progress with `squeue -u <username>`.
+This should finish in a handful of minutes (when testing it ran for 12 minutes). You can monitor the progress with `squeue -u <username>`.
 
 HiFiAdapterFilt creates several files, for instance the filtered file and a statistics file: 
 
