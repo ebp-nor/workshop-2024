@@ -29,7 +29,7 @@ busco -c 5 -i ${origdir}/$1 -l /fp/projects01/ec146/opt/busco_downloads/lineages
 
 ``` 
 
-Create a new directory in your work area named `BUSCO`. Make a new `run.sh` file with `nano run.sh`, and copy the code below into that file:
+Create a new directory in your work area named `busco`. Make a new `run.sh` file with `nano run.sh`, and copy the code below into that file:
 
 ```
 ln -s ../yahs/gsMetZobe_scaffolds_final.fa .
