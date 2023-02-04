@@ -38,7 +38,7 @@ Why do you think each of these metrics are important for evaluating the quality 
 
 When everything is done (hifiasm + YaHS), you can run gfastats on all the different assemblies (iyAthRosa.hic.hap1.p_ctg.fa, iyAthRosa.hic.hap2.p_ctg.fa and iyAthRosa_scaffolds_final) and compare then against each other.
 
-The sequecinging data and approach is chosen to be able to fulfill the criteria/standards Earth Biogenome Project has for genome assemblies. You can review these [here](https://www.earthbiogenome.org/assembly-standards). Does this assembly or these assemblies fulfill the N50 contig criterium?
+The sequecinging data and approach is chosen to be able to fulfill the criteria/standards Earth Biogenome Project has for genome assemblies. You can review these [here](https://www.earthbiogenome.org/assembly-standards). Does this assembly or these assemblies fulfill the N50 contig length criterium?
 
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/05_YaHS.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/07_BUSCO.md)|
