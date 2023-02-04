@@ -30,6 +30,8 @@ Hi-C sequencing is done to capture how the chromatin is folded within the cell n
 
 When combining these two, we can create haplotype resolved assemblies, meaning we can separate reads by maternal and paternal origin, without having access to parental data. In diploid, or polyploid organisms, this adds another level of information, and creates more accurate assemblies than a primary and alternate assembly would. 
 
+Testing, by us, but also earlier by Darwin Tree of Life and Vertebrate Genomes Project, among others, has shown that the combination of HiFi and Hi-C, in appropriate coverages, usually generates assemblies that fulfill the Earth Biogenome Project's criteria for [assembly standards](https://www.earthbiogenome.org/assembly-standards). There are other ways to get to these standards, by using combinations of Oxford Nanopore Technologies sequencing data and Illumina, but these are often less straight-forward and involves more steps to a final assembly that the strategy we outline here.
+
 ## Package management
 
 Administrating the different programs that are needed in project can be a hassle. We like conda, especially [miniconda](https://docs.conda.io/en/latest/miniconda.html), and have set up different environments we will use for the different analyses. [Bioconda](https://bioconda.github.io) contain a lot of different packages that are relevant for us, and genomics and bioinformatics in general.
