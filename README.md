@@ -32,7 +32,7 @@ You can grab the slides [here](Slides_for_workshop_December_2022.pdf).
 
 ### 14:15-16:00 Decontamination and manual curation
 * 14:15-14:30 Introduction to decontamination and manual curation
-* 14:30-15:50 Decontaminating and curating the yeast genome
+* 14:30-15:50 Decontaminating and curating the sawfly genome
   * [FCS-GX](09_FCS_GX.md)
   * [The GRIT Rapid Curation suite](10_Rapid_curation.md)
   * [Working in PretextView](11_PretextView.md)
