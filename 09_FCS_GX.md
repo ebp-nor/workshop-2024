@@ -8,8 +8,9 @@ Contaminants can end up in your assemblies in various different ways. Maybe some
 #!/bin/bash
 #SBATCH --job-name=fcsgx
 #SBATCH --account=nn9984k
+#SBATCH --partition=bigmem
 #SBATCH --time=4:0:0
-#SBATCH --mem-per-cpu=48G
+#SBATCH --mem-per-cpu=50G
 #SBATCH --ntasks-per-node=10
 
 export SHM_LOC=/cluster/projects/nn9984k/opt/fcs
