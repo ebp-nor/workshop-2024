@@ -1,6 +1,6 @@
 # Genome assembly, curation and validation - workshop 2023
 
-This repository contains the course materials for the EBP-Nor Genome Assembly Workshop that was given at the [Norwegian Biodiversity Genomics & Conference] (https://www.ebpnor.org/english/conference/). The course if run on infrastructure provdided by [Sigma2](https://www.sigma2.no/).
+This repository contains the course materials for the EBP-Nor Genome Assembly Workshop that was given at the [Norwegian Biodiversity Genomics & Conference](https://www.ebpnor.org/english/conference/). The course if run on infrastructure provdided by [Sigma2](https://www.sigma2.no/).
 
 
 You can grab the slides [here](Slides_for_workshop_December_2022.pdf).
