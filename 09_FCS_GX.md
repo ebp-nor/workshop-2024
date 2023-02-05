@@ -13,6 +13,11 @@ Contaminants can end up in your assemblies in various different ways. Maybe some
 #SBATCH --mem-per-cpu=50G
 #SBATCH --ntasks-per-node=10
 
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+conda activate base
+#The base system seems to have python2, this sets up python3 which is needed for fcs
+
+
 mkdir /dev/shm/fcs   #make directory. 
 rsync -av /cluster/projects/nn9984k/opt/fcs/gxdb /dev/shm/fcs
 
