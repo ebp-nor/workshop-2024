@@ -43,7 +43,7 @@ You have to modify the run.sh script based on your assembly file and you have to
 
 Unfortunately this program requires a lot of memory to run (["approximately 470 GiB"](https://github.com/ncbi/fcs/wiki/FCS-GX)). If it is given unsufficient memory, the running time can increase by a factor of 10000x. On Saga, there are not that [many nodes](https://documentation.sigma2.no/hpc_machines/saga.html) with a lot of memory. There are 8 so-called bigmem nodes, which should be abel to handle multiple jobs each of the script above. However, these are quite heavily used, so it is not certain that we will be able to run our jobs here. If configured properly, it is quite quick (1-30 minutes when testing). 
 
-We should coordinate this, so only a couple people submit to the cluster. Let us know when you are at this point, and we coordinate.
+We should coordinate this, so only a couple people submit to the cluster. Let us know when you are at this point.
 
 After running the decontamination script, which foreign contaminants did you find?
 
