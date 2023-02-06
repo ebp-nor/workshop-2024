@@ -131,9 +131,9 @@ Enter your password and the file will be transferred to the directory.
 Activate the rapid_curation conda environment. Using the rapid_pretext2tpf_XL.py script, combine the edited TPF and the generated AGP to create a new TPF. 
 
 ```
-source /cluster/projects/nn8013k/programs/miniconda3/etc/profile.d/conda.sh
-eval "$(conda shell.bash hook)"
-conda activate rapid_curation
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+
+conda activate curation
 
 # create new tpf
 
