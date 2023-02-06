@@ -80,7 +80,7 @@ mkdir -p data
 mkdir -p out
 
 #or use your own
-cat  /cluster/projects/nn9984k/data/fcs/gsMetZobe_clean.fa > data/ref.fa 
+cat  /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa > data/ref.fa 
 
 echo "/hic/ERR6054981_60x.bam" > data/cram.fofn
 
