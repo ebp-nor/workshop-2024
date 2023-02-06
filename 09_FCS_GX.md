@@ -47,7 +47,7 @@ We should coordinate this, so only a couple people submit to the cluster. Let us
 
 After running the decontamination script, which foreign contaminants did you find?
 
-If you were unable to run it, you can take a look at the results of a previous run at `/projects/ec146/data/fcsgx/gsMetZobe_scaffolds_final.27328.taxonomy.rpt`, `/projects/ec146/data/fcsgx/fcsgx.log` and `/projects/ec146/data/fcsgx/gsMetZobe_scaffolds_final.27328.fcs_gx_report.txt`. 
+If you were unable to run it, you can take a look at the results of a previous run at ` /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_scaffolds_final.37344.taxonomy.rpt`, `/cluster/projects/nn9984k/data/fcsgx/fcs.log ` and `/cluster/projects/nn9984k/data/fcsgx/iyAthRosa_scaffolds_final.37344.fcs_gx_report.txt`. 
 
 To remove contamination, you can do something like this:
 ```
@@ -55,12 +55,12 @@ eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)"
 
 conda activate seqtk
 
-grep ">" gsMetZobe_scaffolds_final.fa  |tr -d ">" |sort > all_sequences
+grep ">" iyAthRosa_scaffolds_final.fa  |tr -d ">" |sort > all_sequences
 grep EXCLUDE *fcs_gx_report.txt |cut -f 1 |sort > exclude_sequences
 
 comm -23 all_sequences exclude_sequences > keep_sequences
 
-seqtk subseq gsMetZobe_scaffolds_final.fa keep_sequences > gsMetZobe_clean.fa 
+seqtk subseq iyAthRosa_scaffolds_final.fa keep_sequences > iyAthRosa_clean.fa 
 ```
 You can do it on the command line, or put it in a small script. Adjust for possible different file names.
 
