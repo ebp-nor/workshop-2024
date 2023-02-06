@@ -17,12 +17,13 @@ eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)"
 conda activate base
 #The base system seems to have python2, this sets up python3 which is needed for fcs
 
+#this copies the database to a shared memory. This works, but not sure how safe it is.
 mkdir /dev/shm/fcs   #make directory. 
 rsync -av /cluster/projects/nn9984k/opt/fcs/gxdb /dev/shm/fcs
 
 export SHM_LOC=/dev/shm/fcs/gxdb
 
-#export SHM_LOC=/cluster/projects/nn9984k/opt/fcs
+#export SHM_LOC=/cluster/projects/nn9984k/opt/fcs/gxdb
 
 echo "GX_NUM_CORES=10" > env.txt
 
