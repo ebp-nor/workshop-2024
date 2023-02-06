@@ -90,12 +90,12 @@ sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa /cluster
 
 After this is finished, you should be left with an out.pretext file, and this can be used for manual curation. 
 
-However, since the yeast species you were working on had some ambiguous Hi-C contact signals, we´re gonna let you try your hand at curating the EBP-Nor brook lamprey instead! To download this file to your local computer, open a new terminal window, navigate to where you want to place your file, and use the code below:
+If you don´t want to wait for your scripts to finish, and you want to start curating right away, we have provided both the files you need to do so. To download these files to your local computer, open a new terminal window, navigate to where you want to place the files, and use the code below:
 
 ```
-scp -r <username>@fox.educloud.no:/projects/ec146/data/pretext_data/lampetra_planeri_hap1.pretext .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/file.pretext .
 
-scp -r <username>@fox.educloud.no:/projects/ec146/data/pretext_data/lampetra_planeri_hap1.tpf .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/file.tpf .
 ```
 
 ### For information: converting fastq files to BAM
@@ -103,7 +103,7 @@ The rapid curation suite requires Hi-C reads to be in a BAM format. To create th
 ```
 #!/bin/bash
 #SBATCH --job-name=convert_bam
-#SBATCH --account=ec146
+#SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
 #SBATCH --mem-per-cpu=48G
 #SBATCH --ntasks-per-node=10
