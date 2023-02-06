@@ -101,7 +101,7 @@ In some instances you´ll want to invert segments in your chromosome sized scaff
 
 ### Step 4: Painting your scaffolds
 
-You have made your edits, and now you hopefully have five large scaffolds matching *Metschnikowia zobellii´s* karyotype. Before finishing your assembly, you need to "paint" them. What does this mean? You need to mark which scaffolds are part of the same "super-scaffolds" or chromosomes, so they´ll all have the same name in the final FASTA. 
+You have made your edits, and now you hopefully have eight large scaffolds matching *Athalia rosae´s* karyotype. Before finishing your assembly, you need to "paint" them. What does this mean? You need to mark which scaffolds are part of the same "super-scaffolds" or chromosomes, so they´ll all have the same name in the final FASTA. 
 
 Enter the "Scaffold Edit Mode" by pressing **S**. Go to the bottom right corner, and left click on the smallest scaffold you want to include as a chromosome. 
 
