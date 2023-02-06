@@ -105,7 +105,7 @@ conda activate base
 
 ln -s /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa
 
-perl /cluster/projects/nn9984k/opt/rapid-curation/rapid_hic_software/rapid_split.pl -fa iyAthRosa_clean.fa
+perl /cluster/projects/nn9984k/opt/rapid-curation/rapid_split.pl -fa iyAthRosa_clean.fa
 ```
 
 
