@@ -138,7 +138,7 @@ conda activate curation
 # create new tpf
 
 python /cluster/projects/nn9984k/opt/rapid-curation/rapid_pretext2tpf_XL.py \
-iyAthRosa1.h1.decon.fasta.tpf \
+iyAthRosa_clean.fa.tpf \
 out.pretext.agp_1
 ```
 
@@ -148,10 +148,10 @@ Using the new TPF, the chrs.csv-file generated with the Rapid curation suite, an
 ```
 # create new fasta
 
-perl /cluster/projects/nn9984k/opt/rapid-curation/rapid_join.pl -fa iyAthRosa1.h1.decon.fasta \
+perl /cluster/projects/nn9984k/opt/rapid-curation/rapid_join.pl -fa iyAthRosa_clean.fa \
 -tpf rapid_prtxt_XL.tpf \
 -csv chrs.csv \
--out hap1_curated.fasta
+-out hap1_clean.fasta
 ```
 
 And now you are left with a complete, curated, haplotype resolved whole-genome assembly! Congratulations, you champ!
