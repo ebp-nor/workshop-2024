@@ -16,6 +16,7 @@ You can grab the slides [here](Slides_for_workshop_December_2022.pdf).
   * [HiFiAdapterFilt](03_HiFiAdapterFilt.md)
   * [hifiasm](04_hifiasm.md)
   * [YaHS](05_YaHS.md)
+  * Coffee break 10:45-11:00
 * 11:55-12:00 Summary
 
 ### 12:00-13:00 Lunch
