@@ -10,6 +10,9 @@ There are many ways to view a Hi-C contact map, but today we are going to use Pr
  
  When you load your Hi-C contact map, this is what it should look like, depending on which colour scheme you have chosen. For this tutorial we will be using **"Blue-Orange Divergent"**.  
  
+ <img width="962" alt="Screenshot 2023-02-06 at 13 43 38" src="https://user-images.githubusercontent.com/110542053/216974988-510ca53d-a3f9-4d84-8a0f-77ce8d53057a.png">
+
+ 
  Here, each square represents a scaffold (which after curation will hopefully all be of chromosome length). The red line in the centre shows where the strongest contact signals are between the DNA sequences. 
 
  Go ahead and look at the extensions for your contact maps. These overlays makes it easier to figure out where the unplaced and wrongly oriented scaffolds are supposed to go. 
