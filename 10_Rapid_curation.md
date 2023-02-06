@@ -84,8 +84,8 @@ cat  /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa > data/ref.fa
 
 echo "/hic/ERR6054981_60x.bam" > data/cram.fofn
 
-sbatch /projects/ec146/scripts/run_rapidcuration.sh gsMetZobe /cluster/projects/nn9984k/data/genomic_data/hic/  /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz 
-#/fp/projects01/ec146/data/genomic_data/hic/ERR9503460_1_60x.fastq.gz /fp/projects01/ec146/data/genomic_data/hic/ERR9503460_2_60x.fastq.gz 
+sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa /cluster/projects/nn9984k/data/genomic_data/hic/  /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz 
+
 ```
 
 After this is finished, you should be left with an out.pretext file, and this can be used for manual curation. However, since the yeast species you were working on had some ambiguous Hi-C contact signals, we´re gonna let you try your hand at curating the EBP-Nor brook lamprey instead! To download this file to your local computer, open a new terminal window, navigate to where you want to place your file, and use the code below:
