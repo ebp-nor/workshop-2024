@@ -116,9 +116,9 @@ To finish your assembly you need to:
 
 Press **U** to bring up the main menu. Press the "Generate AGP" button, and create a out.pretext.agp file. 
 
-#### 2. Transfer your out.pretext.agp file to educloud
+#### 2. Transfer your out.pretext.agp file to saga
 
-Bring the AGP file back to your working directory opening another terminal window, going to the folder where you saved your AGP-file, and write:
+Bring the AGP file back to your saga working directory by opening another terminal window, logging into saga. and going to the folder where you saved your TPF-file. When you are in the right location, use the code below to copy your file:
 
 ```
 scp -r out.pretext.agp <username>@saga.sigma2.no:/cluster/projects/nn9984k/folder_with_tpf
