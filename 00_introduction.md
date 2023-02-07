@@ -47,7 +47,7 @@ We mostly set up scripts and arranged data so it is ready to run, but ask you to
 
 ## Infrastructure
 
-For the different analyses we are doing, we will use [Saga](https://documentation.sigma2.no/hpc_machines/saga.html). Everything should be set up properly by now. The project we have at Saga is called nn9984k, and the working folder is `/cluster/projects/nn9984k`. 
+For the different analyses we are doing, we will use [Saga](https://documentation.sigma2.no/hpc_machines/saga.html). Everything should be set up properly by now. The project we have at Saga is called nn9984k, and the working folder is `/cluster/projects/nn9984k`. You should set up and do stuff in `/cluster/projects/nn9984k/work/$USERNAME`, but we'll come back to that in the next subject.
 
 On Saga we will submit jobs/analyses as job scripts. This is for a system called SLURM. Basically, this is instructions to the system for what kind of analysis we are running, or more concretely, how much memory and computing power we need. 
 
