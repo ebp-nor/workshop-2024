@@ -40,6 +40,14 @@ When you have done this, you can submit to the cluster by typing `sh run.sh`.
  
 This will run for a while. When testing it ran for 3.2 hours. When next needing the assembly, we will use one which is already done. You can monitor the progress with `squeue -u <username>`.
 
+## Software versions used
+```
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+conda activate hifiasm
+conda list
+```
+hifiasm version 0.18.5
+
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/03_HiFiAdapterFilt.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/05_YaHS.md)|
 |---|---|
