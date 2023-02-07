@@ -40,5 +40,13 @@ When everything is done (hifiasm + YaHS), you can run gfastats on all the differ
 
 The sequecinging data and approach is chosen to be able to fulfill the criteria/standards Earth Biogenome Project has for genome assemblies. You can review these [here](https://www.earthbiogenome.org/assembly-standards). Does this assembly or these assemblies fulfill the N50 contig length criterium?
 
+## Software versions used
+```
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+conda activate gfastats
+conda list
+```
+gfastats version 1.3.6
+
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/05_YaHS.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/07_BUSCO.md)|
 |---|---|
