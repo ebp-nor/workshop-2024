@@ -16,7 +16,7 @@ You can grab the slides [here](Slides_for_workshop_December_2022.pdf).
   * [HiFiAdapterFilt](03_HiFiAdapterFilt.md)
   * [hifiasm](04_hifiasm.md)
   * [YaHS](05_YaHS.md)
-  * Coffee break 10:45-11:15
+  * Coffee break 10:45-11:15 together Genetic Diversity Monitoring Workshop
 * 12:25-12:30 Summary
 
 ### 12:30-13:30 Lunch together with Genetic Diversity Monitoring Workshop. 
