@@ -123,9 +123,9 @@ The rapid curation suite requires Hi-C reads to be in a BAM format. To create th
 module load picard/2.24.0-Java-11
 
 java -Xms6g -Xmx6g -jar $EBROOTPICARD/picard.jar FastqToSam \
-F1=ERR9503460_1_60x.fastq.gz \
-F2=ERR9503460_1_60x.fastq.gz \
-O=hic_sawfly.bam \
+F1=ERR6054981_1_60x.fastq.gz \
+F2=ERR6054981_1_60x.fastq.gz \
+O=ERR6054981_60x.bam \
 SM=hic_sawfly \
 TMP_DIR=.
 ```
