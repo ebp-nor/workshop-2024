@@ -51,8 +51,7 @@ bamCoverage -b coverage_pri.bam -o coverage.bw
 singularity run /cluster/projects/nn9984k/opt/rapid-curation/rapid_hic_software/runGap.sif -t $1
 
 #repeats
-singularity run /cluster/projects/nn9984k/opt/rapid-curation/rapid_hic_software/runRepeat.sif -t $1  -s 10000
-
+singularity run /cluster/projects/nn9984k/opt/rapid-curation/rapid_hic_software/runRepeat.sif -t $1
 
 #telomers
 singularity run /cluster/projects/nn9984k/opt/rapid-curation/rapid_hic_software/runTelo.sif -t $1 -s TTAGG
@@ -84,7 +83,7 @@ cat  /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa > data/ref.fa
 
 echo "/hic/ERR6054981_60x.bam" > data/cram.fofn
 
-sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa /cluster/projects/nn9984k/data/genomic_data/hic/  /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz 
+sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa /cluster/projects/nn9984k/data/genomic_data/hic/  /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fasta.gz 
 
 ```
 
