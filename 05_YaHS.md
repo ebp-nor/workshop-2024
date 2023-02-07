@@ -68,7 +68,9 @@ conda activate yahs
 conda list
 ```
 bwa version 0.7.17 
+
 samtools version 1.6
+
 yahs version 1.2a.2
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/04_hifiasm.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/06_gfastats.md)|
