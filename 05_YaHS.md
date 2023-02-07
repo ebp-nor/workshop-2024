@@ -47,6 +47,8 @@ As we did with hifiasm, we have set up this script for you. Create a run.sh in y
 ```
 ln -s ../hifiasm/iyAthRosa.hic.hap1.p_ctg.fa .
 
+#or link from /cluster/projects/nn9984k/data/assemblies/iyAthRosa.hic.hap1.p_ctg.fa if you are not done yet with the assembly
+
 sbatch /cluster/projects/nn9984k/scripts/run_yahs.sh iyAthRosa.hic.hap1.p_ctg.fa \
 iyAthRosa \
 /cluster/projects/nn9984k/data/genomic_data/hic/ERR6054981_1_60x.fastq.gz \
