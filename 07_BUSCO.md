@@ -57,7 +57,7 @@ We have also downloaded more lineages than what is used in the script above. Tak
 ## Software versions used
 ```
 eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
-conda activate hifiadapterfilt
+conda activate busco
 conda list
 ```
 metaeuk version 6.a5d39d9 
