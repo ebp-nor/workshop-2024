@@ -35,7 +35,7 @@ ln -s ../yahs/iyAthRosa_scaffolds_final.fa .
 sbatch /cluster/projects/nn9984k/scripts/run_busco.sh iyAthRosa_scaffolds_final.fa
 ```
 
-You can also run the script in the `hifiasm` and/or `yahs` folder directly. The script will make a subfolder with the results (look at the file called `busco.out` in the subfolder.
+You can also run the script in the `hifiasm` and/or `yahs` folder directly. The script will make a subfolder with the results (look at the file called `busco.out` in the subfolder).
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`. If you scaffolded both haplotypes, repeat the process for both assemblies.
 
@@ -54,6 +54,15 @@ We have also downloaded more lineages than what is used in the script above. Tak
 
 (Hint: `busco  --list-datasets` shows all possible datasets/lineages and their hierarchy.) 
 
+## Software versions used
+```
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+conda activate hifiadapterfilt
+conda list
+```
+metaeuk version 6.a5d39d9 
+
+busco version 5.4.5
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/06_gfastats.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/08_Merqury.md)|
 |---|---|
