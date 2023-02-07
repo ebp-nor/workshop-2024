@@ -48,7 +48,17 @@ Finished on Sat Feb  4 09:18:25 CET 2023
 
 You should have similar content.
 
+## Software versions used
+```
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+conda activate yahs
+conda list
+```
+HiFiAdapterFilt version Second release
 
+blast version 2.13.0
+
+bamtools version 2.5.2
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/02_Smudgeplot.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/04_hifiasm.md)|
 |---|---|
