@@ -58,6 +58,17 @@ scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/genom
 
 What is the estimated genome size of *Athalia rosae*? 
 
+## Software versions used
+```
+eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+conda activate smudgescope
+conda list
+```
+kmc version 3.2.1
+
+genomescope2 version 2.0
+
+smudgeplot version 0.2.5
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/00_introduction.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/02_Smudgeplot.md)|
 |---|---|
