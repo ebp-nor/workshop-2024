@@ -66,7 +66,7 @@ Here we have simplified matters a bit and only proposes to scaffold one of the a
 eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
 conda activate yahs
 conda list
-
+```
 bwa version 0.7.17 
 samtools version 1.6
 yahs version 1.2a.2
