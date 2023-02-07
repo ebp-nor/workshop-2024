@@ -87,12 +87,12 @@ sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa /cluster
 
 ```
 
-After this is finished, you should be left with an out.pretext file, and this can be used for manual curation. 
+After this is finished, you should be left with an iyAthRosa.pretext file, and this can be used for manual curation. 
 
 If you don´t want to wait for your scripts to finish, and you want to start curating right away, we have provided both the files you need to do so. To download the PRETEXT file to your local computer, open a new terminal window, navigate to where you want to place the file, and use the code below:
 
 ```
-scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/file.pretext .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/data/pretext/iyAthRosa.pretext .
 
 ```
 
@@ -102,6 +102,7 @@ You also need a TPF file to curate the sawfly assembly, and this is created from
 eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)"
 conda activate base
 
+#or use your own
 ln -s /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa
 
 perl /cluster/projects/nn9984k/opt/rapid-curation/rapid_split.pl -fa iyAthRosa_clean.fa
