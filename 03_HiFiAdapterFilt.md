@@ -51,7 +51,7 @@ You should have similar content.
 ## Software versions used
 ```
 eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
-conda activate yahs
+conda activate hifiadapterfilt
 conda list
 ```
 HiFiAdapterFilt version Second release
