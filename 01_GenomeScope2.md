@@ -9,7 +9,7 @@ When creating de novo assemblies, there are a lot of considerations to take into
 #SBATCH --job-name=genomescope
 #SBATCH --account=nn9984k
 #SBATCH --time=1:0:0
-#SBATCH --mem-per-cpu=1G
+#SBATCH --mem-per-cpu=10G
 #SBATCH --ntasks-per-node=5
 
 eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
