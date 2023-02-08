@@ -5,6 +5,8 @@ This repository contains the course materials for the EBP-Nor Genome Assembly Wo
 
 You can grab the slides [here](Slides_for_Workshop_February_2023.pdf).
 
+To set up password, go here: [https://www.metacenter.no/user/reset/](https://www.metacenter.no/user/reset/).
+
 ## Genome assembly, curation and validation - Schedule
 
 ### 09:00-12:00 Assembly
