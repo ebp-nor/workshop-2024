@@ -100,7 +100,7 @@ You also need a TPF file to curate the sawfly assembly, and this is created from
 
 ```
 eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)"
-conda activate base
+conda activate curation
 
 #or use your own
 ln -s /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa
