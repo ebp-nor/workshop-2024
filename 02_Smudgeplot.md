@@ -61,7 +61,7 @@ This is a smudgeplot generated for the EBP-Nor river lamprey (*Lampetra fluviati
 
 Here we see that based on the coverage of the heterozygous kmer pairs, the most represented haplotype structure for the river lamprey is diploid. 
 
-Which is the most representet haplotype for *Metschnikowia zobellii*? To look at the plots you created, open a new terminal window, and navigate to a directory where you want to place your files. When you have found the place where you want to save them, use this code to copy them to your local computer:
+Which is the most representet haplotype for the coleseed sawfly? To look at the plots you created, open a new terminal window, and navigate to a directory where you want to place your files. When you have found the place where you want to save them, use this code to copy them to your local computer:
 
 ```
 scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/smudgeplot/"*.png" .
