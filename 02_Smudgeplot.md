@@ -67,6 +67,8 @@ Which is the most representet haplotype for *Metschnikowia zobellii*? To look at
 scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/smudgeplot/"*.png" .
 ```
 
+You can look at the plot [here](smudgeplot_smudgeplot_log10.png).
+
 ## Software versions used
 ```
 eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
