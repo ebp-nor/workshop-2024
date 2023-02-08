@@ -92,7 +92,7 @@ After this is finished, you should be left with an iyAthRosa.pretext file, and t
 If you don´t want to wait for your scripts to finish, and you want to start curating right away, we have provided both the files you need to do so. To download the PRETEXT file to your local computer, open a new terminal window, navigate to where you want to place the file, and use the code below:
 
 ```
-scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/data/pretext/iyAthRosa.pretext .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/data/pretext/iyAthRosa_2.pretext .
 
 ```
 
