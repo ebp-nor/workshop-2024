@@ -12,7 +12,7 @@ To set up password, go here: [https://www.metacenter.no/user/reset/](https://www
 ### 09:00-12:00 Assembly
 
 * 09:00-09:30 Introduction to whole-genome assembly and [introduction to the study system and infrastructure](00_introduction.md)
-* 09:30-11:55 Assembling the yeast genome
+* 09:30-11:55 Assembling the sawfly genome
   * [GenomeScope2](01_GenomeScope2.md)
   * [Smudgeplot](02_Smudgeplot.md)
   * [HiFiAdapterFilt](03_HiFiAdapterFilt.md)
