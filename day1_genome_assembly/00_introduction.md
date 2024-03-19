@@ -17,14 +17,23 @@ The coleseed or turnip sawfly, *Athalia rosae*, is a sawfly found in Europe, Asi
 
 The genome itself is around 170 Mbp, and the PacBio data was about 18 Gbp, more than 100x coverage. It was subsampled with [seqtk](https://github.com/lh3/seqtk) like this:
 ```
-seqtk sample ERR6548410.fastq.gz  410000 |gzip > ERR6548410_30x.fastq.gz
+seqtk sample ERR6548410.fastq.gz  300000 |gzip > ERR6548410_322.fastq.gz
 ```
-to get about 30x coverage with PacBio data. 
-
+to get about 22x coverage with PacBio data. We could have used higher coverages, but for time efficiency, we have subsampled it such. We also subsampled the Hi-C data like this:
+```
+seqtk sample ERR6054981_1.fastq.gz 25000000 |gzip > ERR6054981_1_50x.fastq.gz
+seqtk sample ERR6054981_2.fastq.gz 25000000 |gzip > ERR6054981_2_50x.fastq.gz
+```
+If you want the full set of reads, or if you want to try to subsample it yourself, you can grab the files by these commands:
+```
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR605/001/ERR6054981/ERR6054981_1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR605/001/ERR6054981/ERR6054981_2.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR654/000/ERR6548410/ERR6548410.fastq.gz
+```
 
 ## Why do we use a combination of HiFi and Hi-C reads? 
 
-HiFi sequencing creates highly accurate circularized consensus reads. How are these reads generated? By ligating hairpin adapters, the DNA fragment that is being sequenced becomes a circle. This means that the machine can do multiple passes over the same DNA sequence, to weed out any misread nucleotides. This is how HiFi reads can relatively long, while remaining over 99.9% accurate. 
+HiFi sequencing creates highly accurate circularized consensus reads. How are these reads generated? By ligating hairpin adapters, the DNA fragment that is being sequenced becomes a circle. This means that the sequencing machine can do multiple passes over the same DNA sequence, to weed out any misread nucleotides. This is how HiFi reads can relatively long, while remaining over 99.9% accurate. 
 
 Hi-C sequencing is done to capture how the chromatin is folded within the cell nucleus. By ligating the folded DNA strands, we can capture which loci are found in close proximity, and thus which parts of the DNA are found within the same chromosomes.
 
@@ -34,11 +43,12 @@ Testing, by us, but also earlier by Darwin Tree of Life and Vertebrate Genomes P
 
 ## Package management
 
-Administrating the different programs that are needed in project can be a hassle. We like conda, especially [miniconda](https://docs.conda.io/en/latest/miniconda.html), and have set up different environments we will use for the different analyses. [Bioconda](https://bioconda.github.io) contain a lot of different packages that are relevant for us, and genomics and bioinformatics in general.
+Administrating the different programs that are needed in project can be a hassle. We like conda, especially [miniforge](https://github.com/conda-forge/miniforge), and have set up different environments we will use for the different analyses. [Bioconda](https://bioconda.github.io) contain a lot of different packages that are relevant for us, and genomics and bioinformatics in general.
 
 To load conda, do this:
+
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 ```
 
 There are some of the different programs that are not available through conda. For most of these we use [Singularity containers](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html). 
@@ -69,7 +79,6 @@ Vertebrate Genomes Project as a workflow they have implemented in Galaxy, but wi
 [https://training.galaxyproject.org/training-material//topics/assembly/tutorials/vgp_genome_assembly/tutorial.html](https://training.galaxyproject.org/training-material//topics/assembly/tutorials/vgp_genome_assembly/tutorial.html)
 
 UC Davis Bioinformatics Core has a genome assembly workshop they held in 2020, which also contains a lot of useful information if you want to deep-dive into this subject. Read it here: [https://ucdavis-bioinformatics-training.github.io/2020-Genome_Assembly_Workshop/](https://ucdavis-bioinformatics-training.github.io/2020-Genome_Assembly_Workshop/)
-
 
 
 |[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/01_GenomeScope2.md)|
