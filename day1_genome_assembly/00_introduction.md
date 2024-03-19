@@ -81,5 +81,5 @@ Vertebrate Genomes Project as a workflow they have implemented in Galaxy, but wi
 UC Davis Bioinformatics Core has a genome assembly workshop they held in 2020, which also contains a lot of useful information if you want to deep-dive into this subject. Read it here: [https://ucdavis-bioinformatics-training.github.io/2020-Genome_Assembly_Workshop/](https://ucdavis-bioinformatics-training.github.io/2020-Genome_Assembly_Workshop/)
 
 
-|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/01_GenomeScope2.md)|
+|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/01_GenomeScope2.md)|
 |---|
