@@ -14,10 +14,9 @@ When creating de novo assemblies, there are a lot of considerations to take into
 
 eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
 
-conda activate smudgescope
+mamba activate smudgescope
 
-k=21
-ploidy=2
+k=32
 
 mkdir -p tmp
 echo $1 > FILES
@@ -34,13 +33,12 @@ genomescope2 -i reads.histo -o output_ploidy4 -k $k -p 4 1> genomescope_ploidy4.
 We have set up this script for you. What you need to do is to create a `run.sh` in your working folder (`/cluster/projects/nn9984k/work/<username>/genomescope`) with this content (with `nano` for instance):
 
 ```
-sbatch /cluster/projects/nn9984k/scripts/run_genomescope.sh /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz  
+sbatch /cluster/projects/nn9984k/scripts/run_genomescope.sh  /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
 ````
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
 
 This should finish in a handful of minutes (when testing it ran for 5 minutes). You can monitor the progress with `squeue -u <username>`.
-
 
 ## Interpreting your k-mer profile plot
 
