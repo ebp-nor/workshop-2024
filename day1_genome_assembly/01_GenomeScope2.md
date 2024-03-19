@@ -70,5 +70,5 @@ genomescope2 version 2.0
 
 smudgeplot version 0.2.5
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/00_introduction.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/02_Smudgeplot.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/00_introduction.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/02_Smudgeplot.md)|
 |---|---|
