@@ -12,7 +12,7 @@ When creating de novo assemblies, there are a lot of considerations to take into
 #SBATCH --mem-per-cpu=10G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 mamba activate smudgescope
 
@@ -60,7 +60,7 @@ You can look at the plot [here](genomescope2_linear_plot.png).
 
 ## Software versions used
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 conda activate smudgescope
 conda list
 ```
