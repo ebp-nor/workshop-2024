@@ -4,7 +4,7 @@ After filtering the EvidenceModeler genes we have a set of genes we (hopefully) 
 
 In addition to annotating domains, it is useful to attach gene names to the proteins. This can be done by a simple comparison to known genes with known names using [DIAMOND](https://github.com/bbuchfink/diamond), similar to what we did for [filtering](06_filtering.md). 
 
-Comparisons against UniProtKB/Swiss-prot can be done with this script:
+Comparisons against UniProtKB/Swiss-Prot can be done with this script:
 ```
 #!/bin/bash
 #SBATCH --job-name=uniprot
