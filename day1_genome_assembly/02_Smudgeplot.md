@@ -81,5 +81,5 @@ genomescope2 version 2.0
 
 smudgeplot version 0.2.5
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/01_GenomeScope2.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/03_HiFiAdapterFilt.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/01_GenomeScope2.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/03_HiFiAdapterFilt.md)|
 |---|---|
