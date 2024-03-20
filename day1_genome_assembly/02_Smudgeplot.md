@@ -71,7 +71,7 @@ You can look at the plot [here](smudgeplot_smudgeplot_log10.png).
 
 ## Software versions used
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 conda activate smudgescope
 conda list
 ```
