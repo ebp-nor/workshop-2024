@@ -12,7 +12,7 @@ Congratulations, you have created your sawfly assembly! But now you have to comb
 #SBATCH --mem-per-cpu=20G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate yahs
 
@@ -27,10 +27,8 @@ mkdir -p outs
 [ -s hic_markdup.sort_n.bam ] || bwa mem -t 8 -R '@RG\tSM:$SAMPLE\tID:$SAMPLE' -5SPM $REF \
 $3 $4 \
 |samtools view -buS - |samtools sort -@1 -n -T tmp_n -O bam - \
-|samtools fixmate -mr - -|samtools sort -@1 -T hic_tmp -O bam - |samtools markdup -rs - -  2> hic_markdup.stats |samtools sort -n -@1 -n -T temp_n -O bam\
+|samtools fixmate -mr - -|samtools sort -@1 -T hic_tmp -O bam - |samtools markdup -rsS - -  2> hic_markdup.stats |samtools sort -n -@1 -n -T temp_n -O bam\
 > hic_markdup.sort_n.bam
-
-#markdup -S is not supported by samtools 1.6
 
 [ -s $REF.fai ] ||samtools faidx $REF
 
@@ -53,8 +51,8 @@ ln -s ../hifiasm/iyAthRosa.hic.hap1.p_ctg.fa .
 
 sbatch /cluster/projects/nn9984k/scripts/run_yahs.sh iyAthRosa.hic.hap1.p_ctg.fa \
 iyAthRosa \
-/cluster/projects/nn9984k/data/genomic_data/hic/ERR6054981_1_60x.fastq.gz \
-/cluster/projects/nn9984k/data/genomic_data/hic/ERR6054981_2_60x.fastq.gz
+/cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_1_50x.fastq.gz \
+/cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_2_50x.fastq.gz
 ```
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
@@ -71,9 +69,9 @@ conda list
 ```
 bwa version 0.7.17 
 
-samtools version 1.6
+samtools version 1.19.2
 
 yahs version 1.2a.2
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/04_hifiasm.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/06_gfastats.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/04_hifiasm.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/06_gfastats.md)|
 |---|---|
