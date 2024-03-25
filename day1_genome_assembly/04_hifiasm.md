@@ -1,6 +1,6 @@
 # hifiasm tutorial
 
-When choosing an assembler, you need to keep your data in mind. Since we want to create haplotype resolved assemblies, and we have both HiFi and Hi-C reads available, we are going to use **hifiasm**. Hifiasm is fast, easy to use, and creates high quality assemblies with longer contigs. To read more about how this software works, click [*here.*](https://github.com/chhylp123/hifiasm)
+The kind of sequencing data you have sets some limit for what kine of assembler you can use. Most assemblers have a recommended set of inputs, and this basically guide what kind of sequencing strategy you would use for a particular species. As always, you should start from what you actually want from genome sequencing and assembly project, and then figure out what kind of data and assembly process you need to achieve this. We want to create [haplotype resolved assemblies](https://lh3.github.io/2021/10/10/introducing-dual-assembly), and up until quite recently ([these](https://doi.org/10.1101/2023.02.21.529152 [two](https://www.biorxiv.org/content/10.1101/2024.03.15.585294v2) papers changes the lay of the land a bit), the easiest  way to do this was to generate PacBio HiFi and Hi-C reads and use [hifiasm](https://github.com/chhylp123/hifiasm). It is quite quick, easy to use, and creates high quality assemblies with longer contigs.
 
 ## Assembling with hifiasm
 
@@ -12,7 +12,7 @@ When choosing an assembler, you need to keep your data in mind. Since we want to
 #SBATCH --mem-per-cpu=10G
 #SBATCH --ntasks-per-node=10
 
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate hifiasm
 
