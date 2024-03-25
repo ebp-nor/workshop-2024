@@ -35,15 +35,15 @@ This should finish in a handful of minutes (when testing it ran for about 9 minu
 HiFiAdapterFilt creates several files, for instance the filtered file and a statistics file: 
 
 ```
-Started on Sat Feb  4 08:58:25 CET 2023
-For the iyAthRosa_pacbio dataset:
+Started on Mon Mar 25 09:19:20 AM CET 2024
+For the ERR6548410_22x dataset:
 Removing reads containing adapters a minimum of 44 bp in length and 97% match.
 
-Number of ccs reads: 410000
-Number of adapter contaminated ccs reads: 205 (0.05% of total)
-Number of ccs reads retained: 409795 (99.95% of total)
+Number of ccs reads: 300000
+Number of adapter contaminated ccs reads: 146 (0.0486667% of total)
+Number of ccs reads retained: 299854 (99.9513% of total)
 
-Finished on Sat Feb  4 09:18:25 CET 2023
+Finished on Mon Mar 25 09:27:53 AM CET 2024
 ```
 
 You should have similar content.
