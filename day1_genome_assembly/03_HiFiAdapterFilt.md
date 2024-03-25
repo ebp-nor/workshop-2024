@@ -60,5 +60,5 @@ blast version 2.15.0
 
 bamtools version 2.5.2
 
-|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/02_Smudgeplot.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/04_hifiasm.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/02_Smudgeplot.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/04_hifiasm.md)|
 |---|---|
