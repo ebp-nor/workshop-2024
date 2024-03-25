@@ -56,7 +56,7 @@ conda list
 ```
 HiFiAdapterFilt version Second release
 
-blast version 2.13.0
+blast version 2.15.0
 
 bamtools version 2.5.2
 
