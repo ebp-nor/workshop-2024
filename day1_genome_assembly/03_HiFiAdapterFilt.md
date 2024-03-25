@@ -12,7 +12,7 @@ Now that you have learned a bit more about your dataset you are *almost* ready t
 #SBATCH --mem-per-cpu=2G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate hifiadapterfilt
 
@@ -50,7 +50,7 @@ You should have similar content.
 
 ## Software versions used
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 conda activate hifiadapterfilt
 conda list
 ```
@@ -60,5 +60,5 @@ blast version 2.13.0
 
 bamtools version 2.5.2
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/02_Smudgeplot.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/04_hifiasm.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/02_Smudgeplot.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/04_hifiasm.md)|
 |---|---|
