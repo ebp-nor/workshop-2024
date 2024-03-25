@@ -8,8 +8,8 @@ Now that you have learned a bit more about your dataset you are *almost* ready t
 #!/bin/bash
 #SBATCH --job-name=hifiadaptfilt
 #SBATCH --account=nn9984k
-#SBATCH --time=4:0:0
-#SBATCH --mem-per-cpu=2G
+#SBATCH --time=1:0:0
+#SBATCH --mem-per-cpu=1G
 #SBATCH --ntasks-per-node=5
 
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
@@ -30,7 +30,7 @@ sbatch /cluster/projects/nn9984k/scripts/run_hifiadaptfilt.sh
 ```  
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
 
-This should finish in a handful of minutes (when testing it ran for about 20 minutes). You can monitor the progress with `squeue -u <username>`.
+This should finish in a handful of minutes (when testing it ran for about 9 minutes). You can monitor the progress with `squeue -u <username>`.
 
 HiFiAdapterFilt creates several files, for instance the filtered file and a statistics file: 
 
