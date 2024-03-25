@@ -49,5 +49,5 @@ conda list
 hifiasm version 0.19.8
 
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/03_HiFiAdapterFilt.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/05_YaHS.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/03_HiFiAdapterFilt.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/05_YaHS.md)|
 |---|---|
