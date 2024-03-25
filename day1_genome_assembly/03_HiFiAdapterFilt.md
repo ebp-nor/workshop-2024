@@ -17,7 +17,7 @@ eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)"
 conda activate hifiadapterfilt
 
 export PATH=/cluster/projects/nn9984k/opt/HiFiAdapterFilt/:$PATH
-export PATH=/cluster/projects/nn9984k/HiFiAdapterFilt/DB:$PATH
+export PATH=/cluster/projects/nn9984k/opt/HiFiAdapterFilt/DB:$PATH
 
 pbadapterfilt.sh -t 5
 ```
@@ -25,7 +25,7 @@ pbadapterfilt.sh -t 5
 We have set up this script for you. What you need to do is to create a run.sh in your working folder (`cluster/projects/nn9984k/work/<username>/hifiadaptfilt`) with this content (with nano for instance):
 
 ```
-ln -s /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz  . 
+ln -s /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz  . 
 sbatch /cluster/projects/nn9984k/scripts/run_hifiadaptfilt.sh
 ```  
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
