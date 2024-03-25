@@ -1,6 +1,6 @@
 # hifiasm tutorial
 
-The kind of sequencing data you have sets some limit for what kine of assembler you can use. Most assemblers have a recommended set of inputs, and this basically guide what kind of sequencing strategy you would use for a particular species. As always, you should start from what you actually want from genome sequencing and assembly project, and then figure out what kind of data and assembly process you need to achieve this. We want to create [haplotype resolved assemblies](https://lh3.github.io/2021/10/10/introducing-dual-assembly), and up until quite recently ([these](https://doi.org/10.1101/2023.02.21.529152 [two](https://www.biorxiv.org/content/10.1101/2024.03.15.585294v2) papers changes the lay of the land a bit), the easiest  way to do this was to generate PacBio HiFi and Hi-C reads and use [hifiasm](https://github.com/chhylp123/hifiasm). It is quite quick, easy to use, and creates high quality assemblies with longer contigs.
+The kind of sequencing data you have sets some limit for what kine of assembler you can use. Most assemblers have a recommended set of inputs, and this basically guide what kind of sequencing strategy you would use for a particular species. As always, you should start from what you actually want from genome sequencing and assembly project, and then figure out what kind of data and assembly process you need to achieve this. We want to create [haplotype resolved assemblies](https://lh3.github.io/2021/10/10/introducing-dual-assembly), and up until quite recently ([these](https://doi.org/10.1101/2023.02.21.529152) [two](https://www.biorxiv.org/content/10.1101/2024.03.15.585294v2) papers changes the lay of the land a bit), the easiest  way to do this was to generate PacBio HiFi and Hi-C reads and use [hifiasm](https://github.com/chhylp123/hifiasm). It is quite quick, easy to use, and creates high quality assemblies with longer contigs.
 
 ## Assembling with hifiasm
 
@@ -30,9 +30,9 @@ We have set up this script for you. What you need to do is to create a run.sh in
  
 ```
 sbatch /cluster/projects/nn9984k/scripts/run_hifiasm.sh iyAthRosa \
-/cluster/projects/nn9984k/data/genomic_data/hic/ERR6054981_1_60x.fastq.gz \
-/cluster/projects/nn9984k/data/genomic_data/hic/ERR6054981_2_60x.fastq.gz \
-/cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fastq.gz 
+/cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_1_50x.fastq.gz \
+/cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_2_50x.fastq.gz \
+/cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
 ```
 This script contain the unfiltered HiFi reads. Please replace the reads with the filtered reads you created with HiFiAdapterFilt.
 
@@ -42,11 +42,11 @@ This will run for a while. When testing it ran for 3.2 hours. When next needing 
 
 ## Software versions used
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 conda activate hifiasm
 conda list
 ```
-hifiasm version 0.18.5
+hifiasm version 0.19.8
 
 
 |[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/03_HiFiAdapterFilt.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/05_YaHS.md)|
