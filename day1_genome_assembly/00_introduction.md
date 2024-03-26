@@ -17,7 +17,7 @@ The coleseed or turnip sawfly, *Athalia rosae*, is a sawfly found in Europe, Asi
 
 The genome itself is around 170 Mbp, and the PacBio data was about 18 Gbp, more than 100x coverage. It was subsampled with [seqtk](https://github.com/lh3/seqtk) like this:
 ```
-seqtk sample ERR6548410.fastq.gz  300000 |gzip > ERR6548410_322.fastq.gz
+seqtk sample ERR6548410.fastq.gz  300000 |gzip > ERR6548410_22x.fastq.gz
 ```
 to get about 22x coverage with PacBio data. We could have used higher coverages, but for time efficiency, we have subsampled it such. We also subsampled the Hi-C data like this:
 ```
