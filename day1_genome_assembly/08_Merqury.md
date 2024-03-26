@@ -62,7 +62,7 @@ Further, the `<prefix>.completeness.stats` is informative. It shows the number o
 
 ## Software versions used
 ```
-eval "$(/cluster/projects/nn9984k/miniforge/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 conda activate merqury
 conda list
 ```
