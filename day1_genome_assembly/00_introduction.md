@@ -30,6 +30,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR605/001/ERR6054981/ERR6054981_1.fastq
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR605/001/ERR6054981/ERR6054981_2.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR654/000/ERR6548410/ERR6548410.fastq.gz
 ```
+We have also uploaded [subsampled reads at Zenodo](https://doi.org/10.5281/zenodo.10867805) so that you can play around with this at your leisure.
 
 ## Why do we use a combination of HiFi and Hi-C reads? 
 
