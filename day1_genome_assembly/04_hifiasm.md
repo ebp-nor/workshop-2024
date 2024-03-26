@@ -38,7 +38,10 @@ This script contain the unfiltered HiFi reads. Please replace the reads with the
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
  
-This will run for a while. When testing it ran for 3.2 hours. When next needing the assembly, we will use one which is already done. You can monitor the progress with `squeue -u <username>`.
+This will run for a while. When testing it ran for 50 minutes. When next needing the assembly, we will use one which is already done if this one did not finish. You can monitor the progress with `squeue -u <username>`.
+
+For extra fun:
+We have also subsampled the PacBio sequencing reads to 26x and 30x (look in `/cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/`). If you have time and/or want, you can use that data instead. Please don't start all three different assemblies at the same time, but chose one or collaborate with someone else. You will get some different metrics out of thesee. 26x coverage is what is recommened by the developers of hifiasm, and 30x is what is recommended by [Vertebrate Genomes Project](https://www.nature.com/articles/s41587-023-02100-3). 
 
 ## Software versions used
 ```
