@@ -8,7 +8,7 @@ Run this code in the terminal command line, and fill out the table below.
 
 
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate gfastats
 
@@ -42,11 +42,11 @@ The sequecinging data and approach is chosen to be able to fulfill the criteria/
 
 ## Software versions used
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 conda activate gfastats
 conda list
 ```
 gfastats version 1.3.6
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/05_YaHS.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/07_BUSCO.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/05_YaHS.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/07_BUSCO.md)|
 |---|---|
