@@ -42,7 +42,7 @@ When you have done this, you can submit to the cluster by typing `sh run.sh`. If
 
 ## Reviewing the BUSCO results
 
-Before you start reviewing your results, look at the [list of lineages](https://busco-data.ezlab.org/v5/data/lineages/) found within the OrthoDB database. Which lineage would you pick for the yeast assemblies? Is it the same as the one we specified in the script above?
+Before you start reviewing your results, look at the [list of lineages](https://busco-data.ezlab.org/v5/data/lineages/) found within the OrthoDB database. Which lineage would you pick for the sawfly assemblies? Is it the same as the one we specified in the script above?
 
 **Try to answer these questions by reviewing your BUSCO results:**
 
