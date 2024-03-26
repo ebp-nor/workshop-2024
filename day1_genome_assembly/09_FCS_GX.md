@@ -13,7 +13,7 @@ Contaminants can end up in your assemblies in various different ways. Maybe some
 #SBATCH --mem-per-cpu=50G
 #SBATCH --ntasks-per-node=10
 
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge/bin/conda shell.bash hook)" 
 conda activate base
 #The base system seems to have python2, this sets up python3 which is needed for fcs
 
@@ -67,5 +67,5 @@ You can do it on the command line, or put it in a small script. Adjust for possi
 
 
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/08_Merqury.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/10_Rapid_curation.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/08_Merqury.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/10_Rapid_curation.md)|
 |---|---|
