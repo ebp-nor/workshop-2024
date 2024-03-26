@@ -12,7 +12,7 @@ This is the script we use to run BUSCO:
 #SBATCH --job-name=busco
 #SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
-#SBATCH --mem-per-cpu=1G
+#SBATCH --mem-per-cpu=3G
 #SBATCH --ntasks-per-node=5
 
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
