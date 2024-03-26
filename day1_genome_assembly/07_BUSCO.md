@@ -62,7 +62,7 @@ conda list
 ```
 metaeuk version 6.a5d39d9 
 
-busco version 5.4.5
+busco version 5.7.0
 
 |[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/06_gfastats.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/8_Merqury.md)|
 |---|---|
