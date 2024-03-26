@@ -14,7 +14,7 @@ To run Merqury, create a new directory named `merqury`.
 #SBATCH --mem-per-cpu=2G
 #SBATCH --ntasks-per-node=10
 
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate merqury
 
@@ -62,7 +62,7 @@ Further, the `<prefix>.completeness.stats` is informative. It shows the number o
 
 ## Software versions used
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge/bin/conda shell.bash hook)" 
 conda activate merqury
 conda list
 ```
@@ -71,5 +71,5 @@ meryl version 1.3
 
 merqury version 1.3
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/07_BUSCO.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/09_FCS_GX.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/07_BUSCO.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/09_FCS_GX.md)|
 |---|---|
