@@ -9,7 +9,7 @@ The kind of sequencing data you have sets some limit for what kine of assembler 
 #SBATCH --job-name=hifiasm
 #SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
-#SBATCH --mem-per-cpu=10G
+#SBATCH --mem-per-cpu=5G
 #SBATCH --ntasks-per-node=10
 
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
