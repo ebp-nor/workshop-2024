@@ -6,7 +6,6 @@ Now it´s time to evaluate the assemblies you have created, starting with **gfas
 
 Run this code in the terminal command line, and fill out the table below.
 
-
 ```
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
