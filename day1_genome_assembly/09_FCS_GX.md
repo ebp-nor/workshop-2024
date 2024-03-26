@@ -13,9 +13,8 @@ Contaminants can end up in your assemblies in various different ways. Maybe some
 #SBATCH --mem-per-cpu=50G
 #SBATCH --ntasks-per-node=10
 
-eval "$(/cluster/projects/nn9984k/miniforge/bin/conda shell.bash hook)" 
-conda activate base
-#The base system seems to have python2, this sets up python3 which is needed for fcs
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
+conda activate fcs-gx
 
 #this copies the database to a shared memory. This works, but not sure how safe it is.
 mkdir /dev/shm/fcs   #make directory. 
