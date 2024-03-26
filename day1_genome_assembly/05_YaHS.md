@@ -47,7 +47,7 @@ As we did with hifiasm, we have set up this script for you. Create a run.sh in y
 ```
 ln -s ../hifiasm/iyAthRosa.hic.hap1.p_ctg.fa .
 
-#or link from /cluster/projects/nn9984k/data/iyAthRosa1/assembly/22x/yAthRosa.hic.hap1.p_ctg.fa if you are not done yet with the assembly (or from /cluster/projects/nn9984k/data/iyAthRosa1/assembly/26x or /cluster/projects/nn9984k/data/iyAthRosa1/assembly/30x)
+#or link from /cluster/projects/nn9984k/data/iyAthRosa1/assembly/22x/iyAthRosa.hic.hap1.p_ctg.fa if you are not done yet with the assembly (or from /cluster/projects/nn9984k/data/iyAthRosa1/assembly/26x or /cluster/projects/nn9984k/data/iyAthRosa1/assembly/30x)
 
 sbatch /cluster/projects/nn9984k/scripts/run_yahs.sh iyAthRosa.hic.hap1.p_ctg.fa \
 iyAthRosa \
