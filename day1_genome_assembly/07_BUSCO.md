@@ -15,7 +15,7 @@ This is the script we use to run BUSCO:
 #SBATCH --mem-per-cpu=1G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate busco
 
@@ -56,7 +56,7 @@ We have also downloaded more lineages than what is used in the script above. Tak
 
 ## Software versions used
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 conda activate busco
 conda list
 ```
@@ -64,5 +64,5 @@ metaeuk version 6.a5d39d9
 
 busco version 5.4.5
 
-|[Previous](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/06_gfastats.md)|[Next](https://github.com/ebp-nor/genome-assembly-workshop-2023/blob/main/08_Merqury.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/06_gfastats.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/8_Merqury.md)|
 |---|---|
