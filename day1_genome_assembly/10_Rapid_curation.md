@@ -115,12 +115,19 @@ conda list
 ```
 
 deeptools version 3.5.5 
+
 pretextgraph version 0.0.6
+
 pretextsnapshot version 0.0.4
+
 pretextmap version 0.1.9 
+
 ucsc-bigwigtobedgraph version 448
+
 bwa version 0.7.17 
+
 minimap2 version 2.27 
+
 samtools version 1.19.2
 
 
