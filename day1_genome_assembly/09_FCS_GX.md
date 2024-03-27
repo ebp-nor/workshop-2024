@@ -14,7 +14,6 @@ Contaminants can end up in your assemblies in various different ways. Maybe some
 #SBATCH --ntasks-per-node=10
 
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
-conda activate fcs-gx
 
 #this copies the database to a shared memory. This works, but not sure how safe it is.
 mkdir /dev/shm/fcs   #make directory. 
