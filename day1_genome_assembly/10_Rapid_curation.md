@@ -1,6 +1,9 @@
-# Rapid curation tutorial
+# Rapid curation (2.0) tutorial
 
-Although hifiasm is a great assembler, and YaHS can create chromosome length scaffolds, assembly errors do occur. Whether there are contigs that are misassembled, or scaffolds that are harder for the software to place, sometimes we need to manually curate the assemblies in order to reach our EBP-Nor assembly standards (you can read more about that here). To do this, we use the **Rapid curation** suite, developed by the GRIT-team at the Wellcome Sanger Institute, and **PretextView**, which you´ll learn more about in the last tutorial. If you want to read more about the code you´ll be using today, click [here](https://gitlab.com/wtsi-grit/rapid-curation/-/blob/main/README_software.md), and if you want to read more about why curation is so important for good quality reference genomes, click [here.](https://academic.oup.com/gigascience/article/10/1/giaa153/6072294) 
+Although hifiasm is a pretty good assembler, and YaHS equally so scaffolder, assembly errors do occur. Whether there are contigs that are misassembled, or scaffolds that are harder for the software to place, sometimes we need to manually curate the assemblies in order to reach the [wanted standards](https://www.earthbiogenome.org/report-on-assembly-standards). To do this, we use the [**Rapid curation** suite](https://gitlab.com/wtsi-grit/rapid-curation/-/blob/main/README_software.md), developed by the GRIT team at the Wellcome Sanger Institute, and [**PretextView**](https://github.com/sanger-tol/PretextView), which you´ll learn more about in the last tutorial, in combination with [Rapid curation 2.0](https://github.com/Nadolina/Rapid-curation-2.0). This last repository enable us to avoid the tedious TPF (Tile Path Format) editing the manuals and tutorials from the first [Rapid curation](https://gitlab.com/wtsi-grit/rapid-curation/-/blob/main/README_software.md) repository discusses. It is worth taking a look at them anyhow, especially for how to interpret the Hi-C contact maps we will work with in the next stage. 
+
+The Rapid curation 2.0 approach involved looking at both haplotypes simultaneously. This usually enables more easily distinguishment of sex chromosomes, and small autosomal chromosomes (like the microchromosomes in birds). To read more about manual curation in general, you can take a look at [this publication](https://academic.oup.com/gigascience/article/10/1/giaa153/6072294).
+
 
 ## Running the Rapid curation suite
 
@@ -16,7 +19,7 @@ As with the other programs in the assembly pipeline, we have set up a script for
 #SBATCH --mem-per-cpu=2G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate curation
 
@@ -32,14 +35,20 @@ $TMP_DIR:/tmp
 "
 
 #hic
-singularity run /cluster/projects/nn9984k/opt/rapid-curation/rapid_hic_software/runHiC.sif -q 0 -s $1
-#rm $HOME/hic_done
+[ -f data/ref.fa.bwt ] || bwa index data/ref.fa
+
+bwa mem -t 5 -5SPM data/ref.fa \
+$1 $2 \
+|samtools view -buS - | samtools sort -@2 -n -T tmp_n -O bam - \
+|samtools fixmate -mr - -|samtools sort -@2 -T hic_tmp -O bam - | samtools markdup -rsS - -  2> hic_markdup.stats |samtools sort -@2  -T temp_n -O bam > hic_markdup.sort.bam
+
+samtools view -h hic_markdup.sort.bam | PretextMap -o bwa_map.pretext --sortby length --sortorder descend --mapq 0
 
 #coverage
 minimap2 -ax map-hifi \
          -t 5 data/ref.fa \
 	$3 \
-| samtools sort -@16 -O BAM -o coverage.bam
+| samtools sort -@2 -O BAM -o coverage.bam
 
 samtools view -b -F 256 coverage.bam > coverage_pri.bam
 
@@ -56,7 +65,7 @@ singularity run /cluster/projects/nn9984k/opt/rapid-curation/rapid_hic_software/
 #telomers
 singularity run /cluster/projects/nn9984k/opt/rapid-curation/rapid_hic_software/runTelo.sif -t $1 -s TTAGG
 
-cp out/out.pretext $1.pretext
+cp bwa_map.pretext $1.pretext
 
 #put it together
 bigWigToBedGraph coverage.bw  /dev/stdout |PretextGraph -i $1.pretext -n "PB coverage"
@@ -80,8 +89,6 @@ mkdir -p out
 
 #or use your own
 cat  /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa > data/ref.fa 
-
-echo "/hic/ERR6054981_60x.bam" > data/cram.fofn
 
 sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa /cluster/projects/nn9984k/data/genomic_data/hic/  /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fasta.gz 
 
@@ -108,27 +115,6 @@ ln -s /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa
 perl /cluster/projects/nn9984k/opt/rapid-curation/rapid_split.pl -fa iyAthRosa_clean.fa
 ```
 
-
-### For information: converting fastq files to BAM
-The rapid curation suite requires Hi-C reads to be in a BAM format. To create that, we did this:
-```
-#!/bin/bash
-#SBATCH --job-name=convert_bam
-#SBATCH --account=nn9984k
-#SBATCH --time=4:0:0
-#SBATCH --mem-per-cpu=48G
-#SBATCH --ntasks-per-node=10
-
-
-module load picard/2.24.0-Java-11
-
-java -Xms6g -Xmx6g -jar $EBROOTPICARD/picard.jar FastqToSam \
-F1=ERR6054981_1_60x.fastq.gz \
-F2=ERR6054981_1_60x.fastq.gz \
-O=ERR6054981_60x.bam \
-SM=hic_sawfly \
-TMP_DIR=.
-```
 
 
 |[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/09_FCS_GX.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/11_PretextView.md)|
