@@ -38,7 +38,7 @@ $TMP_DIR:/tmp
 [ -f data/ref.fa.bwt ] || bwa index data/ref.fa
 
 bwa mem -t 5 -5SPM data/ref.fa \
-$1 $2 \
+$2 $3 \
 |samtools view -buS - | samtools sort -@2 -n -T tmp_n -O bam - \
 |samtools fixmate -mr - -|samtools sort -@2 -T hic_tmp -O bam - | samtools markdup -rsS - -  2> hic_markdup.stats |samtools sort -@2  -T temp_n -O bam > hic_markdup.sort.bam
 
@@ -47,7 +47,7 @@ samtools view -h hic_markdup.sort.bam | PretextMap -o bwa_map.pretext --sortby l
 #coverage
 minimap2 -ax map-hifi \
          -t 5 data/ref.fa \
-	$3 \
+	$4 \
 | samtools sort -@2 -O BAM -o coverage.bam
 
 samtools view -b -F 256 coverage.bam > coverage_pri.bam
@@ -88,13 +88,17 @@ mkdir -p data
 mkdir -p out
 
 #or use your own
-cat  /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa > data/ref.fa 
+cat /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_hap1_clean.fa /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_hap2_clean.fa > data/ref.fa 
 
-sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa /cluster/projects/nn9984k/data/genomic_data/hic/  /cluster/projects/nn9984k/data/genomic_data/pacbio/iyAthRosa_pacbio.fasta.gz 
+sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa \
+/cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_1_50x.fastq.gz \
+/cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_2_50x.fastq.gz \
+/cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
+
 
 ```
 
-After this is finished, you should be left with an iyAthRosa.pretext file, and this can be used for manual curation. 
+After this is finished, you should be left with an iyAthRosa.pretext file which can be used for manual curation. 
 
 If you don´t want to wait for your scripts to finish, and you want to start curating right away, we have provided both the files you need to do so. To download the PRETEXT file to your local computer, open a new terminal window, navigate to where you want to place the file, and use the code below:
 
@@ -103,18 +107,21 @@ scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/data/pretext/iyAthRos
 
 ```
 
-You also need a TPF file to curate the sawfly assembly, and this is created from your decontaminated fasta. To create the TPF file, run the code below in your curation directory:
-
+## Software versions used
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)"
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 conda activate curation
-
-#or use your own
-ln -s /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_clean.fa
-
-perl /cluster/projects/nn9984k/opt/rapid-curation/rapid_split.pl -fa iyAthRosa_clean.fa
+conda list
 ```
 
+deeptools version 3.5.5 
+pretextgraph version 0.0.6
+pretextsnapshot version 0.0.4
+pretextmap version 0.1.9 
+ucsc-bigwigtobedgraph version 448
+bwa version 0.7.17 
+minimap2 version 2.27 
+samtools version 1.19.2
 
 
 |[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/09_FCS_GX.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/11_PretextView.md)|
