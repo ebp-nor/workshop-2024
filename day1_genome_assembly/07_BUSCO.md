@@ -60,7 +60,6 @@ eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)"
 conda activate busco
 conda list
 ```
-metaeuk version 6.a5d39d9 
 
 busco version 5.7.0
 
