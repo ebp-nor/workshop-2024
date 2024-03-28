@@ -136,6 +136,8 @@ gfastats version 1.3.6
 
 pandas version 2.2.1
 
+mashmap 3.1.3
+
 
 
 |[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/09_FCS_GX.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/11_PretextView.md)|
