@@ -25,8 +25,9 @@ PREFIX=${1%.*}
 python3 /cluster/projects/nn9984k/opt/fcs/fcs.py \
 --image /cluster/projects/nn9984k/opt/fcs/fcs-gx.sif \
 screen genome --fasta $1 \
+--tax-id $2 \
 --out-dir ./gx_out/ \
---gx-db  "${GXDB_LOC}/gxdb" --tax-id $2 
+--gx-db  "${GXDB_LOC}/gxdb"
 
 cat $1 | python3 /cluster/projects/nn9984k/opt/fcs/fcs.py \
 --image /cluster/projects/nn9984k/opt/fcs/fcs-gx.sif \
@@ -41,7 +42,7 @@ As we have done earlier, we have set up this script for you. Create a run.sh in 
 sbatch /cluster/projects/nn9984k/scripts/run_fcsgx.sh assembly.fasta \
 taxonomy_id
 ```
-You have to modify the run.sh script based on your assembly file and you have to find the NCBI taxonomy ID for *Athalia rosae* and input that.
+You have to modify the run.sh script based on your assembly file and you have to find the NCBI taxonomy ID for *Athalia rosae* and input that. You also have to copy the fasta file, because FCS-GX runs in a Singularity container, and cannot follow soft-linked files.
 
 Unfortunately this program requires a lot of memory to run (["approximately 470 GiB"](https://github.com/ncbi/fcs/wiki/FCS-GX)). If it is given unsufficient memory, the running time can increase by a factor of 10000x. On Saga, there are not that [many nodes](https://documentation.sigma2.no/hpc_machines/saga.html) with a lot of memory. There are 8 so-called bigmem nodes, which should be abel to handle multiple jobs each of the script above. However, these are quite heavily used, so it is not certain that we will be able to run our jobs here. If configured properly, it is quite quick (1-30 minutes when testing). 
 
@@ -50,22 +51,6 @@ We should coordinate this, so only a couple people submit to the cluster. Let us
 After running the decontamination script, which foreign contaminants did you find?
 
 If you were unable to run it, you can take a look at the results of a previous run at ` /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_scaffolds_final.37344.taxonomy.rpt`, `/cluster/projects/nn9984k/data/fcsgx/fcs.log ` and `/cluster/projects/nn9984k/data/fcsgx/iyAthRosa_scaffolds_final.37344.fcs_gx_report.txt`. 
-
-To remove contamination, you can do something like this:
-```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
-
-conda activate seqtk
-
-grep ">" iyAthRosa_scaffolds_final.fa  |tr -d ">" |sort > all_sequences
-grep EXCLUDE *fcs_gx_report.txt |cut -f 1 |sort > exclude_sequences
-
-comm -23 all_sequences exclude_sequences > keep_sequences
-
-seqtk subseq iyAthRosa_scaffolds_final.fa keep_sequences > iyAthRosa_clean.fa 
-```
-You can do it on the command line, or put it in a small script. Adjust for possible different file names.
-
 
 
 
