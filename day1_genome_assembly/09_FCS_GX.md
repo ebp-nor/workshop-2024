@@ -15,20 +15,24 @@ Contaminants can end up in your assemblies in various different ways. Maybe some
 
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
-#this copies the database to a shared memory. This works, but not sure how safe it is.
-mkdir /dev/shm/fcs   #make directory. 
-rsync -av /cluster/projects/nn9984k/opt/fcs/gxdb /dev/shm/fcs
-
-export SHM_LOC=/dev/shm/fcs/gxdb
-
-#export SHM_LOC=/cluster/projects/nn9984k/opt/fcs/gxdb
+export SHM_LOC=/cluster/projects/nn9984k/opt/fcs/
+export GXDB_LOC=/cluster/projects/nn9984k/opt/fcs/
 
 echo "GX_NUM_CORES=10" > env.txt
 
-python3 /cluster/projects/nn9984k/opt/fcs/run_fcsgx.py --fasta $1 \
---gx-db  "${SHM_LOC}/all" --split-fasta --tax-id $2 \
---gx-db-disk "${SHM_LOC}/all.gxi" \
---container-engine singularity --image /cluster/projects/nn9984k/opt/fcs/fcsgx.sif
+PREFIX=${1%.*}
+
+python3 /cluster/projects/nn9984k/opt/fcs/fcs.py \
+--image /cluster/projects/nn9984k/opt/fcs/fcs-gx.sif \
+screen genome --fasta $1 \
+--out-dir ./gx_out/ \
+--gx-db  "${GXDB_LOC}/gxdb" --tax-id $2 
+
+cat $1 | python3 /cluster/projects/nn9984k/opt/fcs/fcs.py \
+--image /cluster/projects/nn9984k/opt/fcs/fcs-gx.sif \
+clean genome \
+--action-report ./gx_out/*.fcs_gx_report.txt --output ${PREFIX}.decon.fasta --contam-fasta-out contam.fasta
+
 ```
 
 As we have done earlier, we have set up this script for you. Create a run.sh in your working folder (`/projects/ec146/work/<username>/fcsgx`) with this content (with `nano` for instance):
