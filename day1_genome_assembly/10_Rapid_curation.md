@@ -88,7 +88,8 @@ mkdir -p data
 mkdir -p out
 
 #or use your own
-cat /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_hap1_clean.fa /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_hap2_clean.fa > data/ref.fa 
+cat /cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final_22x_h1.decon.fasta
+/cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final_22x_h2.decon.fasta > data/ref.fa 
 
 sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_1_50x.fastq.gz \
@@ -103,7 +104,7 @@ After this is finished, you should be left with an iyAthRosa.pretext file which 
 If you don´t want to wait for your scripts to finish, and you want to start curating right away, we have provided both the files you need to do so. To download the PRETEXT file to your local computer, open a new terminal window, navigate to where you want to place the file, and use the code below:
 
 ```
-scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/data/pretext/iyAthRosa.pretext .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/data/iyAthRosa1/pretext/iyAthRosa.pretext .
 
 ```
 
