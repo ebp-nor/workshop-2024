@@ -95,8 +95,6 @@ sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_1_50x.fastq.gz \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_2_50x.fastq.gz \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
-
-
 ```
 
 After this is finished, you should be left with an iyAthRosa.pretext file which can be used for manual curation. 
