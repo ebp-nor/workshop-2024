@@ -8,7 +8,6 @@ After attending the workshop you should:
 - be able to validate genome assemblies
 - know about manual curation of assemblies
 
-
 ## Our dataset
 
 The coleseed or turnip sawfly, *Athalia rosae*, is a sawfly found in Europe, Asia, North America and Africa. It is often considered a pest, feeding on plants of the brassica family, such as rapeseed, turnip, mustard and cabbage. 
@@ -40,11 +39,11 @@ Hi-C sequencing is done to capture how the chromatin is folded within the cell n
 
 When combining these two, we can create haplotype resolved assemblies, meaning we can separate reads by maternal and paternal origin, without having access to parental data. In diploid, or polyploid organisms, this adds another level of information, and creates more accurate assemblies than a primary and alternate assembly would. 
 
-Testing, by us, but also earlier by Darwin Tree of Life and Vertebrate Genomes Project, among others, has shown that the combination of HiFi and Hi-C, in appropriate coverages, usually generates assemblies that fulfill the Earth Biogenome Project's criteria for [assembly standards](https://www.earthbiogenome.org/assembly-standards). There are other ways to get to these standards, by using combinations of Oxford Nanopore Technologies sequencing data and Illumina, but these are often less straight-forward and involves more steps to a final assembly that the strategy we outline here.
+Testing, by us, but also earlier by Darwin Tree of Life and Vertebrate Genomes Project, among others, has shown that the combination of HiFi and Hi-C, in appropriate coverages, usually generates assemblies that fulfill the Earth Biogenome Project's criteria for [assembly standards](https://www.earthbiogenome.org/assembly-standards). Here we use [hifiasm](https://github.com/chhylp123/hifiasm) as the tool to manage this. Hifiasm has [been designed](https://doi.org/10.1038/s41587-022-01261-x) to take advantage of the combination of Hi-C and HiFi. There are other ways to get to these standards, for instance by using combinations of Oxford Nanopore Technologies sequencing data (Pore-C, Duplex and Simplex). A [preprint](https://www.biorxiv.org/content/10.1101/2024.03.15.585294v1) from 17th March 2024 outlines how to do this. The next step would be to benchmark these two approaches in multiple aspects, such as cost, CPU hours, and accuracy, to figure out which is preferable under which conditions.
 
 ## Package management
 
-Administrating the different programs that are needed in project can be a hassle. We like conda, especially [miniforge](https://github.com/conda-forge/miniforge), and have set up different environments we will use for the different analyses. [Bioconda](https://bioconda.github.io) contain a lot of different packages that are relevant for us, and genomics and bioinformatics in general.
+Administrating the different programs that are needed in project can be a hassle. We like conda/mamba, especially [miniforge](https://github.com/conda-forge/miniforge), and have set up different environments we will use for the different analyses. [Bioconda](https://bioconda.github.io) contain a lot of different packages that are relevant for us, and genomics and bioinformatics in general.
 
 To load conda, do this:
 
@@ -80,6 +79,8 @@ Vertebrate Genomes Project as a workflow they have implemented in Galaxy, but wi
 [https://training.galaxyproject.org/training-material//topics/assembly/tutorials/vgp_genome_assembly/tutorial.html](https://training.galaxyproject.org/training-material//topics/assembly/tutorials/vgp_genome_assembly/tutorial.html)
 
 UC Davis Bioinformatics Core has a genome assembly workshop they held in 2020, which also contains a lot of useful information if you want to deep-dive into this subject. Read it here: [https://ucdavis-bioinformatics-training.github.io/2020-Genome_Assembly_Workshop/](https://ucdavis-bioinformatics-training.github.io/2020-Genome_Assembly_Workshop/)
+
+We also try to give links to relevant GitHub repositories and publications/preprints, at least the most essential, across these GitHub pages. This is meant for your own enjoyment and interest. 
 
 
 |[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/01_GenomeScope2.md)|
