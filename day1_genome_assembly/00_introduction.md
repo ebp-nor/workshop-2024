@@ -41,6 +41,8 @@ When combining these two, we can create haplotype resolved assemblies, meaning w
 
 Testing, by us, but also earlier by Darwin Tree of Life and Vertebrate Genomes Project, among others, has shown that the combination of HiFi and Hi-C, in appropriate coverages, usually generates assemblies that fulfill the Earth Biogenome Project's criteria for [assembly standards](https://www.earthbiogenome.org/assembly-standards). Here we use [hifiasm](https://github.com/chhylp123/hifiasm) as the tool to manage this. Hifiasm has [been designed](https://doi.org/10.1038/s41587-022-01261-x) to take advantage of the combination of Hi-C and HiFi. There are other ways to get to these standards, for instance by using combinations of Oxford Nanopore Technologies sequencing data (Pore-C, Duplex and Simplex). A [preprint](https://www.biorxiv.org/content/10.1101/2024.03.15.585294v1) from 17th March 2024 outlines how to do this. The next step would be to benchmark these two approaches in multiple aspects, such as cost, CPU hours, and accuracy, to figure out which is preferable under which conditions.
 
+For a up-to-date general overview of the status of genome assembly today, [this paper](https://arxiv.org/abs/2308.07877) by Heng Li and Richard Durbin (two legends in the field), is essential reading.
+
 ## Package management
 
 Administrating the different programs that are needed in project can be a hassle. We like conda/mamba, especially [miniforge](https://github.com/conda-forge/miniforge), and have set up different environments we will use for the different analyses. [Bioconda](https://bioconda.github.io) contain a lot of different packages that are relevant for us, and genomics and bioinformatics in general.
