@@ -50,7 +50,7 @@ We should coordinate this, so only a couple people submit to the cluster. Let us
 
 After running the decontamination script, which foreign contaminants did you find?
 
-If you were unable to run it, you can take a look at the results of a previous run at ` /cluster/projects/nn9984k/data/fcsgx/iyAthRosa_scaffolds_final.37344.taxonomy.rpt`, `/cluster/projects/nn9984k/data/fcsgx/fcs.log ` and `/cluster/projects/nn9984k/data/fcsgx/iyAthRosa_scaffolds_final.37344.fcs_gx_report.txt`. 
+If you were unable to run it, you can take a look at the results of a previous run at ` /cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final.37344.taxonomy_22x_h1.rpt` and `/cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final.37344.fcs_gx_report_22x_h1.txt `. 
 
 
 
