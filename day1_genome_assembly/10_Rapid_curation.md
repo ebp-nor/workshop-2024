@@ -88,8 +88,8 @@ mkdir -p data
 mkdir -p out
 
 #or use your own
-cat /cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final_22x_h1.decon.fasta
-/cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final_22x_h2.decon.fasta > data/ref.fa 
+cat /cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final_22x_h1.decon.fasta |sed "s/>/>H1_/g" > data/ref.fa 
+cat /cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final_22x_h2.decon.fasta |sed "s/>/>H2_/g" > > data/ref.fa 
 
 sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_1_50x.fastq.gz \
