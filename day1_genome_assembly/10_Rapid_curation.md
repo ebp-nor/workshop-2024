@@ -4,6 +4,7 @@ Although hifiasm is a pretty good assembler, and YaHS equally so scaffolder, ass
 
 The Rapid curation 2.0 approach involved looking at both haplotypes simultaneously. This usually enables more easily distinguishment of sex chromosomes, and small autosomal chromosomes (like the microchromosomes in birds). To read more about manual curation in general, you can take a look at [this publication](https://academic.oup.com/gigascience/article/10/1/giaa153/6072294).
 
+Further, when preparing this teaching material, we noticed that Sanger has two new pipelines out that replaces the one above, [https://pipelines.tol.sanger.ac.uk/treeval](https://pipelines.tol.sanger.ac.uk/treeval) and [https://pipelines.tol.sanger.ac.uk/curationpretext](https://pipelines.tol.sanger.ac.uk/curationpretext). We have not tested these yet, but some of the Singularity containers we use below are no longer available online, so if you want to do curation now, you should take a closer look at those pipelines.
 
 ## Running the Rapid curation suite
 
