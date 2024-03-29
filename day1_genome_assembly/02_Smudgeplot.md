@@ -40,7 +40,7 @@ smudgeplot.py hetkmers -o kmcdb_L"$L"_U"$U" < kmcdb_L"$L"_U"$U".dump
 smudgeplot.py plot kmcdb_L"$L"_U"$U"_coverages.tsv
 ```
 
-We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/smudgeplot`) with this content (with nano for instance): 
+We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/assembly/smudgeplot`) with this content (with nano for instance): 
  
 ```
 sbatch /cluster/projects/nn9984k/scripts/run_smudgeplot.sh /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
@@ -64,7 +64,7 @@ Here we see that based on the coverage of the heterozygous kmer pairs, the most 
 Which is the most representet haplotype for the coleseed sawfly? To look at the plots you created, open a new terminal window, and navigate to a directory where you want to place your files. When you have found the place where you want to save them, use this code to copy them to your local computer:
 
 ```
-scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/smudgeplot/"*.png" .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assembly/smudgeplot/"*.png" .
 ```
 
 You can look at the plot [here](smudgeplot_smudgeplot_log10.png).
