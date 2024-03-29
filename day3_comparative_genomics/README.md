@@ -4,7 +4,7 @@ This repository contains the course materials for the workshop Genome annotation
 
 You can find part 1 [here](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1). You should be able to follow this workshop independently of part 1, but it might give some background that is useful.
 
-This workshop is sponsored by EBP-Nor in addition to the sponsors for the Oslo Bioinformatics Workshop Week 2023 itself. 
+This workshop is sponsored by EBP-Nor and Norbis.
 
 <img src="EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/>
 
