@@ -37,5 +37,5 @@ Some commands.
 ```
 
 
-|[Next](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1/blob/main/01_repeatmasking.md)|
+|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/01_repeatmasking.md|
 |---|
