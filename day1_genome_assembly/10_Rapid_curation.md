@@ -82,7 +82,7 @@ This script creates both the Hi-C contact map that we'll use in PretextView, and
 
 ### Starting the script
 
-To run the script above, create a `run.sh` file in a new curation-directory, and run the code using `sh run.sh`. 
+To run the script above, create a `run.sh` file in a new `curation` directory, and run the code using `sh run.sh`. 
 
 ```
 mkdir -p data
