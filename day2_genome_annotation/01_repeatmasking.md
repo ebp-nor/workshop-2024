@@ -41,5 +41,5 @@ Then, you can run this script by typing `sh run.sh`. This will execute the lines
 
 This should finish in a handful of minutes (when testing it ran for 0.5 minutes). You can monitor the progress with `squeue -u <username>`, or using `sacct`.
 
-|[Previous](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1/blob/main/00_introduction.md)|[Next](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1/blob/main/02_miniprot.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/00_introduction.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/02_miniprot.md)|
 |---|---|
