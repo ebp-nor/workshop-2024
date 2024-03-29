@@ -26,7 +26,7 @@ awk '/^S/{print ">"$2"\n"$3}' $1.hic.hap1.p_ctg.gfa | fold > $1.hic.hap1.p_ctg.f
 awk '/^S/{print ">"$2"\n"$3}' $1.hic.hap2.p_ctg.gfa | fold > $1.hic.hap2.p_ctg.fa
 ```
 
-We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/hifiasm`) with this content (with nano for instance): 
+We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/assembly/hifiasm`) with this content (with nano for instance): 
  
 ```
 sbatch /cluster/projects/nn9984k/scripts/run_hifiasm.sh iyAthRosa \
