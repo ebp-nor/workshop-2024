@@ -47,7 +47,7 @@ These are two of the Merqury plots generated for the EBP-Nor assembled Svalbard 
 Open a new terminal window, navigate to a folder where you want to place your Merqury png-files, and copy them using this line of code:
 
 ```
-scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/merqury/"*.png" .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assembly/merqury/"*.png" .
 ```
 
 Look at the k-mer spectrum plots that you generated for *Athalia rosae* and answer these questions:
