@@ -8,7 +8,7 @@ To set up password, go here: [https://www.metacenter.no/user/reset/](https://www
 
 This workshop is sponsored by EBP-Nor and [Norbis](https://norbis.w.uib.no/).
 
-<img src="EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/>
+<img src="../day3_comparative_genomics/EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/>
 
 ## Genome assembly, curation and validation - Schedule
 
