@@ -8,7 +8,7 @@ To set up password, go here: [https://www.metacenter.no/user/reset/](https://www
 
 Part 2 of the workshop builds further on this and can be found [here](https://github.com/ebp-nor/workshop-2024/tree/main/day3_comparative_genomics). 
 
-This workshop is sponsored by EBP-Nor and Norbis.
+This workshop is sponsored by EBP-Nor and [Norbis](https://norbis.w.uib.no/).
 
 <img src="EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/>
 
