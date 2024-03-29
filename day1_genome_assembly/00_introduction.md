@@ -8,6 +8,10 @@ After attending the workshop you should:
 - be able to validate genome assemblies
 - know about manual curation of assemblies
 
+## How to use this material
+The material for this workshop is written in a way that you can work through it independently of any other resource. The explanations should suffice to understand the material, but contains links to other resources (e.g. scientific papers and/or websites) where you can learn more if you are interested. These links are not necessary to complete the workshop, but are included as reference material that you can use to learn more about the software and concepts used during the workshop. 
+Please read both the text and the scripts carefully. If you want to see what a certain program does, you can generally try running it without any arguments. This will in general show you information about the program, and its parameters. Please don't hesitate to ask questions if you want to know more, or if anything is unclear.
+
 ## Our dataset
 
 The coleseed or turnip sawfly, *Athalia rosae*, is a sawfly found in Europe, Asia, North America and Africa. It is often considered a pest, feeding on plants of the brassica family, such as rapeseed, turnip, mustard and cabbage. 
