@@ -3,16 +3,16 @@ When annotating a genome assembly, the first step is usually to mask the repeats
 
 The actual masking itself can be done either "hard" or "soft". Hard masking entails replacing the detected repeats with either 'X' or 'N', thereby hiding the sequence itself and making it unavailable for downstream analyses. Soft masking means replacing the nucleotides of detected repeats by their lowercase equivalant (e.g. replace "A" with "a"), as nucleotides in fasta files are usually all in capital letters (ACTG). This makes it possible for different tools to recognise repeats (because they are in lowercase) and avoid creating alignments in these repeats, but alignments can be extended into the repeats if necessary, because the actual sequence is still accessible. However, some tools, such as [miniprot](https://github.com/lh3/miniprot), ignore soft masked bases and treat them as normal. Thus it is important to check how the software you're using handles repeat masking!
 
-[RepeatMasker](https://www.repeatmasker.org/) is a widely used tool for masking repeats. First, a species/genome-specific repeat library is created using [RepeatModeler](http://www.repeatmasker.org/RepeatModeler/) ([Flynn et al (2020)](https://doi.org/10.1073/pnas.1921046117), and afterwards classifying the repeats, for example into different classes of transposable elements. While an exellent tool, Repeatmasker has the downside of being quite slow, and thus is not used for this workshop. However, if you want to use it in your own analysis, we we would recommend using a [container](https://github.com/Dfam-consortium/TETools). 
+[RepeatMasker](https://www.repeatmasker.org/) is a widely used tool for masking repeats. First, a species/genome-specific repeat library is created using [RepeatModeler](http://www.repeatmasker.org/RepeatModeler/) ([Flynn et al (2020)](https://doi.org/10.1073/pnas.1921046117)), and afterwards classifying the repeats, for example into different classes of transposable elements. While an excellent tool, Repeatmasker has the downside of being quite slow.
 
-Recently, faster repeatmasking software has been developped. However, these only identify and mask repeats, but do not classify them. Thus, they are only useful in case you are not interested in what the repeats are, and just in where there are. Here, we go for a program that uses a lot less resources, called Red ([Giris 2015](https://doi.org/10.1186/s12859-015-0654-5)). Red and an associated Python script [redmask.py](https://github.com/nextgenusfs/redmask) are already set up on Fox using conda and by downloading the redmask GitHub repository. You do not need to do anything yourself.  
+Recently, faster repeatmasking software has been developed. However, these only identify and mask repeats, but do not classify them. Thus, they are only useful in case you are not interested in what the repeats are, and just in where there are. Here, we go for a program that uses a lot less resources, called Red ([Giris 2015](https://doi.org/10.1186/s12859-015-0654-5)). Red and an associated Python script [redmask.py](https://github.com/nextgenusfs/redmask) are already set up on Saga using conda and by downloading the redmask GitHub repository. You do not need to do anything yourself.  We will also run RepeatModeler and RepeatMasker. 
 
-In order to keep your analyses tidy, and to make it easier to help you out if things go wrong, have to set up a user-specific working directory in `/projects/ec146/work`. This can be done by running the following command:
+In order to keep your analyses tidy, and to make it easier to help you out if things go wrong, have to set up a user-specific working directory in `/cluster/projects/nn9984k/work/`. This can be done by running the following command:
 ```
-mkdir -p /projects/ec146/work/$USER
+mkdir -p /cluster/projects/nn9984k/work/$USER
 ```
 
-Then, navigate to this location (`cd /projects/ec146/work/$USER`) and create a subfolder called 'annotation' and enter that. This will be our working area for now. 
+Then, navigate to this location (`cd /cluster/projects/nn9984k/work/$USER`) and create a subfolder called 'annotation' and enter that. This will be our working area for now. 
 
 Create a subfolder called 'softmask', and enter it. 
 
@@ -25,16 +25,16 @@ To run repeatmasking using Red, we created a script that looks like this:
 #SBATCH --mem-per-cpu=10G
 #SBATCH --ntasks-per-node=1
 
-eval "$(/fp/projects01/ec146/miniconda3/bin/conda shell.bash hook)"
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate anno_pipeline
 
-python /projects/ec146/opt/redmask/redmask.py -i ${1} -o ${2}
+python /cluster/projects/nn9984k/opt/redmask/redmask.py -i ${1} -o ${2}
 ```
 To set up the necessary data, and to submit the script to the server, you have to create a file called `run.sh` in your current folder (`/projects/ec146/work/$USER/annotation/softmask` presumably). In this file, you need to store the following lines of code: (for example using `nano` or `cat` for instance):
 ```
-ln -s /projects/ec146/data/gzUmbRama1.contigs.fasta .
-sbatch /projects/ec146/scripts/annotation/run_red.sh gzUmbRama1.contigs.fasta gzUmbRama1
+ln -s /cluster/projects/nn9984k/data/gzUmbRama1.contigs.fasta .
+sbatch /cluster/projects/nn9984k/scripts/annotation/run_red.sh gzUmbRama1.contigs.fasta gzUmbRama1
 ```
 
 Then, you can run this script by typing `sh run.sh`. This will execute the lines of code in the file, and submit the Redmaks job to the cluster.
