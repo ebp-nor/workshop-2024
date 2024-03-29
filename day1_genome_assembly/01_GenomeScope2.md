@@ -30,7 +30,16 @@ genomescope2 -i reads.histo -o output_ploidy4 -k $k -p 4 1> genomescope_ploidy4.
 
 ```
 
-We have set up this script for you. What you need to do is to create a `run.sh` in your working folder (`/cluster/projects/nn9984k/work/<username>/genomescope`) with this content (with `nano` for instance):
+We have set up this script for you. 
+
+In order to keep your analyses tidy, and to make it easier to help you out if things go wrong, have to set up a user-specific working directory in `/cluster/projects/nn9984k/work/`. This can be done by running the following command:
+```
+mkdir -p /cluster/projects/nn9984k/work/$USER
+```
+
+Then, navigate to this location (`cd /cluster/projects/nn9984k/work/$USER`) and create a subfolder called 'genomescope' and enter that. 
+
+What you need to do is to create a `run.sh` in your working folder (`/cluster/projects/nn9984k/work/$USER/genomescope`) with this content (with `nano` for instance):
 
 ```
 sbatch /cluster/projects/nn9984k/scripts/run_genomescope.sh  /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
