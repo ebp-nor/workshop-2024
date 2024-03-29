@@ -36,7 +36,7 @@ clean genome \
 
 ```
 
-As we have done earlier, we have set up this script for you. Create a run.sh in your working folder (`/projects/ec146/work/<username>/fcsgx`) with this content (with `nano` for instance):
+As we have done earlier, we have set up this script for you. Create a run.sh in your working folder (`/projects/ec146/work/<username>/assembly/fcsgx`) with this content (with `nano` for instance):
 
 ```
 sbatch /cluster/projects/nn9984k/scripts/run_fcsgx.sh assembly.fasta \
