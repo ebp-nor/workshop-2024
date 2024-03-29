@@ -20,7 +20,7 @@ To run repeatmasking using Red, we created a script that looks like this:
 ```
 #!/bin/bash
 #SBATCH --job-name=red
-#SBATCH --account=ec146
+#SBATCH --account=nn9984k
 #SBATCH --time=1:0:0
 #SBATCH --mem-per-cpu=10G
 #SBATCH --ntasks-per-node=1
