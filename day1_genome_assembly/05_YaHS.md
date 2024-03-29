@@ -42,7 +42,7 @@ fi
 
 ```
 
-As we did with hifiasm, we have set up this script for you. Create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/yahs`) with this content (with `nano` for instance):
+As we did with hifiasm, we have set up this script for you. Create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/assembly/yahs`) with this content (with `nano` for instance):
 
 ```
 ln -s ../hifiasm/iyAthRosa.hic.hap1.p_ctg.fa .
