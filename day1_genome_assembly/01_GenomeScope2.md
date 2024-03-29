@@ -37,9 +37,9 @@ In order to keep your analyses tidy, and to make it easier to help you out if th
 mkdir -p /cluster/projects/nn9984k/work/$USER
 ```
 
-Then, navigate to this location (`cd /cluster/projects/nn9984k/work/$USER`) and create a subfolder called 'genomescope' and enter that. 
+Then, navigate to this location (`cd /cluster/projects/nn9984k/work/$USER`) and create a subfolder called 'assembly' and enter that. Create a subfolder called 'genomescope'.
 
-What you need to do is to create a `run.sh` in your working folder (`/cluster/projects/nn9984k/work/$USER/genomescope`) with this content (with `nano` for instance):
+What you need to do is to create a `run.sh` in your working folder (`/cluster/projects/nn9984k/work/$USER/assembly/genomescope`) with this content (with `nano` for instance):
 
 ```
 sbatch /cluster/projects/nn9984k/scripts/run_genomescope.sh  /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
@@ -60,7 +60,7 @@ The peak on the extreme left are all the kmers that are the result of sequencing
 What have you learned about your reads from the k-mer profile plot you created? To look at the plots you created, open a new terminal window, and navigate to a directory where you want to place your files. When you have found the place where you want to save them, use this command to copy them to your local computer:
 
 ```
-scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/genomescope/output_ploidy2/"*.png" .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assembly/genomescope/output_ploidy2/"*.png" .
 ```
 
 What is the estimated genome size of *Athalia rosae*? 
