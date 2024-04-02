@@ -16,7 +16,7 @@ Please read both the text and the scripts carefully. If you want to see what a c
 
 The coleseed or turnip sawfly, *Athalia rosae*, is a sawfly found in Europe, Asia, North America and Africa. It is often considered a pest, feeding on plants of the brassica family, such as rapeseed, turnip, mustard and cabbage. 
 
-[Darwin Tree of Life](https://www.darwintreeoflife.org) has sequenced the coleseed sawfly, but not published a genome not for it yet. Fortunately for us, they allow everyone to play with the data anyhow, so we will do that. DToL has some interesting webpages where they list several quality measures for the sequencing (some of which we will do in this workshop) [here](https://tolqc.cog.sanger.ac.uk/darwin/insects/Athalia_rosae/). It can be worth a look. We downloaded the data from [ENA](https://www.ebi.ac.uk/ena/browser/view/GCA_917208135) and subsampled it to get it to the coverages we expect/plan for. 
+[Darwin Tree of Life](https://www.darwintreeoflife.org) has sequenced and assembled the coleseed sawfly. It is published [here](https://wellcomeopenresearch.org/articles/8-87). Fortunately for us, they allow everyone to play with the data anyhow, so we will do that. DToL has some interesting webpages where they list several quality measures for the sequencing (some of which we will do in this workshop) [here](https://tolqc.cog.sanger.ac.uk/darwin/insects/Athalia_rosae/). It can be worth a look. We downloaded the data from [ENA](https://www.ebi.ac.uk/ena/browser/view/GCA_917208135) and subsampled it to get it to the coverages we expect/plan for. 
 
 The genome itself is around 170 Mbp, and the PacBio data was about 18 Gbp, more than 100x coverage. It was subsampled with [seqtk](https://github.com/lh3/seqtk) like this:
 ```
