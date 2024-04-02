@@ -30,7 +30,7 @@ Again, you have to create a `run.sh` script containing the following lines:
 ln -s /cluster/projects/nn9984k/data/annotation/gzUmbRama1.contigs.fasta .
 ln -s /cluster/projects/nn9984k/data/annotation/GCF_025201355.1_Halrad1_protein.faa.gz .
 sbatch /cluster/projects/nn9984k/scripts/annotation/run_miniprot_swissprot.sh gzUmbRama1.contigs.fasta
-sbatch /cluster/projects/nn9984k/scripts/annotation/run_miniprot_model.sh gzUmbRama1.contigs.fasta
+sbatch /cluster/projects/nn9984k/scripts/annotation/run_miniprot_model.sh gzUmbRama1.contigs.fasta GCF_025201355.1_Halrad1_protein.faa.gz
 ```
 Then, you can submit the script, in a similar fashion to what we did for the repeatmasking (run `sh run.sh`)
 This `run.sh` script will submit both miniprot jobs. If you look at the script itself, you'll see in addition to miniprot two other programs, `agat_sp_extract_sequences.pl` and `miniprot_GFF_2_EVM_GFF3.py`.  `agat_sp_extract_sequences.pl` is from [AGAT](https://github.com/NBISweden/AGAT) (short for Another Gtf/Gff Analysis Toolkit). It is a really useful set of tools if you need to convert between different formats, create the predicted proteins from the annotation/alignments (as used here) or for adding functional annotation information to the annotation (shown later). `miniprot_GFF_2_EVM_GFF3.py` is an utility that is provided together with EvidenceModeler to convert the output of miniprot into something EvindenceModeler understands (but is not found in the current release yet).   
@@ -39,6 +39,6 @@ You should also investigate what the different options to the different programs
 
 The alignment of UniProtKB/Swiss-Prot proteins took around 50 minutes when we ran it, but alignment of the related fungus proteins only took a couple of minutes. These jobs can be started independently of the softmasking, so you don't need to wait for the repeatmasking to complete to run these jobs.
 
-|[Previous](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1/blob/main/01_repeatmasking.md)|[Next](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1/blob/main/03_galba.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/01_repeatmasking.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/03_galba.md)|
 |---|---|
 
