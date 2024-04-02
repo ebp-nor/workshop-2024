@@ -33,7 +33,7 @@ python /cluster/projects/nn9984k/opt/redmask/redmask.py -i ${1} -o ${2}
 ```
 To set up the necessary data, and to submit the script to the server, you have to create a file called `run.sh` in your current folder (`/projects/ec146/work/$USER/annotation/softmask` presumably). In this file, you need to store the following lines of code: (for example using `nano` or `cat` for instance):
 ```
-ln -s /cluster/projects/nn9984k/data/gzUmbRama1.contigs.fasta .
+/cluster/projects/nn9984k/data/annotation/gzUmbRama1.contigs.fasta
 sbatch /cluster/projects/nn9984k/scripts/annotation/run_red.sh gzUmbRama1.contigs.fasta gzUmbRama1
 ```
 
