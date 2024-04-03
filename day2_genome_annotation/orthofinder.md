@@ -65,7 +65,7 @@ Then you can submit a job like this:
 sbatch /projects/ec146/scripts/orthofinder/run_orthofinder_cds.sh
 ```
 
-A previous version of the SLURM scripts had specified running `muscle` and `iqtree` (`-M msa -A muscle -T iqtree`). By default, OrthoFinder calls `musle` like this:
+A previous version of the SLURM scripts had specified running `muscle` and `iqtree` (`-M msa -A muscle -T iqtree`). By default, OrthoFinder calls `muscle` like this:
 ```
 muscle -in INPUT -out OUTPUT
 ```
