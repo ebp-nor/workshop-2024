@@ -1,10 +1,10 @@
 # Rapid curation (2.0) tutorial
 
-Although hifiasm is a pretty good assembler, and YaHS equally so scaffolder, assembly errors do occur. Whether there are contigs that are misassembled, or scaffolds that are harder for the software to place, sometimes we need to manually curate the assemblies in order to reach the [wanted standards](https://www.earthbiogenome.org/report-on-assembly-standards). To do this, we use the [**Rapid curation** suite](https://gitlab.com/wtsi-grit/rapid-curation/-/blob/main/README_software.md), developed by the GRIT team at the Wellcome Sanger Institute, and [**PretextView**](https://github.com/sanger-tol/PretextView), which you'll learn more about in the last tutorial, in combination with [Rapid curation 2.0](https://github.com/Nadolina/Rapid-curation-2.0). This last repository enable us to avoid the tedious TPF (Tile Path Format) editing the manuals and tutorials from the first [Rapid curation](https://gitlab.com/wtsi-grit/rapid-curation/-/blob/main/README_software.md) repository discusses. It is worth taking a look at them anyhow, especially for how to interpret the Hi-C contact maps we will work with in the next stage. 
+Although hifiasm is a pretty good assembler and YaHS an equally good scaffolder, assembly errors do occur. Whether there are contigs that are misassembled, or scaffolds that are harder for the software to place, sometimes we need to manually curate the assemblies in order to reach the [desired standards](https://www.earthbiogenome.org/report-on-assembly-standards). To do this, we use the [**Rapid curation** suite](https://gitlab.com/wtsi-grit/rapid-curation/-/blob/main/README_software.md), developed by the GRIT team at the Wellcome Sanger Institute, and [**PretextView**](https://github.com/sanger-tol/PretextView), which you'll learn more about in the last tutorial, in combination with [Rapid curation 2.0](https://github.com/Nadolina/Rapid-curation-2.0). This last repository enable us to avoid the tedious TPF (Tile Path Format) editing the manuals and tutorials from the first [Rapid curation](https://gitlab.com/wtsi-grit/rapid-curation/-/blob/main/README_software.md) repository discusses. It is worth taking a look at them anyway, especially for how to interpret the Hi-C contact maps we will work with in the next stage. 
 
-The Rapid curation 2.0 approach involved looking at both haplotypes simultaneously. This usually enables more easily distinguishment of sex chromosomes, and small autosomal chromosomes (like the microchromosomes in birds). To read more about manual curation in general, you can take a look at [this publication](https://academic.oup.com/gigascience/article/10/1/giaa153/6072294).
+The Rapid curation 2.0 approach involves looking at both haplotypes simultaneously. This usually allows easier determination of sex chromosomes and small autosomal chromosomes (like the microchromosomes in birds). To read more about manual curation in general, you can take a look at [this publication](https://academic.oup.com/gigascience/article/10/1/giaa153/6072294).
 
-Further, when preparing this teaching material, we noticed that Sanger has two new pipelines out that replaces the one above, [https://pipelines.tol.sanger.ac.uk/treeval](https://pipelines.tol.sanger.ac.uk/treeval) and [https://pipelines.tol.sanger.ac.uk/curationpretext](https://pipelines.tol.sanger.ac.uk/curationpretext). We have not tested these yet, but some of the Singularity containers we use below are no longer available online, so if you want to do curation now, you should take a closer look at those pipelines.
+Furthermore, when preparing this teaching material we noticed that Sanger has two new pipelines out that replaces the one above, [https://pipelines.tol.sanger.ac.uk/treeval](https://pipelines.tol.sanger.ac.uk/treeval) and [https://pipelines.tol.sanger.ac.uk/curationpretext](https://pipelines.tol.sanger.ac.uk/curationpretext). We were not able to test these yet, but some of the Singularity containers we use below are no longer available online, so if you want to do curation now, you should take a closer look at those pipelines instead.
 
 ## Running the Rapid curation suite
 
@@ -90,7 +90,7 @@ mkdir -p out
 
 #or use your own
 cat /cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final_22x_h1.decon.fasta |sed "s/>/>H1_/g" > data/ref.fa 
-cat /cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final_22x_h2.decon.fasta |sed "s/>/>H2_/g" > > data/ref.fa 
+cat /cluster/projects/nn9984k/data/iyAthRosa1/fcsgx/iyAthRosa_scaffolds_final_22x_h2.decon.fasta |sed "s/>/>H2_/g" > data/ref.fa 
 
 sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_1_50x.fastq.gz \
@@ -98,7 +98,7 @@ sbatch /cluster/projects/nn9984k/scripts/run_rapidcuration.sh iyAthRosa \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
 ```
 
-After this is finished, you should be left with an iyAthRosa.pretext file which can be used for manual curation. 
+After this is finished, you should have an iyAthRosa.pretext file which can be used for manual curation. 
 
 If you don´t want to wait for your scripts to finish, and you want to start curating right away, we have provided the file you need to do so. To download the PRETEXT file to your local computer, open a new terminal window, navigate to where you want to place the file, and use the code below:
 

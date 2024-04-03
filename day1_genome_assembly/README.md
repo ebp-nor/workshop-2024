@@ -21,10 +21,10 @@ This workshop is sponsored by EBP-Nor and [Norbis](https://norbis.w.uib.no/).
   * [HiFiAdapterFilt](03_HiFiAdapterFilt.md)
   * [hifiasm](04_hifiasm.md)
   * [YaHS](05_YaHS.md)
-  * Coffee break 10:45-11:15 together Genetic Diversity Monitoring Workshop
+  * Coffee break 10:45-11:15
 * 12:25-12:30 Summary
 
-### 12:30-13:30 Lunch together with Genetic Diversity Monitoring Workshop. 
+### 12:30-13:30 Lunch break
 
 ### 13:30-14:15 Validation
 * 13:30-13:45 Introduction to assembly validation
