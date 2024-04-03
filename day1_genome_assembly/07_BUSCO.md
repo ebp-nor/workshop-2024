@@ -25,7 +25,7 @@ mkdir -p busco_${prefix}
 origdir=$PWD
 cd busco_${prefix}
 
-busco -c 5 -i ${origdir}/$1 -l /cluster/projects/nn9984k/opt/busco_downloads/lineages/hymenoptera_odb10 -o assembly -m genome  --offline > busco.out 2> busco.err
+busco -c 5 -i ${origdir}/$1 -l /cluster/projects/nn9984k/opt/busco_downloads/lineages/hymenoptera_odb10 -o assembly -m genome  --tar --offline > busco.out 2> busco.err
 ``` 
 
 Create a new directory in your work area named `busco`. Make a new `run.sh` file with `nano run.sh`, and copy the code below into that file:
