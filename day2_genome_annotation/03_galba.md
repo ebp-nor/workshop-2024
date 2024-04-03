@@ -45,6 +45,6 @@ Why do we need to copy both the genome assembly and the protein sequences to the
 
 When we ran this, it took about 50 minutes. This job can be started at the same time as the miniprot jobs, but have to be run after the softmasking.
 
-|[Previous](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1/blob/main/02_miniprot.md)|[Next](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1/blob/main/04_evm.md)|
+|[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/02_miniprot.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/04_evm.md)|
 |---|---|
 
