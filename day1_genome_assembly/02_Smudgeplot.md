@@ -26,7 +26,7 @@ echo $reads > FILES
 
 [ -s reads.kmc_suf ] || kmc -k$k -t5 -m38 -ci1 -cs10000 @FILES reads tmp/
 
-[ -s reads.histo ] || kmc_tools transform reads histogram reads.histo -cx10000
+[ -s reads.histo ] || kmc_tools transform reads histogram reads.histo -cx10000
 
 L=$(smudgeplot.py cutoff reads.histo L)
 U=$(smudgeplot.py cutoff reads.histo U)
@@ -40,7 +40,7 @@ smudgeplot.py hetkmers -o kmcdb_L"$L"_U"$U" < kmcdb_L"$L"_U"$U".dump
 smudgeplot.py plot kmcdb_L"$L"_U"$U"_coverages.tsv
 ```
 
-We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/assembly/smudgeplot`) with this content (with nano for instance): 
+We have set up this script for you. What you need to do is to create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/assembly/smudgeplot`) with this content (with `nano` for instance): 
  
 ```
 sbatch /cluster/projects/nn9984k/scripts/run_smudgeplot.sh /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
@@ -50,7 +50,7 @@ When you have done this, you can submit to the cluster by typing `sh run.sh`.
  
 This ran for a bit more than an hour when testing, so you should continue with the next exercise and come back to this later. You can monitor the progress with `squeue -u <username>`.
 
-Smudgeplot produces several files in addition to the plot itself. You can for instance look at `smudgeplot_verbose_summary.txt` which contain the same information as the plot, but in text.
+Smudgeplot produces several files in addition to the plot itself. You can for instance look at `smudgeplot_verbose_summary.txt` which contain the same information as the plot, but in text format.
 
   
 ## Interpreting your smudgeplot

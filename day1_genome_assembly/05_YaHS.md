@@ -1,6 +1,6 @@
 # YaHS tutorial
 
-Congratulations, you have created your sawfly assembly! But now you have to combine your contigs into scaffolds, and for that we use **YaHS**. YaHS stands for “yet another Hi-C scaffolding tool”, and as the name implies, there are a lot of Hi-C scaffolders out there. However, we in EBP-Nor choose to use YaHS because it is fast, creates more contiguous scaffolds, with better genome statistics compared to other widely used scaffolders. To learn more about this, click [*here*](https://github.com/c-zhou/yahs), otherwise scroll down to start scaffolding your haplotype-resolved assemblies.
+If Hifiasm has completetd, than congratulations: you have created your sawfly assembly! However, this is not the end of it. The next step is to combine the generated contigs into larger scaffolds. For this we will use **YaHS**. YaHS stands for “yet another Hi-C scaffolding tool”, and as the name implies, there are a lot of Hi-C scaffolders out there. However, we in EBP-Nor choose to use YaHS because it is fast, creates more contiguous scaffolds, with better genome statistics compared to other widely used scaffolders. To learn more about this, click [*here*](https://github.com/c-zhou/yahs), otherwise scroll down to start scaffolding your haplotype-resolved assemblies.
 
 ## Scaffolding with YaHS
 
@@ -42,7 +42,7 @@ fi
 
 ```
 
-As we did with hifiasm, we have set up this script for you. Create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/assembly/yahs`) with this content (with `nano` for instance):
+Again, we have set up this script for you. Create a run.sh in your working folder (`/cluster/projects/nn9984k/work/<username>/assembly/yahs`) with this content (with `nano` for instance):
 
 ```
 ln -s ../hifiasm/iyAthRosa.hic.hap1.p_ctg.fa .
@@ -55,11 +55,12 @@ iyAthRosa \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_2_50x.fastq.gz
 ```
 
+Make sure to check that you link the correct file from the correct folder!
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
 
 When testing, this ran for 1.6 hours. You can monitor the progress with `squeue -u <username>`.
 
-Here we have simplified matters a bit and only proposes to scaffold one of the assemblies. Usually, we filter the Hi-C data based on unique k-mers in the two assemblies. This would lead to the reads used to scaffold hap1 would not contain reads with k-mers that are unique to hap2, and vice versa. 
+Here we have simplified matters a bit and we will only scaffold one of the haplotype assemblies using all the Hi-C data. Usually, we would filter the Hi-C data based on unique k-mers from each haplotype assembly in order to only scaffold using reads from the proper haplotype.
 
 ## Software versions used
 ```

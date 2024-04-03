@@ -1,6 +1,6 @@
 # Merqury tutorial
 
-Another way to validate your assemblies is by using **Merqury**. This k-mer based tool compares k-mers from the reads to the assemblies you have created, to find the degree of k-mer completeness, i.e. the percentage of the k-mers from the reads that are found within your assemblies. The advantage of this genome validation tool is that it can be used without any references, which is optimal when assessing *de novo* assemblies. If you want to learn more about Merqury, click [*here.*](https://github.com/marbl/merqury)
+Another way to validate your assemblies is by using **Merqury**. This k-mer based tool compares k-mers from the reads to k-mers from the assemblies you have created, to find the degree of k-mer completeness, i.e. the percentage of the k-mers from the reads that are found within your assemblies. The advantage of this genome validation tool is that it can be used without any references, which is optimal when assessing *de novo* assemblies. If you want to learn more about Merqury, click [*here.*](https://github.com/marbl/merqury)
 
 ## Running Merqury
 
@@ -30,10 +30,10 @@ meryl k=21 threads=10 memory=8g count output $j.meryl $f
 merqury.sh $j.meryl $2 $3 $4 > $4_merqury.out 2> $4_merqury.err
 ```
 
-Create a run.sh script with the following content (modify so it corresponds to what you have):
+Create a run.sh script with the following content (modify so it corresponds to what you have, prefix can be any name you want for your analysis):
 
 ```
-sbatch /cluster/projects/nn9984k/scripts/run_merqury.sh reads.fastq.gz first.fasta second.fasta prefix
+sbatch /cluster/projects/nn9984k/scripts/run_merqury.sh reads.fastq.gz hap1.fasta hap2.fasta prefix
 ```
 
 ## Interpreting a Merqury assembly spectrum plot
