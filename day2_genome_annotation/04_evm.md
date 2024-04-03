@@ -62,7 +62,7 @@ sbatch /projects/ec146/scripts/annotation/run_evm.sh \
 Submit the job.
 This ran for 40 minutes when testing.
 
-|[Previous](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1/blob/main/03_galba.md)|[Next](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part1/blob/main/05_busco.md)|
+|[Previous](https://github.com/ebp-nor/gworkshop-2024/blob/main/day2_genome_annotation/03_galba.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/05_busco.md)|
 |---|---|
 
 
