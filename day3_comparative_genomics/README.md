@@ -12,20 +12,18 @@ This workshop is sponsored by EBP-Nor and [Norbis](https://norbis.w.uib.no/).
 
 ##  Genome annotation and comparative genomics, part 2 - Schedule
 
-### 09:00-12:00 OrthoFinder on proteins
+### 09:00-12:00 Visualizing and interpreting comparative genomics results
 
-* 09:00-09:30 [Introduction to OrthoFinder](slides_morning_2.pdf) and [introduction to the study system and infrastructure](00_introduction.md)
+* 09:00-10:00 Recap of comparative genomics results 
  
-* 09:30-11:55 [Vizualising OrthoFinder results](https://htmlpreview.github.io/?https://github.com/ebp-nor/genome_annotation_comparative_genomics_part2/blob/main/Obiwow_orthofinder_stats_2023_3.html)
+* 10:00-10:15 Break
 
-* 11:55-12:00 Summary
+* 10:15-12:00 Visualizing comparative genomics results in R
 
 ### 12:00-13:00 Lunch
 
-* 13:00-14:00 [Spiderman and the adaptive story](https://github.com/ebp-nor/genome_annotation_comparative_genomics_part2/blob/main/dNdS.md)
-  * 15 minutes [presentation](slides_afternoon_2.pdf)
-  * 45 minutes coding
+### 13:00-16:00 Genomic repeats
+* 13:00-14:00 Transposable element evolution 
 * 14:00-14:15 Break
-* 14:15-16:00 Spiderman and the adaptive story
-  * 15 minutes presentation 
-  * Final words
+* 14:15-15:45 Visualization and analyses of repeats in R
+* 15:45-16:00 Evaluation and final words
