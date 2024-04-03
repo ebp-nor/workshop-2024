@@ -31,13 +31,13 @@ conda activate anno_pipeline
 
 python /cluster/projects/nn9984k/opt/redmask/redmask.py -i ${1} -o ${2}
 ```
-To set up the necessary data, and to submit the script to the server, you have to create a file called `run.sh` in your current folder (`/projects/ec146/work/$USER/annotation/softmask` presumably). In this file, you need to store the following lines of code: (for example using `nano` or `cat` for instance):
+To set up the necessary data, and to submit the script to the server, you have to create a file called `run.sh` in your current folder (`/cluster/projects/nn9984k/work/$USER/annotation/softmask` presumably). In this file you need to store the following lines of code: (for example using `nano` or `cat` for instance):
 ```
 ln -s /cluster/projects/nn9984k/data/annotation/gzUmbRama1.contigs.fasta .
 sbatch /cluster/projects/nn9984k/scripts/annotation/run_red.sh gzUmbRama1.contigs.fasta gzUmbRama1
 ```
 
-Then, you can run this script by typing `sh run.sh`. This will execute the lines of code in the file, and submit the Redmaks job to the cluster.
+Then, you can run this script by typing `sh run.sh`. This will execute the lines of code in the file, and submit the Redmask job to the cluster.
 
 This should finish in a handful of minutes (when testing it ran for 0.5 minutes). You can monitor the progress with `squeue -u <username>`, or using `sacct`.
 
