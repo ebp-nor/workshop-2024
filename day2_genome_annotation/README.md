@@ -38,4 +38,5 @@ This workshop is sponsored by EBP-Nor and [Norbis](https://norbis.w.uib.no/).
 ### 14:00-14:15 Break
 
 ### 14:15-16:00 
-* Running OrthoFinder on proteins and CDS
+* [Gene family evolution analyses with CAFE5](CAFE5.md)
+* [GO enrichment analyses](GO-enrichment.md)
