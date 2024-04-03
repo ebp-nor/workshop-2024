@@ -9,7 +9,7 @@ The creators of GenomeScope2 created another way to visualize and estimate the p
 #SBATCH --job-name=smudgeplot
 #SBATCH --account=nn9984k
 #SBATCH --time=4:0:0
-#SBATCH --mem-per-cpu=2G
+#SBATCH --mem-per-cpu=20G
 #SBATCH --ntasks-per-node=5
 
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
