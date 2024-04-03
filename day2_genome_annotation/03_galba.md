@@ -33,7 +33,7 @@ Here we use a [Singularity container](https://docs.sylabs.io/guides/3.5/user-gui
 
 Remeber to create a new folder for GALBA in your working direcotry, and then you can use this jobscript for running galba by creating the following `run.sh` script:
 ```
-cp -rf /projects/ec146/data/GCF_025201355.1_Halrad1_protein.faa  .
+cp -rf /cluster/projects/nn9984k/data/annotation/GCF_025201355.1_Halrad1_protein.faa  .
 cp -rf ../softmask/gzUmbRama1.softmasked.fa .
 
 sbatch /cluster/projects/nn9984k/scripts/annotation/run_galba.sh gzUmbRama1.softmasked.fa gzUmbRama1 GCF_025201355.1_Halrad1_protein.faa
