@@ -31,7 +31,7 @@ agat_sp_extract_sequences.pl --gff galba.gtf -f $1  -t cds -p -o galba.proteins.
 ```
 Here we use a [Singularity container](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html), because sometimes it can be a hassle to set up everything to run GALBA (and other AUGUSTUS-related software) properly, even with Conda. 
 
-Remeber to create a new folder for GALBA in your working direcotry, and then you can use this jobscript for running galba by creating the following `run.sh` script:
+Remeber to create a new folder for GALBA in your working direcotry, and then you can use this jobscript for running GALBA by creating the following `run.sh` script:
 ```
 cp -rf /cluster/projects/nn9984k/data/annotation/GCF_025201355.1_Halrad1_protein.faa  .
 cp -rf ../softmask/gzUmbRama1.softmasked.fa .
