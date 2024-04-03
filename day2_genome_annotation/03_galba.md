@@ -3,7 +3,7 @@
 
 The developers of AUGUSTUS have through the years developed different programs that allow one to easily train AUGUSTUS using different datasets (BRAKER1 with RNA-seq data, BRAKER2 with protein data, and recently BRAKER3 incorporating both, available from https://github.com/Gaius-Augustus/BRAKER), and use that to predict genes. Another recent AUGUSTUS wrapper that was developped is called [GALBA](https://github.com/Gaius-Augustus/GALBA). GALBA uses Miniprot to align a set of proteins your genome, and uses that to train AUGUSTUS to predict genes _de novo_.
 
-Here, we will run GALBA uding the proteins from a related fungus to generate a set up _ab initio_ predicted genes.
+Here, we will run GALBA with the proteins from a related fungus to generate a set up _ab initio_ predicted genes.
 
 Our pre-prepared jobscript looks like this: 
 ```
