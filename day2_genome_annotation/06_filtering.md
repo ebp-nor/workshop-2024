@@ -7,18 +7,18 @@ All this can be done with this script:
 ```
 #!/bin/bash
 #SBATCH --job-name=filter
-#SBATCH --account=ec146
+#SBATCH --account=nn9984k
 #SBATCH --time=1:0:0
 #SBATCH --mem-per-cpu=1G
 #SBATCH --ntasks-per-node=5
 
-eval "$(/fp/projects01/ec146/miniconda3/bin/conda shell.bash hook)" 
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate anno_pipeline
 
 MIN_AA_SIZE=50
 
-diamond blastp --sensitive --query $1 --threads 5 --out repeats.tsv --db  /fp/projects01/ec146/data/funannotate_db/repeats.dmnd --evalue 1e-10 --max-target-seqs 1 --outfmt 6
+diamond blastp --sensitive --query $1 --threads 5 --out repeats.tsv --db /cluster/projects/nn9984k/opt/funannotate_db/repeats.dmnd --evalue 1e-10 --max-target-seqs 1 --outfmt 6
 
 cut -f 1 repeats.tsv |sort -u > kill.list
 
@@ -32,13 +32,13 @@ agat_sp_extract_sequences.pl --gff filtered_genes_sup${MIN_AA_SIZE}.gff -f $3 -t
 ```
 You can run this script by this `run.sh` script:
 ```
-sbatch /projects/ec146/scripts/annotation/run_filter.sh \
+sbatch /cluster/projects/nn9984k/scripts/annotation/run_filter.sh \
 ../evm/evm.proteins.fa \
 ../evm/evm.gff3 \
 ../softmask/gzUmbRama1.softmasked.fa
 ```
 
-(There are backups for all input files at `/projects/ec146/data/` if some of them were not generated for some reason.)
+(There are backups for all input files at `/cluster/projects/nn9984k/data/annotation/` if some of them were not generated for some reason.)
 
 This should only take a minute or so.
 
