@@ -18,7 +18,8 @@ eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)"
 
 conda activate anno_pipeline
 
-singularity exec -B $PWD:/data /cluster/projects/nn9984k/opt/galba/galba.sif cp -rf /usr/share/augustus/config /data/
+#singularity exec -B $PWD:/data /cluster/projects/nn9984k/opt/galba/galba.sif cp -rf /usr/share/augustus/config /data/
+singularity exec -B $PWD:/data /cluster/projects/nn9984k/opt/galba/galba.sif cp -rf /opt/Augustus/config /data/
 singularity exec -B $PWD:/data /cluster/projects/nn9984k/opt/galba/galba.sif galba.pl --version > galba.version
 singularity exec -B $PWD:/data /cluster/projects/nn9984k/opt/galba/galba.sif galba.pl --species=$2 --threads=10 \
 --genome=/data/$1 \
