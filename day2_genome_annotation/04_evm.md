@@ -60,7 +60,7 @@ sbatch /cluster/projects/nn9984k/scripts/annotation/run_evm.sh \
 (There are backups for all input files at `/cluster/projects/nn9984k/data/annotation` if some of them were not generated for some reason.)
 
 Submit the job.
-This ran for 40 minutes when testing.
+This ran for 70 minutes when testing.
 
 |[Previous](https://github.com/ebp-nor/gworkshop-2024/blob/main/day2_genome_annotation/03_galba.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/05_busco.md)|
 |---|---|
