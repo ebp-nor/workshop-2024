@@ -44,7 +44,7 @@ sbatch /cluster/projects/nn9984k/scripts/annotation/run_galba.sh gzUmbRama1.soft
 
 Why do we need to copy both the genome assembly and the protein sequences to the current folder?
 
-When we ran this, it took about 50 minutes. This job can be started at the same time as the miniprot jobs, but have to be run after the softmasking.
+When we ran this, it took about 1.2 hours. This job can be started at the same time as the miniprot jobs, but have to be run after the softmasking.
 
 |[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/02_miniprot.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/04_evm.md)|
 |---|---|
