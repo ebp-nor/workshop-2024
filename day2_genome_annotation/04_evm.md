@@ -62,6 +62,9 @@ sbatch /cluster/projects/nn9984k/scripts/annotation/run_evm.sh \
 Submit the job.
 This ran for 80 minutes when testing.
 
+The developer of EvidenceModeler has [discontinued the development of the tool](https://github.com/EVidenceModeler/EVidenceModeler/wiki#alternatives-to-evm), and recommends [GINGER](https://academic.oup.com/dnaresearch/article/30/4/dsad017/7227702) instead. However, it looks like [GINGER](https://github.com/i10labtitech/GINGER
+) requires the use of RNA-seq data, which is not available for many species. (Of course, using the unscientific term "higher eukaryotes" is not a sign of excellence either.) It might therefore not be as flexible as EvidenceModeler. The developers of funannotate are working on [GFFtk](https://github.com/nextgenusfs/gfftk/), which might be able to replace EvidenceModeler eventually.
+
 |[Previous](https://github.com/ebp-nor/gworkshop-2024/blob/main/day2_genome_annotation/03_galba.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/05_busco.md)|
 |---|---|
 
