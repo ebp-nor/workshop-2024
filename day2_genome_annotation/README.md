@@ -8,9 +8,11 @@ To set up password, go here: [https://www.metacenter.no/user/reset/](https://www
 
 Part 2 of the workshop builds further on this and can be found [here](https://github.com/ebp-nor/workshop-2024/tree/main/day3_comparative_genomics). 
 
-This workshop is sponsored by EBP-Nor and [Norbis](https://norbis.w.uib.no/).
 
-<img src="EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/>
+This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https://norbis.w.uib.no/) and [Elixir](https://elixir.no/).
+
+<img src="../day3_comparative_genomics/EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/> <img src="../data/Elixir.no.logo.png" alt="Elixir.no logo" width="200"/> 
+
 
 ##  Genome annotation and comparative genomics, part 1 - Schedule
 
