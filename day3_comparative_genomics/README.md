@@ -15,11 +15,11 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
 
 ### 09:00-12:00 Visualizing and interpreting comparative genomics results
 
-* 09:00-10:00 Recap of comparative genomics results 
- 
+* 09:00-10:00 Interpretation and visualization of CAFE5 results
 * 10:00-10:15 Break
-
-* 10:15-12:00 Visualizing comparative genomics results in R
+* 10:15-10:45 [Introduction to GO enrichement analyses](slides)
+* 10:45-11:30 [GO enrichment analyses](GO-enrichment.md)
+* 11:30-12:00 Discussion
 
 ### 12:00-13:00 Lunch
 
