@@ -12,7 +12,7 @@ We have installed [Funannotate](https://github.com/nextgenusfs/funannotate), an 
 #SBATCH --account=nn9984k
 #SBATCH --time=1:0:0
 #SBATCH --mem-per-cpu=1G
-#SBATCH --ntasks-per-node=5
+#SBATCH --ntasks-per-node=10
 
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
@@ -31,7 +31,7 @@ printf "OTHER_PREDICTION\tminiprot\t7\n" >> weights.evm.txt
 
 python  /cluster/projects/nn9984k/miniforge3/envs/anno_pipeline/lib/python3.8/site-packages/funannotate/aux_scripts/funannotate-runEVM.py \
 -w weights.evm.txt \
--c 5 \
+-c 10 \
 -d . \
 -g gene_predictions.gff3 \
 -f $1 \
