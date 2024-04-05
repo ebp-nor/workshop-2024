@@ -1,5 +1,5 @@
 
-# Orthofinder
+# OrthoFinder
 
 [OrthoFinder](https://github.com/davidemms/OrthoFinder) is an easy, fast and great tool to study the evolutionary relationship between genes, and identify gene duplications. It also provides a species tree, as well as gene trees. 
 
@@ -19,9 +19,9 @@ We will go through how to run OrthoFinder on a cluster. The work flow is based o
 
 They show you how to manually downliad data from different databases. To do this step on the command line, look at tips and tricks in the databases section. 
 
-# Getting the input data for Orthofinder
+# Getting the input data for OrthoFinder
 
-We will use our own data to run Orthofinder. All you need is a fasta file of all the protein sequences for each species. It is also good to have an outgroup species for your analsys. We have chosen to use Aspergillus.
+We will use our own data to run OrthoFinder. All you need is a fasta file of all the protein sequences for each species. It is also good to have an outgroup species for your analsys. We have chosen to use _Aspergillus nidulans_.
 
 Create a folder at your work directory:
 ```
@@ -56,16 +56,16 @@ Then you can submit a job like this:
 sbatch /cluster/projects/nn9984k/scripts/orthofinder/run_orthofinder_proteins.sh
 ```
 
-A previous version of the SLURM scripts had specified running `muscle` and `iqtree` (`-M msa -A muscle -T iqtree`). By default, OrthoFinder calls `muscle` like this:
-```
-muscle -in INPUT -out OUTPUT
-```
-However, the version of `muscle` we have installed (5.1) requires 
-```
-muscle -align INPUT -output OUTPUT
-```
+<!-- A previous version of the SLURM scripts had specified running `muscle` and `iqtree` (`-M msa -A muscle -T iqtree`). By default, OrthoFinder calls `muscle` like this: -->
+<!-- ``` -->
+<!-- muscle -in INPUT -out OUTPUT -->
+<!-- ``` -->
+<!-- However, the version of `muscle` we have installed (5.1) requires  -->
+<!-- ``` -->
+<!-- muscle -align INPUT -output OUTPUT -->
+<!-- ``` -->
 
-Luckily, this is easy to change. We just modified this file to the correct command: `/cluster/projects/nn9984k/miniconda3/envs/orthofinder/bin/scripts_of/config.json`. If you run into similar issues when doing this yourself, be aware that it might be easily addressed. Running with the the `muscle` and `iqtree` options took a lot of time, so we did not enable them. However, some of you can try it, but please do not create a lot of jobs. Each OrthoFinder job might create tens of thousands of files, and overload the filesystem we are working on.
+<!-- Luckily, this is easy to change. We just modified this file to the correct command: `/cluster/projects/nn9984k/miniconda3/envs/orthofinder/bin/scripts_of/config.json`. If you run into similar issues when doing this yourself, be aware that it might be easily addressed. Running with the the `muscle` and `iqtree` options took a lot of time, so we did not enable them. However, some of you can try it, but please do not create a lot of jobs. Each OrthoFinder job might create tens of thousands of files, and overload the filesystem we are working on. -->
 
 ## Example script
 ```
