@@ -1,6 +1,6 @@
 # PretextView tutorial
 
-There are many ways to view a Hi-C contact map, but today we are going to use PretextView. To download the PretextView desktop application, click [here](https://github.com/wtsi-hpag/PretextView/releases), and pick a release that is suitable for your laptop. 
+There are many ways to view a Hi-C contact map, but today we are going to use PretextView. To download the PretextView desktop application, click [here](https://github.com/wtsi-hpag/PretextView/releases), and pick a release that is suitable for your laptop. Some of the text below might be a bit outdated, but we have tried to address it where we have come across it. In addition to the text, take a look at [https://github.com/Nadolina/Rapid-curation-2.0](https://github.com/Nadolina/Rapid-curation-2.0), and make sure to tag your chromosomes.
 
 ## How to curate your assemblies
 
@@ -13,11 +13,11 @@ There are many ways to view a Hi-C contact map, but today we are going to use Pr
  <img width="962" alt="Screenshot 2023-02-06 at 13 43 38" src="https://user-images.githubusercontent.com/110542053/216974988-510ca53d-a3f9-4d84-8a0f-77ce8d53057a.png">
 
  
- Here, each square represents a scaffold (which after curation will hopefully all be of chromosome length). The red diagonal line shows where the strongest contact signals are between the DNA sequences. 
+Here each square represents a scaffold (which after curation will hopefully all be of chromosome length). The red diagonal line shows where the strongest contact signals are between the DNA sequences. 
 
- Go ahead and look at the extensions for your contact maps. These overlays makes it easier to figure out where the unplaced and wrongly oriented scaffolds are supposed to go. 
+Go ahead and look at the extensions for your contact maps. These overlays makes it easier to figure out where the unplaced and wrongly oriented scaffolds are supposed to go. 
 
- For this tutorial, turn on the **Gaps** extension, and turn the **Gamma Min** and **Gamma Mid** sliders down to zero, and the **Gamma Max** slider all the way up. This will make it easier to see where there are gaps in the assembly, and increase the contrast so the contact signals will be easier to interpret. 
+For this tutorial, turn on the **Gaps** extension, and turn the **Gamma Min** and **Gamma Mid** sliders down to zero, and the **Gamma Max** slider all the way up. This will make it easier to see where there are gaps in the assembly, and increase the contrast so the contact signals will be easier to interpret. 
 
  ### Step 2: Moving scaffolds in PretextView
 
@@ -31,65 +31,11 @@ Move to the far right of the contact map. Are there any smaller, unplaced scaffo
 
 Now that you know how to move around and make edits in PretextView, delete all your edits with **Q** while in Edit mode, and press **U** to check to see that all your test edits are gone. You are now ready to edit the assembly for real!
 
-### Step 3: Editing your TPF
-
-When editing a Hi-C contact map, you need to make *the same* edits to the TPF-file you generated with the Rapid curation suite. 
-
-To make edits to your TPF in the command line, type:
-
-```
-nano filename.tpf
-```
-
 Here are some different scenarios that you may encounter:
 
 #### "I want to add an unplaced scaffold to the end of one of the larger, chromosome sized scaffolds"
 
-No worries, just enter Edit mode, toggle the snap function, and snap the unplaced scaffold onto the end of the larger chromosome sized scaffold. No need to edit the TPF!
-
-
-#### "I want to add an unplaced scaffold to the middle of one of the larger, chromosome sized scaffolds, where there is a gap"
-
-This can be done! Just grab the unplaced scaffold with the space bar and move it to the gap (this is where the "Gaps" extension comes in handy). Press **E** to exit edit mode, and press **U** to see your edits. Here you can see the exact position you moved the scaffold to. 
-
-Then, go to the TPF, and add a **>** to the line you want to remove. For instance, say that we have a gap in scaffold 1, at position 408378. Before editing, the TPF will look like this:
-
-```
-?	scaffold_1:1-408378     scaffold_1	PLUS
-GAP     TYPE-2  200
-?	scaffold_1:408579-1794055	scaffold_1	PLUS
-GAP     TYPE-2  200
-?	scaffold_1:1794256-2710345	scaffold_1	PLUS
-GAP     TYPE-2  200
-?	scaffold_1:2710546-2734866	scaffold_1	PLUS
-GAP     TYPE-2  200
-?	scaffold_1:2735067-3369476	scaffold_1	PLUS
-GAP     TYPE-2  200
-?	scaffold_1:3369677-3660413	scaffold_1	PLUS
-```
-
-After editing, your TPF should look like this:
-
-```
-?	scaffold_1:1-408378     scaffold_1	PLUS
->GAP     TYPE-2  200
-?	scaffold_1:408579-1794055	scaffold_1	PLUS
-GAP     TYPE-2  200
-?	scaffold_1:1794256-2710345	scaffold_1	PLUS
-GAP     TYPE-2  200
-?	scaffold_1:2710546-2734866	scaffold_1	PLUS
-GAP     TYPE-2  200
-?	scaffold_1:2735067-3369476	scaffold_1	PLUS
-GAP     TYPE-2  200
-?	scaffold_1:3369677-3660413	scaffold_1	PLUS
-```
-
-You have made your first edit! There is no need to do anything to the scaffold you have now placed. 
-
-
-#### "I want to add an unplaced scaffold to the middle of one of the larger, chromosome sized scaffolds, where there is NOT a gap"
-
-While this is possible, we will not be doing those kind of edits in this course. You need a higher resolution editor to be able to create gaps in the correct place in the assembly (such as HiGlass, which you can read about [here](http://higlass.io/)).
+No worries, just enter Edit mode, toggle the snap function, and snap the unplaced scaffold onto the end of the larger chromosome sized scaffold. 
 
 #### "Some of my unplaced scaffolds have ambiguous contact signals, what do I do?"
 
@@ -97,18 +43,20 @@ Ask us for help! You can also read more about these ambiguous signals in GRIT´s
 
 #### "I want to make edits within one of the larger scaffolds, what do I do"
 
-In some instances you´ll want to invert segments in your chromosome sized scaffolds. If there are gaps in the breakpoints where you want to make the inversion, you simply edit the TPF as shown above. However, if there are no gaps, do not make the edit. To invert segments, press spacebar again after you have picked up the segment you want to invert. 
+In some instances you'll want to invert segments in your chromosome sized scaffolds. If there are gaps in the breakpoints where you want to make the inversion, just cut where the gaps are and invert. However, if there are no gaps, do not make the edit. To invert segments, press spacebar again after you have picked up the segment you want to invert. 
 
-### Step 4: Painting your scaffolds
+### Step 3: Painting your scaffolds
 
-You have made your edits, and now you hopefully have eight large scaffolds matching *Athalia rosae´s* karyotype. Before finishing your assembly, you need to "paint" them. What does this mean? You need to mark which scaffolds are part of the same "super-scaffolds" or chromosomes, so they´ll all have the same name in the final FASTA. 
+You have made your edits, and now you hopefully have eight large scaffolds matching *Athalia rosae's* karyotype. Before finishing your assembly, you need to "paint" them. What does this mean? You need to mark which scaffolds are part of the same "super-scaffolds" or chromosomes, so they´ll all have the same name in the final FASTA. 
+
+Before painting the scaffolds, tag them with either Hap_1 or Hap_2 as mention on [https://github.com/Nadolina/Rapid-curation-2.0](https://github.com/Nadolina/Rapid-curation-2.0). Enter tagging mode by pressing **M**, and scroll through the tags by right and left arrows.
 
 Enter the "Scaffold Edit Mode" by pressing **S**. Go to the bottom right corner, and left click on the smallest scaffold you want to include as a chromosome. 
 
 While clicking, hold **A**, and drag in a diagonal line (following the contact signal) till you reach the end of the chromosome. Repeat until you have reached the end in the left top corner, and have painted all the scaffolds. 
 
 
-### Step 5: Finishing your assembly
+### Step 4: Finishing your assembly
 
 To finish your assembly you need to:
 
@@ -116,42 +64,45 @@ To finish your assembly you need to:
 
 Press **U** to bring up the main menu. Press the "Generate AGP" button, and create a out.pretext.agp file. 
 
-#### 2. Transfer your out.pretext.agp file to saga
+#### 2. Transfer your out.pretext.agp file to Saga
 
-Bring the AGP file back to your saga working directory by opening another terminal window, logging into saga. and going to the folder where you saved your TPF-file. When you are in the right location, use the code below to copy your file:
+Bring the AGP file back to your Saga working directory by opening another terminal window. When you are in the right location, modify the command below to copy your file:
 
 ```
-scp -r out.pretext.agp <username>@saga.sigma2.no:/cluster/projects/nn9984k/folder_with_tpf
+scp -r out.pretext.agp <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<USERNAME>/assembly/curation
 ```
 
 Enter your password and the file will be transferred to the directory. 
 
-#### 3. Create a new TPF and new FASTA from the original edited TPF and AGP file
+#### 3. Create new FASTA files from the original fasta file and AGP file
 
-Activate the rapid_curation conda environment. Using the rapid_pretext2tpf_XL.py script, combine the edited TPF and the generated AGP to create a new TPF. 
+Create a script like the one below (you could call it `process_agp.sh` or similiar). You might have to change some text depending on what you used as input files.
+
 
 ```
-eval "$(/cluster/projects/nn9984k/miniconda3/bin/conda shell.bash hook)" 
+cat iyAthRosa_30x.pretext.agp_1 |sed "s/H1_/H1\./g" |sed "s/H2_/H2\./g" > out.pretext.agp_1.fix
+
+cat data/ref.fa |sed "s/H1_/H1\./g" |sed "s/H2_/H2\./g" > ref.fix.fa
+
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
 conda activate curation
 
-# create new tpf
-
-python /cluster/projects/nn9984k/opt/rapid-curation/rapid_pretext2tpf_XL.py \
-iyAthRosa_clean.fa.tpf \
-out.pretext.agp_1
+sh /cluster/projects/nn9984k/opt/Rapid-curation-2.0/curation_2.0_pipe.sh -f ref.fix.fa -a out.pretext.agp_1.fix
 ```
-
-Using the new TPF, the chrs.csv-file generated with the Rapid curation suite, and the original fasta, you can create a new fasta with the rapid_join.pl script:
-
+You can then run mashmap to map the two haps towards each other, and rename the entries in hap_2 (you could add this to the script above):
 
 ```
-# create new fasta
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 
-perl /cluster/projects/nn9984k/opt/rapid-curation/rapid_join.pl -fa iyAthRosa_clean.fa \
--tpf rapid_prtxt_XL.tpf \
--csv chrs.csv \
--out hap1_clean.fasta
+conda activate curation
+
+sh /cluster/projects/nn9984k/opt/Rapid-curation-2.0/hap2_hap1_ID_mapping.sh Hap_1/hap.chr_level.fa Hap_2/hap.chr_level.fa
+
+# Update names in haplotype 2 to match haplotype 1
+/cluster/projects/nn9984k/opt/Rapid-curation-2.0/update_mapping.rb --fasta Hap_2/hap.chr_level.fa \
+--mashmap_table hap2_hap1.tsv > Hap_2/hap.chr_level_renamed.fa
+
 ```
 
 And now you are left with a complete, curated, haplotype resolved whole-genome assembly! Congratulations, you champ!
