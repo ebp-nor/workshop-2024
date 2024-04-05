@@ -24,15 +24,15 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
   * Coffee break 10:45-11:15
 * 12:25-12:30 Summary
 
-### 12:30-13:30 Lunch break
+### 12:00-13:00 Lunch break
 
-### 13:30-14:15 Validation
-* 13:30-13:45 Introduction to assembly validation
-* 13:45-14:10 Interpreting assembly validation results
+### 13:00-14:00 Validation
+* 13:00-13:15 Introduction to assembly validation
+* 13:15-13:55 Interpreting assembly validation results
   * [gfastats](06_gfastats.md)
   * [BUSCO](07_BUSCO.md)
   * [Merqury](08_Merqury.md)
-* 14:10-14:15 Summary
+* 13:55-14:00 Summary
 
 ### 14:15-16:00 Decontamination and manual curation
 * 14:15-14:30 Introduction to decontamination and manual curation
