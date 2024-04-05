@@ -1,6 +1,8 @@
 ## The study organism
 For the genome annotation exercise we will use [_Umbelopsis ramanniana_](https://en.wikipedia.org/wiki/Umbelopsis_ramanniana), a fungus common in soil. It is one of the species we are working on in the EBP-Nor project, and has a small genome which is perfect for this workshop, as everything will run quicker. This species is also one of the species used in the comparative genomics part of the worksop.
 
+The approach you will use here over the next pages is derived from the [Snakemake pipeline we use at EBP-Nor](https://github.com/ebp-nor/GenomeAnnotation). It is a bit simplified and has been split up into a series of scripts instead of one large Snakemake file.
+
 ## How to use this material
 The material for this workshop is written in a way that you can work through it independently of any other resource. The explanations should suffice to understand the material, but contains links to other resources (e.g. scientific papers and/or websites) where you can learn more if you are interested. These links are not necessary to complete the workshop, but are included as reference material that you can use to learn more about the software and concepts used during the workshop. 
 Please read both the text and the scripts carefully. If you want to see what a certain program does, you can generally try running it without any arguments. This will in general show you information about the program, and its parameters. Please don't hesitate to ask questions if you want to know more, or if anything is unclear.
