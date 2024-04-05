@@ -56,6 +56,8 @@ Then you can submit a job like this:
 sbatch /cluster/projects/nn9984k/scripts/orthofinder/run_orthofinder_proteins.sh
 ```
 
+When testing this, it ran for a bit more than 2 hours. You might submit it if you want, but you might not have time to look at the results from this actual run.
+
 <!-- A previous version of the SLURM scripts had specified running `muscle` and `iqtree` (`-M msa -A muscle -T iqtree`). By default, OrthoFinder calls `muscle` like this: -->
 <!-- ``` -->
 <!-- muscle -in INPUT -out OUTPUT -->
