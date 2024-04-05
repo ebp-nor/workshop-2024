@@ -1,6 +1,6 @@
 ## Functional annotation
 
-After filtering the EvidenceModeler genes we have a set of genes we (hopefully) trust, and which are (hopefully) correct. However, we don't actually know what each gene does, nor what it is named. Not all genes have a known function, nor name, but we have some tools that can help us with this situation. Proteins usually contain domains that can be informative with regards to their function. [InterProScan](https://github.com/ebi-pf-team/interproscan) ([Jones et al (2014)](https://academic.oup.com/bioinformatics/article/30/9/1236/237988)) is a tool that annotates known domains in proteins by comparisons to several different databases, such as PFAM and Panther. Unfortunately, there was not a functioning InterProScan at Fox when we wrote this, so we could not run it.
+After filtering the EvidenceModeler genes we have a set of genes we (hopefully) trust, and which are (hopefully) correct. However, we don't actually know what each gene does, nor what it is named. Not all genes have a known function, nor name, but we have some tools that can help us with this situation. Proteins usually contain domains that can be informative with regards to their function. [InterProScan](https://github.com/ebi-pf-team/interproscan) ([Jones et al (2014)](https://academic.oup.com/bioinformatics/article/30/9/1236/237988)) is a tool that annotates known domains in proteins by comparisons to several different databases, such as PFAM and Panther. 
 
 In addition to annotating domains, it is useful to attach gene names to the proteins. This can be done by a simple comparison to known genes with known names using [DIAMOND](https://github.com/bbuchfink/diamond), similar to what we did for [filtering](06_filtering.md). 
 
@@ -69,8 +69,7 @@ You can run this by
 sbatch /cluster/projects/nn9984k/scripts/annotation/run_ipr.sh ../filter/filtered.proteins.fa ipr
 ```
 
-
-The next script creates a new GFF where the gene names and GO and such have been added:
+The next script creates a new GFF where the gene names and GOs and such have been added:
 
 ```
 #!/bin/bash
