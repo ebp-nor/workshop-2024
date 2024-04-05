@@ -100,7 +100,7 @@ conda activate curation
 sh /cluster/projects/nn9984k/opt/Rapid-curation-2.0/hap2_hap1_ID_mapping.sh Hap_1/hap.chr_level.fa Hap_2/hap.chr_level.fa
 
 # Update names in haplotype 2 to match haplotype 1
-/cluster/projects/nn9984k/opt/Rapid-curation-2.0/update_mapping.rb --fasta Hap_2/hap.chr_level.fa \
+ruby /cluster/projects/nn9984k/opt/Rapid-curation-2.0/update_mapping.rb --fasta Hap_2/hap.chr_level.fa \
 --mashmap_table hap2_hap1.tsv > Hap_2/hap.chr_level_renamed.fa
 
 ```
