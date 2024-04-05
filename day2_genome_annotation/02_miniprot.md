@@ -33,11 +33,32 @@ sbatch /cluster/projects/nn9984k/scripts/annotation/run_miniprot_swissprot.sh gz
 sbatch /cluster/projects/nn9984k/scripts/annotation/run_miniprot_model.sh gzUmbRama1.contigs.fasta GCF_025201355.1_Halrad1_protein.faa.gz
 ```
 Then, you can submit the script, in a similar fashion to what we did for the repeatmasking (run `sh run.sh`)
-This `run.sh` script will submit both miniprot jobs. If you look at the script itself, you'll see in addition to miniprot two other programs, `agat_sp_extract_sequences.pl` and `miniprot_GFF_2_EVM_GFF3.py`.  `agat_sp_extract_sequences.pl` is from [AGAT](https://github.com/NBISweden/AGAT) (short for Another Gtf/Gff Analysis Toolkit). It is a really useful set of tools if you need to convert between different formats, create the predicted proteins from the annotation/alignments (as used here) or for adding functional annotation information to the annotation (shown later). `miniprot_GFF_2_EVM_GFF3.py` is an utility that is provided together with EvidenceModeler to convert the output of miniprot into something EvindenceModeler understands (but is not found in the current release yet).   
+This `run.sh` script will submit both miniprot jobs. If you look at the script itself, you'll see in addition to miniprot two other programs, `agat_sp_extract_sequences.pl` and `miniprot_GFF_2_EVM_GFF3.py`.  `agat_sp_extract_sequences.pl` is from [AGAT](https://github.com/NBISweden/AGAT) (short for Another Gtf/Gff Analysis Toolkit). It is a really useful set of tools if you need to convert between different formats, create the predicted proteins from the annotation/alignments (as used here) or for adding functional annotation information to the annotation (shown later). `miniprot_GFF_2_EVM_GFF3.py` is an utility that is provided together with EvidenceModeler to convert the output of miniprot into something EvindenceModeler understands (but is not found in the release we are using here [1.1.1]).   
 
 You should also investigate what the different options to the different programs mean. Usually you will get this information by running the program without any options, or by running it with only the `-h` option. Some options used here might not be relevant for your own purpuse, or we might have gotten something wrong, so it is always good to check!
 
-The alignment of UniProtKB/Swiss-Prot proteins took around 50 minutes when we ran it, but alignment of the related fungus proteins only took a couple of minutes. These jobs can be started independently of the softmasking, so you don't need to wait for the repeatmasking to complete to run these jobs.
+The alignment of UniProtKB/Swiss-Prot proteins took around 50 minutes when we ran it, but alignment of the related fungus proteins only took about 4 minutes. These jobs can be started independently of the softmasking, so you don't need to wait for the repeatmasking to complete to run these jobs.
+
+For completeness sake, here is the script for mapping the fungus proteins:
+```
+#!/bin/bash
+#SBATCH --job-name=miniprot
+#SBATCH --account=nn9984k
+#SBATCH --time=1:0:0
+#SBATCH --mem-per-cpu=2G
+#SBATCH --ntasks-per-node=10
+
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
+
+conda activate anno_pipeline
+
+miniprot -ut5 --gff $1 $2 > mp_model.gff 2> miniprot_"`date +\%y\%m\%d_\%H\%M\%S`".err
+
+agat_sp_extract_sequences.pl --gff mp_model.gff -f $1 -t cds -p -o model.proteins.fa \
+1> agat_proteins_"`date +\%y\%m\%d_\%H\%M\%S`".out 2> agat_proteins_"`date +\%y\%m\%d_\%H\%M\%S`".err
+
+python /cluster/projects/nn9984k/scripts/annotation/miniprot_GFF_2_EVM_GFF3.py mp_model.gff > mp_model_evm.gff
+```
 
 |[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/01_repeatmasking.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/03_galba.md)|
 |---|---|
