@@ -18,8 +18,7 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
 
 ### 09:00-12:00 Genome annotation
 
-* 09:00-09:30 [Introduction to the study system and infrastructure](00_introduction.md)
-  * Making sure you have access to Fox
+* 09:00-09:30 [Introduction to the study system and comparative genomeics](00_introduction.md)
   * Submit the first set of jobs
     * [Repeat mask](01_repeatmasking.md)
     * [Mapping protein sets](02_miniprot.md)
@@ -35,11 +34,13 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
 ### 12:00-13:00 Lunch
 
 ### 13:00-14:00 
-* [Introduction to comparative genomics](slides_afternoon.pdf)
-* [Setting up OrthoFinder](orthofinder.md)
+* [Introduction to Orthofinder](slides_afternoon.pdf)
+* [Setting up and running OrthoFinder](orthofinder.md)
 
 ### 14:00-14:15 Break
 
 ### 14:15-16:00 
-* [Gene family evolution analyses with CAFE5](CAFE5.md)
-* [GO enrichment analyses](GO-enrichment.md)
+* [Basic visualization of Orthofinder results in R](Orthofinder_stats_2024.Rmd)
+* [Introduction to gene family evolution analyses with CAFE5](slides)
+* [Setting up and running CAFE5](CAFE5.md)
+
