@@ -13,7 +13,7 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
 
 ##  Genome annotation and comparative genomics, part 2 - Schedule
 
-### 09:00-12:00 Visualizing and interpreting comparative genomics results
+### 09:00-12:00 Interpreting comparative genomics results
 
 * 09:00-10:00 Interpretation and visualization of CAFE5 results
 * 10:00-10:15 Break
