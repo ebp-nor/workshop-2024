@@ -21,8 +21,8 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
   * [HiFiAdapterFilt](03_HiFiAdapterFilt.md)
   * [hifiasm](04_hifiasm.md)
   * [YaHS](05_YaHS.md)
-  * Coffee break 10:45-11:15
-* 12:25-12:30 Summary
+  * Coffee break 10:00-10:15
+* 11:55-12:00 Summary
 
 ### 12:00-13:00 Lunch break
 
@@ -33,6 +33,8 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
   * [BUSCO](07_BUSCO.md)
   * [Merqury](08_Merqury.md)
 * 13:55-14:00 Summary
+
+### 14:00-14:15 Coffee break
 
 ### 14:15-16:00 Decontamination and manual curation
 * 14:15-14:30 Introduction to decontamination and manual curation
