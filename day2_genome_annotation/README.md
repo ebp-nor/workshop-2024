@@ -28,7 +28,8 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
   * Work through the rest of the programs
     * [EvidenceModeler](04_evm.md)
     * [BUSCO](05_busco.md)
-    * [Functional annotation](06_functional.md) 
+    * [Functional annotation](06_functional.md)
+    * Coffee break 10:00-10:15
 * 11:55-12:00 Summary
 
 ### 12:00-13:00 Lunch
