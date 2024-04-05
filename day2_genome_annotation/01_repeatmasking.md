@@ -3,7 +3,7 @@ When annotating a genome assembly, the first step is usually to mask the repeats
 
 The actual masking itself can be done either "hard" or "soft". Hard masking entails replacing the detected repeats with either 'X' or 'N', thereby hiding the sequence itself and making it unavailable for downstream analyses. Soft masking means replacing the nucleotides of detected repeats by their lowercase equivalant (e.g. replace "A" with "a"), as nucleotides in fasta files are usually all in capital letters (ACTG). This makes it possible for different tools to recognise repeats (because they are in lowercase) and avoid creating alignments in these repeats, but alignments can be extended into the repeats if necessary, because the actual sequence is still accessible. However, some tools, such as [miniprot](https://github.com/lh3/miniprot), ignore soft masked bases and treat them as normal. Thus it is important to check how the software you're using handles repeat masking!
 
-[RepeatMasker](https://www.repeatmasker.org/) is a widely used tool for masking repeats. First, a species/genome-specific repeat library is created using [RepeatModeler](http://www.repeatmasker.org/RepeatModeler/) ([Flynn et al (2020)](https://doi.org/10.1073/pnas.1921046117)), and afterwards classifying the repeats, for example into different classes of transposable elements. While an excellent tool, Repeatmasker has the downside of being quite slow.
+[RepeatMasker](https://www.repeatmasker.org/) is a widely used tool for masking repeats. First, a species/genome-specific repeat library is created using [RepeatModeler](http://www.repeatmasker.org/RepeatModeler/) ([Flynn et al (2020)](https://doi.org/10.1073/pnas.1921046117)), and afterwards classifying the repeats, for example into different classes of transposable elements. While an excellent tool, RepeatModeler has the downside of being quite slow.
 
 Recently, faster repeatmasking software has been developed. However, these only identify and mask repeats, but do not classify them. Thus, they are only useful in case you are not interested in what the repeats are, and just in where there are. Here, we go for a program that uses a lot less resources, called Red ([Giris 2015](https://doi.org/10.1186/s12859-015-0654-5)). Red and an associated Python script [redmask.py](https://github.com/nextgenusfs/redmask) are already set up on Saga using conda and by downloading the redmask GitHub repository. You do not need to do anything yourself.  We will also run RepeatModeler and RepeatMasker. 
 
@@ -39,7 +39,34 @@ sbatch /cluster/projects/nn9984k/scripts/annotation/run_red.sh gzUmbRama1.contig
 
 Then, you can run this script by typing `sh run.sh`. This will execute the lines of code in the file, and submit the Redmask job to the cluster.
 
-This should finish in a handful of minutes (when testing it ran for 0.5 minutes). You can monitor the progress with `squeue -u <username>`, or using `sacct`.
+This should finish in a handful of minutes (when testing it ran for 1 minute). You can monitor the progress with `squeue -u <username>`, or using `sacct`.
+
+We have also set up a script for RepeatModeler and RepeatMasker. Which looks like this:
+
+```
+#!/bin/bash
+#SBATCH --job-name=repeat
+#SBATCH --account=nn9984k
+#SBATCH --time=72:0:0
+#SBATCH --mem-per-cpu=10G
+#SBATCH --ntasks-per-node=10
+
+singularity exec --bind $PWD:/data --pwd /data /cluster/projects/nn9984k/opt/te-tools/dfam-tetools-latest.sif BuildDatabase -name $1 $2
+
+singularity exec --bind $PWD:/data --pwd /data /cluster/projects/nn9984k/opt/te-tools/dfam-tetools-latest.sif RepeatModeler -database $1 -LTRStruct -threads 10
+
+singularity exec --bind $PWD:/data --pwd /data /cluster/projects/nn9984k/opt/te-tools/dfam-tetools-latest.sif RepeatMasker -lib /data/$1 -pa 10 -small -dir . -gff $2
+```
+
+You could run this by this command:
+```
+rsync  /cluster/projects/nn9984k/data/annotation/gzUmbRama1.contigs.fasta .
+sbatch /cluster/projects/nn9984k/scripts/annotation/run_repeat.sh gzUmbRama1 gzUmbRama1.contigs.fasta 
+```
+But please don't. It ran for more than 48 hours when testing. This illustrates the difference between these to approaches. RepeatModeler and RepeatMasker is superb if you need to know what kind of repeats you have and where they are, but for just masking repeats, Red might suffice. 
+
+As you see, we used a Singularity image of the different tools. You can grab that from [https://github.com/Dfam-consortium/TETools](https://github.com/Dfam-consortium/TETools) if you need it.
+
 
 |[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/00_introduction.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/02_miniprot.md)|
 |---|---|
