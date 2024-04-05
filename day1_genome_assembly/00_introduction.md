@@ -48,6 +48,8 @@ Experience and testing (by various genome projects such as Darwin Tree of Life, 
 
 For an up-to-date general overview of the status of genome assembly today (2024), [this paper](https://arxiv.org/abs/2308.07877) by Heng Li and Richard Durbin (two legends in the field) is essential reading.
 
+The approach you will use here over the next pages is derived from the [Snakemake pipeline we use at EBP-Nor](https://github.com/ebp-nor/GenomeAssembly). It is a bit simplified and has been split up into a series of scripts instead of one large Snakemake file.
+
 ## Package management
 
 Administrating and installing the different programs that are needed in a project can be a hassle. We like conda/mamba to deal with software installation and dependencay manageing, especially [miniforge](https://github.com/conda-forge/miniforge), and have set up different environments we will use for the different analyses. [Bioconda](https://bioconda.github.io) contain a lot of different packages that are relevant for us, and genomics and bioinformatics in general.
