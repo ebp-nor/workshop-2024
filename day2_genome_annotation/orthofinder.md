@@ -49,7 +49,7 @@ We will first run OrthoFinder on the protein sequences. Create a subfolder calle
 
 To get the data, copy them like this:
 ```
-rsync -ravz /cluster/projects/nn9984k/data/proteomes .
+rsync -ravz /cluster/projects/nn9984k/data/proteomes/primary_transcripts/*.fa .
 ```
 Then you can submit a job like this:
 ```
