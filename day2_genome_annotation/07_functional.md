@@ -31,7 +31,8 @@ diamond blastp \
 ```
 You can run this by 
 ```
-sbatch /cluster/projects/nn9984k/scripts/annotation/run_uniprot.sh ../filter/filtered.proteins.fa
+ln -s ../filter/filtered.proteins.fa .
+sbatch /cluster/projects/nn9984k/scripts/annotation/run_uniprot.sh filtered.proteins.fa
 ```
 Please put that command into a `run.sh` script as usual to keep track of what has been done.
 
@@ -66,7 +67,8 @@ interproscan.sh --cpu 20 -dp -i $1  \
 
 You can run this by 
 ```
-sbatch /cluster/projects/nn9984k/scripts/annotation/run_ipr.sh ../filter/filtered.proteins.fa ipr
+ln -s ../filter/filtered.proteins.fa .
+sbatch /cluster/projects/nn9984k/scripts/annotation/run_ipr.sh filtered.proteins.fa ipr
 ```
 
 The next script creates a new GFF where the gene names and GOs and such have been added:
