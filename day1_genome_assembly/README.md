@@ -6,9 +6,9 @@ You can grab the slides [here](Slides_for_Workshop_February_2023.pdf).
 
 To set up password, go here: [https://www.metacenter.no/user/reset/](https://www.metacenter.no/user/reset/).
 
-This workshop is sponsored by EBP-Nor and [Norbis](https://norbis.w.uib.no/).
+This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https://norbis.w.uib.no/) and [Elixir](https://elixir.no/).
 
-<img src="../day3_comparative_genomics/EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/>
+<img src="../day3_comparative_genomics/EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/> <img src="../data/Elixir.no.logo.png" alt="Elixir.no logo" width="200"/> 
 
 ## Genome assembly, curation and validation - Schedule
 
