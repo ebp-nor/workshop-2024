@@ -1,7 +1,7 @@
 
 # Orthofinder
 
-[Orthofinder](https://github.com/davidemms/OrthoFinder) is an easy, fast and great tool to study the evolutionary relationship between genes, and identify gene duplications. It also provides a species tree, as well as gene trees. 
+[OrthoFinder](https://github.com/davidemms/OrthoFinder) is an easy, fast and great tool to study the evolutionary relationship between genes, and identify gene duplications. It also provides a species tree, as well as gene trees. 
 
 ![image](https://user-images.githubusercontent.com/46928237/191227132-3227f638-abd4-4804-9b91-fbc080c905d9.png)
 
@@ -11,11 +11,11 @@ Homology is similarity due to shared ancestry between a pair of structures or ge
 
 ![image](https://user-images.githubusercontent.com/46928237/193239122-33223055-afc8-4f47-91a1-3d341e18535f.png)
 
-Orthofinder identifies something they call orthogroups. An orthogroup is the set of genes derived from a single gene in the last common ancestor of all the species under consideration.
+OrthoFinder identifies something they call orthogroups. An orthogroup is the set of genes derived from a single gene in the last common ancestor of all the species under consideration.
 
 ## How to run Orthofinder on a cluster
 
-We will go through how to run Orthofinder on a cluster. The work flow is based on this: [Step-by-Step OrthoFinder Tutorials](https://davidemms.github.io/menu/tutorials.html). This is a series of tutorials that go through how to find data and use it to run OrthoFinder. 
+We will go through how to run OrthoFinder on a cluster. The work flow is based on this: [Step-by-Step OrthoFinder Tutorials](https://davidemms.github.io/menu/tutorials.html). This is a series of tutorials that go through how to find data and use it to run OrthoFinder. 
 
 They show you how to manually downliad data from different databases. To do this step on the command line, look at tips and tricks in the databases section. 
 
