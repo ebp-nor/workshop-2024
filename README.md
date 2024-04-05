@@ -5,7 +5,7 @@ This repository contains the course materials for the EBP-Nor Genome Assembly, A
 
 This workshop is sponsored by EBP-Nor, [Norbis](https://norbis.w.uib.no/) and [Elixir](https://elixir.no/).
 
-<img src="day3_comparative_genomics/EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/> <img src="data/Elixir.no.logo.png" alt="Elixir.no logo" width="250"/> 
+<img src="day3_comparative_genomics/EBP_Nor-orig.png" alt="EBP_Nor logo" width="300"/> <img src="data/Elixir.no.logo.png" alt="Elixir.no logo" width="200"/> 
 
 
 The workshop consists of three days. 
