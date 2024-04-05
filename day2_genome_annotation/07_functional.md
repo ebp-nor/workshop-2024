@@ -31,7 +31,7 @@ diamond blastp \
 ```
 You can run this by 
 ```
-sbatch /cluster/projects/nn9984k//scripts/annotation/run_uniprot.sh ../filter/filtered.proteins.fa
+sbatch /cluster/projects/nn9984k/scripts/annotation/run_uniprot.sh ../filter/filtered.proteins.fa
 ```
 Please put that command into a `run.sh` script as usual to keep track of what has been done.
 
