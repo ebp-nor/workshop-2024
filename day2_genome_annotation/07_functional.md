@@ -117,7 +117,7 @@ Congratulations! You have now both structurally and functionally annotated a gen
 
 How many genes did you get? How many complete BUSCO genes?
 
-The file `/cluster/projects/nn9984k/data/orthofinder/gzUmbIsab1.proteins.fa` is the result of another annotation effort. How many genes are found in that file? How many complete BUSCO genes? What might the difference be attributed to?
+The file `/cluster/projects/nn9984k/data/proteomes/gzUmbIsab1.proteins.fa` is the result of another annotation effort. How many genes are found in that file? How many complete BUSCO genes? What might the difference be attributed to?
 
 |[Previous](https://github.com/ebp-nor/gworkshop-2024/blob/main/day2_genome_annotation/06_filtering.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/orthofinder.md)|
 |---|---|
