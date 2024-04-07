@@ -21,6 +21,12 @@ There are some programs that are not available through (bio)conda. For most of t
 
 We mostly set up scripts and arranged the data so that it is ready to use for you, but in some steps you will be asked to modify them. We have backups of everything in case things go wrong, but please be careful so you don't delete something you shouldn't.
 
+We are using a specific environment for almost all the analyses in this part, called `anno_pipeline`. It was made by:
+```
+mamba create -y -n anno_pipeline funannotate miniprot red evidencemodeler=1.1.1 agat  
+```
+It pulled in funannotate version 1.8.15, miniprot version 0.13, red version 2018.09.10 and agat version 1.3.3.
+
 ## Infrastructure
 
 For the different analyses we are doing, we will use [Saga](https://documentation.sigma2.no/hpc_machines/saga.html). Everything should be set up properly by now. The project we have at Saga is called nn9984k, and the working folder is `/cluster/projects/nn9984k`. You should set up and do stuff in `/cluster/projects/nn9984k/work/$USERNAME`, but we'll come back to that in the next subject.
