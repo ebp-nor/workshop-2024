@@ -2,6 +2,8 @@
 
 There are many ways to view a Hi-C contact map, but today we are going to use PretextView. To download the PretextView desktop application, click [here](https://github.com/wtsi-hpag/PretextView/releases), and pick a release that is suitable for your laptop. Some of the text below might be a bit outdated, but we have tried to address it where we have come across it. In addition to the text, take a look at [https://github.com/Nadolina/Rapid-curation-2.0](https://github.com/Nadolina/Rapid-curation-2.0), and make sure to tag your chromosomes.
 
+If you are unaware of how many chromosomes you do expect, you can search up your species on [https://goat.genomehubs.org/](https://goat.genomehubs.org/). This is a really useful website also for genome size and other characteristics of the genome. It might not always be clear exactly how many chromosomes you have based on the Hi-C contact map. Ideally, it is quite clear, but the real world is not always ideal.
+
 ## How to curate your assemblies
 
 ### Step 1: Tweaking your settings
@@ -25,7 +27,7 @@ For this step you´ll need a computer mouse. Before you do your first edit, try 
 
 Try to move around in the contact map. Scrolling the mouse wheel zooms you in and out. You´ll notice that the zoom is not affected by where your cursor is, so how do we zoom in on one particular scaffold? By dragging the map and placing the area you want to look at in the centre of the screen. To drag the map, click and hold the right mouse button, and move the mouse around. Move around the map for a bit, and look at the scaffolds. Do some look fragmented? Move to the far right bottom corner of the contact map. Are there many smaller scaffolds there?
 
-When your comfortable with this movement, let´s try to bring up some of the other menus! Pressing **E** activates "Edit mode". When this mode is active, the cursor changes. Do you see that the further away from the red diagonal you move, the larger an area of the scaffold is marked by green? This green indicator shows which part of the scaffold you are picking up. Try to make an edit! Cut out a chunk of a scaffold and move it someplace else in the contact map. Don´t worry about whether the edit is correct, we´ll delete all the test edits before we start the proper curation process. 
+When your comfortable with this movement, let's try to bring up some of the other menus! Pressing **E** activates "Edit mode". When this mode is active, the cursor changes. Do you see that the further away from the red diagonal you move, the larger an area of the scaffold is marked by green? This green indicator shows which part of the scaffold you are picking up. Try to make an edit! Cut out a chunk of a scaffold and move it someplace else in the contact map. Don´t worry about whether the edit is correct, we'll delete all the test edits before we start the proper curation process. 
 
 Move to the far right of the contact map. Are there any smaller, unplaced scaffolds with clear, red contact signals that you think would go well in any of the larger scaffolds? Hover over them, press the space bar, and move the cursor without clicking the left button. When you have oriented yourself to where you want to place the unplaced scaffold, click the left cursor. If the piece fits best on the end of one of the larger squares, press **S** while in Edit mode to toggle the Snap function. Do you notice that the unplaced scaffold "travels" differently across the contact map, in a skipping motion? This lets you "snap" the unplaced scaffold in place at the end of the larger scaffolds. 
 
@@ -55,7 +57,6 @@ Enter the "Scaffold Edit Mode" by pressing **S**. Go to the bottom right corner,
 
 While clicking, hold **A**, and drag in a diagonal line (following the contact signal) till you reach the end of the chromosome. Repeat until you have reached the end in the left top corner, and have painted all the scaffolds. 
 
-
 ### Step 4: Finishing your assembly
 
 To finish your assembly you need to:
@@ -77,7 +78,6 @@ Enter your password and the file will be transferred to the directory.
 #### 3. Create new FASTA files from the original fasta file and AGP file
 
 Create a script like the one below (you could call it `process_agp.sh` or similiar). You might have to change some text depending on what you used as input files.
-
 
 ```
 cat iyAthRosa_30x.pretext.agp_1 |sed "s/H1_/H1\./g" |sed "s/H2_/H2\./g" > out.pretext.agp_1.fix
