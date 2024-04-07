@@ -70,6 +70,7 @@ You can run this by
 ln -s ../filter/filtered.proteins.fa .
 sbatch /cluster/projects/nn9984k/scripts/annotation/run_ipr.sh filtered.proteins.fa ipr
 ```
+When testing, this ran for 5 hours, so maybe a bit longer than what is managable for this workshop.
 
 The next script creates a new GFF where the gene names and GOs and such have been added:
 
@@ -103,7 +104,7 @@ agat_sp_extract_sequences.pl --gff $4.gff -f $5 -t exon --merge -o $4.mrna.fa 1>
 
 You can run this as
 ```
-sbatch /projects/ec146/scripts/annotation/run_functional.sh \
+sbatch /cluster/projects/nn9984k/scripts/annotation/run_functional.sh \
 ../filter/filtered_genes_sup50.gff  \
 uniprot/diamond.blastp.out \
 /cluster/projects/nn9984k/data/annotation/ipr.tsv \
