@@ -63,9 +63,9 @@ You could run this by this command:
 rsync  /cluster/projects/nn9984k/data/annotation/gzUmbRama1.contigs.fasta .
 sbatch /cluster/projects/nn9984k/scripts/annotation/run_repeat.sh gzUmbRama1 gzUmbRama1.contigs.fasta 
 ```
-But please don't. It ran for more than 48 hours when testing. This illustrates the difference between these to approaches. RepeatModeler and RepeatMasker is superb if you need to know what kind of repeats you have and where they are, but for just masking repeats, Red might suffice. 
+But please don't. It ran for more than 48 hours when testing. This illustrates the difference between these two approaches. RepeatModeler and RepeatMasker is superb if you need to know what kind of repeats you have and where they are, but for just masking repeats, Red might suffice. 
 
-As you see, we used a Singularity image of the different tools. You can grab that from [https://github.com/Dfam-consortium/TETools](https://github.com/Dfam-consortium/TETools) if you need it.
+As you see we used a Singularity image with RepeatMasker and RepeatModeler. You can grab that from [https://github.com/Dfam-consortium/TETools](https://github.com/Dfam-consortium/TETools) if you need it.
 
 
 |[Previous](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/00_introduction.md)|[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day2_genome_annotation/02_miniprot.md)|
