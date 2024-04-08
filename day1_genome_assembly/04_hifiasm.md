@@ -34,7 +34,7 @@ sbatch /cluster/projects/nn9984k/scripts/run_hifiasm.sh iyAthRosa \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/hic/ERR6054981_2_50x.fastq.gz \
 /cluster/projects/nn9984k/data/iyAthRosa1/genomic_data/pacbio/ERR6548410_22x.fastq.gz
 ```
-This script contain the unfiltered HiFi reads. **You have to replace the reads with the filtered reads you created using HiFiAdapterFilt.**
+This script contain the unfiltered HiFi reads. **You have to replace the reads with the filtered reads you created using HiFiAdapterFilt.** (Only replace the last line and keep the Hi-C reads lines as they are.)
 
 When you have done this, you can submit to the cluster by typing `sh run.sh`.
  
