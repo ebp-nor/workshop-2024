@@ -41,6 +41,6 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
 
 ### 14:15-16:00 
 * [Basic visualization of Orthofinder results in R](Orthofinder_stats_2024.Rmd)
-* [Introduction to gene family evolution analyses with CAFE5](slides)
+* [Introduction to gene family evolution analyses with CAFE5](Introduction_to_CAFE.pdf)
 * [Setting up and running CAFE5](CAFE5.md)
 
