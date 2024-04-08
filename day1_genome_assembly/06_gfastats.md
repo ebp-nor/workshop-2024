@@ -4,7 +4,7 @@ Now it is time to evaluate the assemblies you have created, starting with **gfas
 
 ## Evaluating the gfastats results
 
-Run this code in the terminal command line on the hifiasm assemblies (iyAthRosa.hic.hap1.p_ctg.fa and iyAthRosa.hic.hap2.p_ctg.fa), on the scaffolded assembly (iyAthRosa_scaffolds_final), and fill out the table below. If your are missing any of the files, or your assemblies ar not done running yet, you can find a copy of the necessary files at `/cluster/projects/nn9984k/data/iyAthRosa1/assembly/`.
+Run this code in the terminal command line on the hifiasm assemblies (iyAthRosa.hic.hap1.p_ctg.fa and iyAthRosa.hic.hap2.p_ctg.fa), on the scaffolded assembly (iyAthRosa_scaffolds_final), and fill out the table below. If your are missing any of the files, or your assemblies ar not done running yet, you can find a copy of the necessary files at `/cluster/projects/nn9984k/data/iyAthRosa1/assembly/` (in subfolders called 22x, 26x, 30x and 22x_scaffolded and 30x_scaffolded. 26x was not scaffolded in time).
 
 ```
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
