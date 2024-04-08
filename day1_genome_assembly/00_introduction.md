@@ -94,6 +94,14 @@ UC Davis Bioinformatics Core has a genome assembly workshop they held in 2020, w
 
 We also try to give links to relevant GitHub repositories and publications/preprints, at least the most essential, across these GitHub pages. This is meant for your own enjoyment and interest. 
 
+## Logging into Saga
+
+You should be able to log into Saga by typing this on the command line:
+ssh <username>@saga.sigma2.no
+
+Then you can navigate to the working area: 
+`cd /cluster/projects/nn9984k/work/`
+
 
 |[Next](https://github.com/ebp-nor/workshop-2024/blob/main/day1_genome_assembly/01_GenomeScope2.md)|
 |---|
