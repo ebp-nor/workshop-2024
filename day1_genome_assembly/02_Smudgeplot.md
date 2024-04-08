@@ -67,6 +67,8 @@ Which is the most represented haplotype for the coleseed sawfly? To look at the 
 scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assembly/smudgeplot/"*.png" .
 ```
 
+We also have a set of backups at `/cluster/projects/nn9984k/data/iyAthRosa1/smudgeplot` which you can look at instead if there was some issues with your job.
+
 You can look at the plot [here](smudgeplot_smudgeplot_log10.png).
 
 ## Software versions used
