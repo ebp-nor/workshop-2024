@@ -69,6 +69,8 @@ scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assem
 
 We also have a set of backups at `/cluster/projects/nn9984k/data/iyAthRosa1/smudgeplot` which you can look at instead if there were some issues with your job.
 
+(And we have uploaded them here: [smudgeplot_smudgeplot.png](smudgeplot_smudgeplot.png) and [smudgeplot_smudgeplot_log10.png](smudgeplot_smudgeplot_log10.png).)
+
 You can look at the plot [here](smudgeplot_smudgeplot_log10.png).
 
 ## Software versions used
