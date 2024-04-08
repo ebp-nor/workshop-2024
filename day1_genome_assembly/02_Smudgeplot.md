@@ -64,7 +64,9 @@ Here we see that based on the coverage of the heterozygous kmer pairs, the most 
 Which is the most represented haplotype for the coleseed sawfly? To look at the plots you created, open a new terminal window, and navigate to a directory where you want to place your files. When you have found the place where you want to save them, use this code to copy them to your local computer:
 
 ```
-scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assembly/smudgeplot/"*.png" .
+scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assembly/smudgeplot/*.png .
+#in some shells you might need to do this:
+#scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assembly/smudgeplot/"*.png" .
 ```
 
 We also have a set of backups at `/cluster/projects/nn9984k/data/iyAthRosa1/smudgeplot` which you can look at instead if there were some issues with your job.
