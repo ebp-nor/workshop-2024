@@ -65,6 +65,8 @@ scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assem
 
 We also have a set of backups at `/cluster/projects/nn9984k/data/iyAthRosa1/genomescope` which you can look at instead if there were some issues with your job.
 
+(And we have uploaded them here: [linear_plot.png](linear_plot.png), [log_plot.png](log_plot.png), [transformed_linear_plot.png](transformed_linear_plot.png) and [transformed_log_plot.png](transformed_log_plot.png).)
+
 What is the estimated genome size of *Athalia rosae*? 
 
 You can look at the plot [here](genomescope2_linear_plot.png).
