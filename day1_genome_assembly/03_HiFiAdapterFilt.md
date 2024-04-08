@@ -48,6 +48,8 @@ Finished on Mon Mar 25 09:27:53 AM CET 2024
 
 You should have similar content.
 
+We also have a set of backup files at `/cluster/projects/nn9984k/data/iyAthRosa1/hifiadaptfilt` if anything went wrong with your job. 
+
 ## Software versions used
 ```
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
