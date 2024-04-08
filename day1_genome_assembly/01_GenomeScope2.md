@@ -63,6 +63,8 @@ What have you learned about your reads from the k-mer profile plot you created? 
 scp -r <username>@saga.sigma2.no:/cluster/projects/nn9984k/work/<username>/assembly/genomescope/output_ploidy2/"*.png" .
 ```
 
+We also have a set of backups at `/cluster/projects/nn9984k/data/iyAthRosa1/genomescope` which you can look at instead if there was some issues with your job.
+
 What is the estimated genome size of *Athalia rosae*? 
 
 You can look at the plot [here](genomescope2_linear_plot.png).
