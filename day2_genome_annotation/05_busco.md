@@ -15,15 +15,8 @@ eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)"
 
 conda activate busco
 
-prefix=${1%.*}
-
-mkdir -p busco5_${2}_${prefix}
-origdir=$PWD
-
-cd busco5_${2}_${prefix}
-
-busco -c 10 -i ${origdir}/${1} -l /cluster/projects/nn9984k/opt/busco_downloads/lineages/${2}_odb10 \
--o assembly -m proteins --offline --tar > busco.out 2> busco.err
+busco -c 10 -i ${1} -l /cluster/projects/nn9984k/opt/busco_downloads/lineages/${2}_odb10 \
+-o assembly -m proteins --offline --tar --out_path busco > busco.out 2> busco.err
 ```
 
 As you see, there are two parameters here (`$1` and `$2`), the first is the set of proteins you want to compare against the database, and the second is the BUSCO lineage (fungi or mucoromycota in this case). 
