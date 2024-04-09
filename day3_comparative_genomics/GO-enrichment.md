@@ -1,8 +1,13 @@
 # Practical exercise - GO enrichment of expanded/contracted gene families
 
+> This exercise is meant to be run locally on your laptop using RStudio.
+
 Scenario:
 
-You have sequenced, assembled and annotated your Mucoromycota genomes. Orthofinder was used to identify ortholog groups (gene families) and CAFE5 was used to identify a list expanding and contracting gene families. Your next task is to investigate what kind of genes are in these lists.
+You have sequenced, assembled and annotated your Mucoromycota genomes. Orthofinder was used to identify ortholog groups (gene families) and CAFE5 was used to identify a list expanding and contracting gene families. Your next task is to use GO enrichment to investigate what kind of genes are in these lists.
+
+GO enrichment will be performed on the [g:Profiler website](https://biit.cs.ut.ee/gprofiler/gost). Since we are bringing our own genomes we will have to create a custom GMT.
+
 
 Input:
 
@@ -11,7 +16,7 @@ Input:
 * CAFE5 output (in git repo)
 
 
-> To download the gff files:
+> To download the gff files from saga to your laptop:
 
 ```
 mkdir downloads
