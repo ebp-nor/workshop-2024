@@ -1,0 +1,118 @@
+---
+title: "Plotting repeats"
+author: "Helle Tessand Baalsrud"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+#install.packages("scales")
+library(scales)
+#install.packages("ggridges")
+library(ggridges)
+#install.packages("dplyr")
+library(dplyr)
+```
+
+# need to remove first 3 lines and all instances of "*"
+
+
+```{r}
+TE <- read.table("/Users/hellebaalsrud/Documents/Projects/Mucormycota/Repeats/gzMucCirc2.fa.out", header = T, na.strings = ("."))
+```
+
+```{r pressure, echo=FALSE}
+colnames(TE) <- c("SW_score","percdiv","perc.del","perc.ins","query.seq","query.start","query.end","left","dunno","repeat_type","repeat.class.family","repeat.startl","repeat.end","left2","ID")
+```
+
+
+```{r}
+# add column based on broader classification
+
+
+# Adding column based on other column:
+TE2 <- TE %>%
+  mutate(repeat.class = case_when(
+    startsWith(repeat.class.family, "DNA") ~ "DNA_transposon",
+    startsWith(repeat.class.family, "LINE") ~ "RNA_transposon",
+    startsWith(repeat.class.family, "LTR") ~ "RNA_transposon",
+    startsWith(repeat.class.family, "Unknown") ~ "Unknown",
+    startsWith(repeat.class.family, "Simple_repeat") ~ "Simple_repeat",
+    startsWith(repeat.class.family, "Satellite") ~ "Satellite",
+    startsWith(repeat.class.family, "Low_complexity") ~ "Low_complexity",
+    startsWith(repeat.class.family, "tRNA") ~ "tRNA",
+    startsWith(repeat.class.family, "rRNA") ~ "rRNA",
+    endsWith(repeat.class.family, "Helitron") ~ "Helitron",
+    startsWith(repeat.class.family, "SINE") ~ "RNA_transposon"
+    ))
+```
+
+```{r}
+#summary of unique variables
+g <- ggplot(data=TE2, aes(x=repeat.class.family, fill=repeat.class)) +
+# Number of cars in each class:
+geom_bar() + theme_light()+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + geom_text(aes(label = ..count..), stat = "count", hjust=2, angle = 90, colour="white")  + scale_y_log10() +labs(title = 'B.)') 
+g
+
+#library(forcats)
+#g + aes(x = reorder(repeat.class.family, repeat.class))
+# TE2$repeat.class.family = reorder( TE2$repeat.class.family,  TE2$repeat.class)
+#str(TE2)
+```
+
+```{r}
+
+h <- ggplot(data=TE2, aes(x=repeat.class)) +
+ geom_bar() + theme_light()+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  geom_text(aes(label = ..count..), stat = "count", hjust=2, angle = 90, colour="white")  + scale_y_log10() +labs(title = 'A.)')
+h
+
+h / g
+```
+
+```{r}
+pr <- ggplot(TE2, aes(x = percdiv, y = repeat.class.family, fill = repeat.class)) +
+  geom_density_ridges_gradient(scale = 2) +
+  
+  #labs(title = 'Percentage divergence from concensus of repeats in the snowy owl genome')
+  #labs(title = 'Size distribution of repeats in the snowy owl genome')
+  theme_light()
+pr
+```
+```{r}
+TE2$Size <- TE2$query.end - TE2$query.start
+```
+
+```{r}
+pr <- ggplot(TE2, aes(x = Size, y = repeat.class.family, fill = repeat.class)) +
+  geom_density_ridges_gradient() + xlim(0,1000)
+  
+  #labs(title = 'Percentage divergence from concensus of repeats in the snowy owl genome')
+  #labs(title = 'Size distribution of repeats in the snowy owl genome')
+  theme_light()
+pr
+```
+
+```{r}
+#table(TE2$query.seq)
+
+TE_size_per_type <- TE2 %>%
+  group_by(repeat.class) %>%
+  summarise(sum_length_repeat = sum(Size))
+
+TE_size_per_type$repeat.class.perc <- (TE_size_per_type$sum_length_repeat /43122843) *100
+```
+
+```{r}
+#summary of unique variables
+g <- ggplot(data=TE_size_per_type, aes(x=repeat.class, y=repeat.class.perc)) +
+# Number of cars in each class:
+geom_col() + theme_light() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+g
+```
