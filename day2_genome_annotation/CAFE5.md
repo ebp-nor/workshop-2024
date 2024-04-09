@@ -86,8 +86,19 @@ We put a copy of this scrip here: `/cluster/projects/nn9984k/scripts/cafe/genera
 
 ```
 module load R/4.3.2-gfbf-2023a
-Rscript /cluster/projects/nn9984k/scripts/cafe/generate_gene_family_size.R 
+Rscript /cluster/projects/nn9984k/scripts/cafe/generate_gene_family_size.R
 ```
+If this does not work, you can install these packages yourself. Start R by typing R:
+```
+R
+```
+and install these by doing these two commands:
+```
+install.packages('tidyverse')
+install.packages('stringr')
+```
+You might have to type `yes` to get it installed in your home area, and you might have to choose a mirror (choose `Norway` with `55`).  
+
 
 or submit a slurm script as the one here: `/cluster/projects/nn9984k/scripts/cafe/runR.sh`
 
