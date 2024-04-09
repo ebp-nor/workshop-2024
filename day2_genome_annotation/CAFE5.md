@@ -95,12 +95,12 @@ or submit a slurm script as the one here: `/cluster/projects/nn9984k/scripts/caf
 
 You should now have the 2 files `mucoromycota.nwk.ultrametric.tre` and `mucoromycota_gene_families.txt` in the folder `cafe`. If not, you can copy them from `/cluster/projects/nn9984k/data/cafe`.
 
-<-- Activate cafe environment to run cafe -->
+<!-- Activate cafe environment to run cafe -->
 
-<-- ``` -->
-<-- eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" -->
-<-- mamba activate cafe -->
-<-- ``` -->
+<!-- ``` -->
+<!-- eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" -->
+<!-- mamba activate cafe -->
+<!-- ``` -->
 
 You can have a look with all available options by typing `cafe5 -h`. We will run it with default setting.
 
