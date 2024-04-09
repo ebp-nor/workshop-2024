@@ -97,7 +97,7 @@ and install these by doing these two commands:
 install.packages('tidyverse')
 install.packages('stringr')
 ```
-You might have to type `yes` to get it installed in your home area, and you might have to choose a mirror (choose `Norway` with `55`).  
+You might have to type `yes` to get it installed in your home area, and you might have to choose a mirror (choose `Norway` with `55`).  (This might take some time.)
 
 
 Or submit a slurm script as the one here: `/cluster/projects/nn9984k/scripts/cafe/runR.sh`
