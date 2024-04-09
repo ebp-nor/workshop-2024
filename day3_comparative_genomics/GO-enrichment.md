@@ -1,12 +1,18 @@
 # Practical exercise - GO enrichment of expanded/contracted gene families
 
-> This exercise is meant to be run locally on your laptop using RStudio.
+> Note: This exercise is meant to be run locally on your laptop using RStudio. File paths are relative to the root of the git repo.
 
 Scenario:
 
 You have sequenced, assembled and annotated your Mucoromycota genomes. Orthofinder was used to identify ortholog groups (gene families) and CAFE5 was used to identify a list expanding and contracting gene families. Your next task is to use GO enrichment to investigate what kind of genes are in these lists.
 
-GO enrichment will be performed on the [g:Profiler website](https://biit.cs.ut.ee/gprofiler/gost). Since we are bringing our own genomes we will have to create a custom GMT.
+GO enrichment will be performed on the [g:Profiler website](https://biit.cs.ut.ee/gprofiler/gost). Since we are bringing our own genome annotations you will have to create a custom GMT first. Here is an overview of the steps:
+
+* Extract GO terms from GFF files
+* Combine GO terms per gene family
+* Using GMT helper to convert to valid GMT file
+* Get list of significant gene families from CAFE results
+* Run enrichment on g:Profiler website
 
 
 Input:
@@ -67,9 +73,10 @@ GOfromGFF <- function(gff_file){
 ```
 
 
-> Optional: If you want, here is an example how to get GO annotations for a given gff and save as tsv file:
+> Normally you would probably do GO analysis of individual genomes. In that case this is how to get GO annotations for a given gff and save as tsv file:
 
 ```
+# Optional (not needed for this exercise)
 GOtbl <- GOfromGFF(gff_file = "downloads/mucoromycota_gff3_files/ggMorZona1.gff3")
 write_tsv(GOtbl, file = "ggMorZona1_GO_annotations.tsv")
 ```
@@ -87,7 +94,7 @@ GOallGenomes <-
 
 ## Step 2: Combine GO terms per gene family
 
-We used the N0 (root node) hierarchical orthogroups (HOGs) for running CAFE5 and want to assign the GO terms to each gene family.
+We used the N0 (root node) hierarchical orthogroups (HOGs) for running CAFE and want to assign the GO terms to each gene family.
 
 If you have cloned this git repo you will find the file under the `data` folder and can load it in R like this:
 
@@ -95,7 +102,7 @@ If you have cloned this git repo you will find the file under the `data` folder 
 N0_HOGs <- read_tsv("data/orthofinder/Phylogenetic_Hierarchical_Orthogroups/N0.tsv")
 ```
 
-Following is the script to
+The following is that joins the GO annotations with the orthogroups and generates a table with to columns that maps HOGs to GO terms:
 
 ```
 HOG_GOtbl <- 
@@ -140,9 +147,11 @@ It is common to only annotate genes with most specific term in the GO hierarchy 
 * Upload your GMT file and the OBO file
 * Leave the selected relations at "is_a" and "part_of" and click "Reannotate"
 
-After some seconds you should get a new GMT file with propagated GO terms. The GO terms will now also have descriptions.
+After some seconds you should get a new GMT file with propagated GO terms. Also importantly, the GO terms will now also have descriptions!
 
-## Step 4: Get list
+## Step 4: Get list of significant gene families from CAFE
+
+For our "gene list" (actually gene family list) we will extract the HOGs that were found to be significant from the CAFE analysis:
 
 ```
 significant_family <-read_tsv("data/cafe/cafe_results/Base_family_results.txt") %>%
@@ -151,7 +160,16 @@ significant_family <-read_tsv("data/cafe/cafe_results/Base_family_results.txt") 
 write_lines(changes_significant$FamilyID,file = "CAFE5_significant_families.txt")
 ```
 
-## Step 5: Run enrichment...
+## Step 5: Run enrichment
+
+* Go to [g:Profiler website](https://biit.cs.ut.ee/gprofiler/gost)
+* Under options there should be button with **Bring your own data (Custom GMT)**. Use this to upload the GMT file you got from the reannotation.
+
+> Note: After succesfully uploading a GMT the "Organism" should change to weird unique identifier.
+
+* Either copy/paste the content of "CAFE5_significant_families.txt" or use **Upload query** to upload the file.
+* Click **Run query** and the results should show up underneath.
+
 
 ## Step 6: Analyse results
 
