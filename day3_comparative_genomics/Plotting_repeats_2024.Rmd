@@ -19,21 +19,21 @@ library(ggridges)
 library(dplyr)
 ```
 
-# need to remove first 3 lines and all instances of "*"
-
 
 ```{r}
-TE <- read.table("/Users/hellebaalsrud/Documents/Projects/Mucormycota/Repeats/gzMucCirc2.fa.out", header = T, na.strings = ("."))
+TE <- read_table("data/repeats/ggMucLanc1.fa.out",
+                 skip=3, # skip the header
+                 na = ".", show_col_types = F,
+                 col_names = c("SW_score", "percdiv", "perc.del", "perc.ins",
+                               "query.seq", "query.start", "query.end", "left", 
+                               "dunno", "repeat_type", "repeat.class.family",
+                               "repeat.startl", "repeat.end", "left2", "ID","blank"))
 ```
 
-```{r pressure, echo=FALSE}
-colnames(TE) <- c("SW_score","percdiv","perc.del","perc.ins","query.seq","query.start","query.end","left","dunno","repeat_type","repeat.class.family","repeat.startl","repeat.end","left2","ID")
-```
 
 
 ```{r}
 # add column based on broader classification
-
 
 # Adding column based on other column:
 TE2 <- TE %>%
@@ -53,10 +53,13 @@ TE2 <- TE %>%
 ```
 
 ```{r}
-#summary of unique variables
-g <- ggplot(data=TE2, aes(x=repeat.class.family, fill=repeat.class)) +
-# Number of cars in each class:
-geom_bar() + theme_light()+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + geom_text(aes(label = ..count..), stat = "count", hjust=2, angle = 90, colour="white")  + scale_y_log10() +labs(title = 'B.)') 
+# Summary of repeat families
+g <- 
+  ggplot(data=TE2, aes(x=repeat.class.family, fill=repeat.class)) +
+  geom_bar() + theme_light() + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+    geom_text(aes(label = ..count..), stat = "count", hjust=2, angle = 90,
+              colour="white")  + scale_y_log10() +labs(title = 'B.)') 
 g
 
 #library(forcats)
