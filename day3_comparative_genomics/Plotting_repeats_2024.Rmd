@@ -17,6 +17,9 @@ library(scales)
 library(ggridges)
 #install.packages("dplyr")
 library(dplyr)
+
+library(readr)
+library(forcats)
 ```
 
 
@@ -55,7 +58,10 @@ TE2 <- TE %>%
 ```{r}
 # Summary of repeat families
 g <- 
-  ggplot(data=TE2, aes(x=repeat.class.family, fill=repeat.class)) +
+  TE2 %>% 
+  arrange(repeat.class,repeat.class.family) %>% 
+  mutate( repeat.class.family = forcats::fct_inorder(repeat.class.family)) %>% 
+  ggplot( aes(x=repeat.class.family, fill=repeat.class)) +
   geom_bar() + theme_light() + 
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
     geom_text(aes(label = ..count..), stat = "count", hjust=2, angle = 90,
