@@ -60,7 +60,8 @@ That will generate a dated tree `mucoromycota.nwk.ultrametric.tre` inside the `c
 ```
 eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
 conda activate cafe
-```)
+```
+)
 
 ### Generating the gene count table
 
