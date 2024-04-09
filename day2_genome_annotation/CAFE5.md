@@ -116,4 +116,4 @@ sbatch run_cafe.sh
 
 Running CAFE5 on our whole mucoromycota dataset would take a couple of hours. If everything goes well, you would have the results this evening and we can look at the results tomorrow morning.
 
-
+For tommorow, we will use your local RStudio. Please make sure to have those R packages installed beforehand: `tidyverse`, `ggplot2`, `ggtree`, `treeio`.
