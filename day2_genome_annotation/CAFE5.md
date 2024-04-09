@@ -56,6 +56,12 @@ python3 /cluster/projects/nn9984k/miniforge3/envs/orthofinder/bin/make_ultrametr
 
 That will generate a dated tree `mucoromycota.nwk.ultrametric.tre` inside the `cafe` folder.
 
+(You might need to activate a conda environment. Try this:
+```
+eval "$(/cluster/projects/nn9984k/miniforge3/bin/conda shell.bash hook)" 
+conda activate cafe
+```)
+
 ### Generating the gene count table
 
 For the gene count table, we need to count the number of genes in each column (species) for each row (gene family) in the
