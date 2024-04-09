@@ -86,6 +86,8 @@ module load R/4.3.2-gfbf-2023a
 Rscript /cluster/projects/nn9984k/scripts/cafe/generate_gene_family_size.R 
 ```
 
+or submit a slurm script as the one here: `/cluster/projects/nn9984k/scripts/cafe/runR.sh`
+
 ### Running CAFE5
 
 You should now have the 2 files `mucoromycota.nwk.ultrametric.tre` and `mucoromycota_gene_families.txt` in the folder `cafe`. If not, you can copy them from `/cluster/projects/nn9984k/data/cafe`.
