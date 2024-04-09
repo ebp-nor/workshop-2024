@@ -1,4 +1,4 @@
-### Looking at the results of CAFE5
+## Looking at the results of CAFE5
 
 If you have submitted the cafe job yesterday, you should now have the results in the folder `~/cafe/cafe_results`. If for some reason, you don't have it, there's a copy of it here `/cluster/projects/nn9984k/data/cafe/cafe_results`, and also on github page under the subfolder `data/cafe`.
 
@@ -6,7 +6,7 @@ We are going to look at the results on your local Rstudio, so if you haven't alr
 
 Make sure that you have the R packages `treeio, ggtree, ggplot2, tidyverse` installed.
 
-#### The asr gene family trees
+### The asr gene family trees
 
 The file `Base_asr.tre` contains the trees with gene count for each gene family at each node.
 We can read this file in `R`:
@@ -31,7 +31,7 @@ The `<node_id>` of each node is in the bracket `<>`, follows by the count of the
 Sometimes there's a star after the node id, which indicates that the changing of family size is significant at that branch.
 
 
-#### Other statistics files
+### Other statistics files
 
 The file `Base_family_results.txt` shows us which gene family has undergone at least 1 significant change in the past.
 
@@ -130,7 +130,7 @@ Calculate the average expansion simply as `change/count`
 info <- mutate(info, averageExpansion = change/count)
 ```
 
-#### Plot the statistics information on the species tree 
+### Plot the statistics information on the species tree 
 
 Read the species tree
 
