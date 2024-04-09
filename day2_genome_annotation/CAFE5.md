@@ -85,10 +85,11 @@ write_tsv(N0_counts,"mucoromycota_gene_families.txt")
 We put a copy of this scrip here: `/cluster/projects/nn9984k/scripts/cafe/generate_gene_family_size.R`, so you can run it:
 
 ```
-module load R/4.3.2-gfbf-2023a
+#module load R/4.3.2-gfbf-2023a
+module load StdEnv R-bundle-CRAN/2023.12-foss-2023a
 Rscript /cluster/projects/nn9984k/scripts/cafe/generate_gene_family_size.R
 ```
-If this does not work, you can install these packages yourself. Start R by typing R:
+If this does not work, you might have install these packages yourself. Start R by typing R:
 ```
 R
 ```
