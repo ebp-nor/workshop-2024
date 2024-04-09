@@ -4,7 +4,7 @@ If everything so far has gone well, you should have three different annotations/
 
 With that many files/annotations, it can be hard to know what to do. You could of course pick one based on some kind of criteria (maybe number of complete BUSCO genes). Some tools, such as BRAKER1/2/3, usually create one set of genes. However, in our case we want to combine the different annotations/files we created into one, non-redudant, gene set. We will do this using [EvidenceModeler](https://github.com/EVidenceModeler/EVidenceModeler) ([Haas et al (2008)](https://pubmed.ncbi.nlm.nih.gov/18190707/)).
 
-We have installed [Funannotate](https://github.com/nextgenusfs/funannotate), an all-in-one genome annotation pipeline, on Fox for this workshop. It is a nice pipeline, but for you to get a better understanding of what actually happens when annotating a genome, we do this workshop by running different programs independently. If you are looking for something more comprehensive you should take a look at Funannotate. In any case, it has a some features that we will take direct advantage of here, namely a script that runs EvidenceModeler for us. This can be run like so:
+We have installed [Funannotate](https://github.com/nextgenusfs/funannotate), an all-in-one genome annotation pipeline, on Saga for this workshop. It is a nice pipeline, but for you to get a better understanding of what actually happens when annotating a genome, we do this workshop by running different programs independently. If you are looking for something more comprehensive you should take a look at Funannotate. In any case, it has a some features that we will take direct advantage of here, namely a script that runs EvidenceModeler for us. This can be run like so:
 
 ```
 #!/bin/bash
