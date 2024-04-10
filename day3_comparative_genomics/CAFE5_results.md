@@ -156,3 +156,19 @@ ggtree(speciesTree) + geom_tiplab(size=3, hjust = -0.5) + hexpand(.1) +
 ```
 
 <img src="species_tree_cafe.png" width="900"/> 
+
+
+### Installing the R packages
+
+To install the R packages, you might have to do this in R:
+```
+#from https://bioconductor.org/install/
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install(version = "3.18")
+BiocManager::install("treeio")
+BiocManager::install("ggtree")
+install.packages('ggplot')
+install.packages('tidyverse')
+```
+
