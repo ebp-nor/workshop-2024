@@ -4,6 +4,7 @@ This repository contains the course materials for the workshop Genome annotation
 
 You can find part 1 [here](https://github.com/ebp-nor/workshop-2024/day2_genome_annotation). You should be able to follow this workshop independently of part 1, but it might give some background that is useful.
 
+You can grab the slides for [morning here](Genome_assembly_annotation_and_comparative_genomics_day_3_morning.pdf) and [afternoon here](Genome_assembly_annotation_and_comparative_genomics_day_3_afternoon.pdf).
 
 This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https://norbis.w.uib.no/) and [Elixir](https://elixir.no/).
 
