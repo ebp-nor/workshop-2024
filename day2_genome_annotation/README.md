@@ -2,7 +2,7 @@
 
 This repository contains the course materials for the EBP-Nor Genome annotation and comparative genomics Workshop that was given in connection with the [Norwegian Biodiversity Genomics & Conference](https://www.ebpnor.org/english/conference/). The course is run on infrastructure provdided by [Sigma2](https://www.sigma2.no/).
 
-You can grab the slides [here](Genome_assembly_annotation_and_comparative_genomics_day_2_morning.pdf).
+You can grab the slides for [morning here](Genome_assembly_annotation_and_comparative_genomics_day_2_morning.pdf) and [afternoon here](Genome_assembly_annotation_and_comparative_genomics_day_2_afternoon.pdf).
 
 To set up password, go here: [https://www.metacenter.no/user/reset/](https://www.metacenter.no/user/reset/).
 
