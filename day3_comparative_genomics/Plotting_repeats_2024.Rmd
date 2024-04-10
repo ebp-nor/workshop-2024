@@ -9,6 +9,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Here we will plot output from [Repeatmasker](https://www.repeatmasker.org/webrepeatmaskerhelp.html). 
+
+First install packages and load libraries we need: 
+
 ```{r}
 library(ggplot2)
 #install.packages("scales")
@@ -17,11 +21,12 @@ library(scales)
 library(ggridges)
 #install.packages("dplyr")
 library(dplyr)
-
 library(readr)
 library(forcats)
+library(aplot)
 ```
 
+We will now load the output file from Repeatmasker for one of the species. You could choose the species that you annotated on Day 2, or one of the other species in the data catalog on [GitHub] (https://github.com/ebp-nor/workshop-2024/tree/main/data/repeats)
 
 ```{r}
 TE <- read_table("data/repeats/ggMucLanc1.fa.out",
@@ -33,12 +38,17 @@ TE <- read_table("data/repeats/ggMucLanc1.fa.out",
                                "repeat.startl", "repeat.end", "left2", "ID","blank"))
 ```
 
+First you can examine the file. If you are familiar with BLAST output tables you may notice that it is very similar. For each repeat you can see where on a sequence (contig/scaffold/chromosome) it starts and ends. 
 
+```{r}
+head(TE)
+```
+
+RepeatMasker gives you the repeat.class.family for each repeat entry. Maybe you want to classify your repeats into broader categories. Here is one way you can do that.
 
 ```{r}
 # add column based on broader classification
-
-# Adding column based on other column:
+  # Adding column based on the infromation in the repeat.class.family column:
 TE2 <- TE %>%
   mutate(repeat.class = case_when(
     startsWith(repeat.class.family, "DNA") ~ "DNA_transposon",
@@ -54,6 +64,8 @@ TE2 <- TE %>%
     startsWith(repeat.class.family, "SINE") ~ "RNA_transposon"
     ))
 ```
+
+Next we can start plotting how many repeat entries we have in each catogory. 
 
 ```{r}
 # Summary of repeat families
@@ -73,6 +85,7 @@ g
 # TE2$repeat.class.family = reorder( TE2$repeat.class.family,  TE2$repeat.class)
 #str(TE2)
 ```
+Let's do the same for the repeat.class category. 
 
 ```{r}
 
@@ -84,6 +97,10 @@ h
 h / g
 ```
 
+How do you interpret this? Are there any categories that sticks out? 
+
+Next we want to look at the relative timing of repeat expansions in the genome. To do this we will use the information in the column percdiv. This is the percentage of divergence to the consensus. Younger repeats will be more similar to the consensus sequence in your repeat library than older repeats. So if we plot the distribution of how divergent each group of repeats is from the consensus we can infer which repeats that were expanding more recently in the genome.  
+
 ```{r}
 pr <- ggplot(TE2, aes(x = percdiv, y = repeat.class.family, fill = repeat.class)) +
   geom_density_ridges_gradient(scale = 2) +
@@ -93,6 +110,11 @@ pr <- ggplot(TE2, aes(x = percdiv, y = repeat.class.family, fill = repeat.class)
   theme_light()
 pr
 ```
+Based on this plot, which repeat family is appears to be the youngest? Which is the oldest? 
+
+
+Let's also look at the sizes of the different types of repeats. Also, just be aware of that this may not be completely accurate, the repeat may be longer or shorter than this. Also, some repeats are nestes, so determining where one starts and another ends is tricky. But this will give us a good overview: 
+¨
 ```{r}
 TE2$Size <- TE2$query.end - TE2$query.start
 ```
@@ -106,6 +128,8 @@ pr <- ggplot(TE2, aes(x = Size, y = repeat.class.family, fill = repeat.class)) +
   theme_light()
 pr
 ```
+If you look into the file that ends with .fa.tbl in the data folder on [GitHub] (https://github.com/ebp-nor/workshop-2024/tree/main/data/repeats) you can get information about the genome size for your species. For MycLanc it is 63053194 bp. Then you can calculate how much of the genome is in each repeat category. 
+
 
 ```{r}
 #table(TE2$query.seq)
@@ -114,14 +138,16 @@ TE_size_per_type <- TE2 %>%
   group_by(repeat.class) %>%
   summarise(sum_length_repeat = sum(Size))
 
-TE_size_per_type$repeat.class.perc <- (TE_size_per_type$sum_length_repeat /43122843) *100
+TE_size_per_type$repeat.class.perc <- (TE_size_per_type$sum_length_repeat /63053194) *100
 ```
+
+And plot this as well: 
 
 ```{r}
 #summary of unique variables
-g <- ggplot(data=TE_size_per_type, aes(x=repeat.class, y=repeat.class.perc)) +
+j <- ggplot(data=TE_size_per_type, aes(x=repeat.class, y=repeat.class.perc)) +
 # Number of cars in each class:
 geom_col() + theme_light() +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-g
+j
 ```
