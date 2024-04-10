@@ -51,7 +51,7 @@ contig_1	funannotate	CDS	514378	514428	.	-	0	ID=GZUMRA1EN_000194-T1.cds;Parent=G
 
 We only need the GO terms and the gene IDs they are assigned to.
 
-The GO annotations are in the mRNA lines somewhere in the last column (you will need scroll to right in the above textbox to see them there). The format is like this: `Ontology_term=GO:0003677,GO:0110165,...,GO:0005622;`. I.e. it always follows "Ontology_term=" and terms are separated by "," and ends with ";". The gene ID ca be found in the "Parent" of the mRNA.
+The GO annotations are in the mRNA lines somewhere in the last column (you will need scroll to right in the above textbox to see them there). The format is like this: `Ontology_term=GO:0003677,GO:0110165,...,GO:0005622;`. I.e. it always follows "Ontology_term=" and terms are separated by "," and ends with ";". The gene ID can be found in the "Parent" of the mRNA.
 
 The following R script uses regular expressions to extract the gene IDs and GO terms:
 
@@ -165,7 +165,7 @@ write_lines(significant_family$`#FamilyID`,file = "CAFE5_significant_families.tx
 * Go to [g:Profiler website](https://biit.cs.ut.ee/gprofiler/gost)
 * Under options there should be button with **Bring your own data (Custom GMT)**. Use this to upload the GMT file you got from the reannotation.
 
-> Note: After succesfully uploading a GMT the "Organism" should change to unique token instead.
+> Note: After succesfully uploading a GMT the "Organism" should change to a unique token instead.
 
 * Either copy/paste the content of "CAFE5_significant_families.txt" or use **Upload query** to upload the file.
 * Click **Run query** and the results should show up underneath.
