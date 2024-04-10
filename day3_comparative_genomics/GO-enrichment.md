@@ -4,7 +4,7 @@
 
 Scenario:
 
-You have sequenced, assembled and annotated your Mucoromycota genomes. Orthofinder was used to identify ortholog groups (gene families) and CAFE5 was used to identify a list expanding and contracting gene families. Your next task is to use GO enrichment to investigate what kind of genes are in these lists.
+You have sequenced, assembled and annotated your Mucoromycota genomes. Orthofinder was used to identify ortholog groups (gene families) and CAFE5 was used to identify a list expanding and contracting gene families. Your next task is to use GO enrichment to investigate what kind of genes are in the list.
 
 GO enrichment will be performed on the [g:Profiler website](https://biit.cs.ut.ee/gprofiler/gost). Since we are bringing our own genome annotations you will have to create a custom GMT first. Here is an overview of the steps:
 
@@ -157,7 +157,7 @@ For our "gene list" (actually gene family list) we will extract the HOGs that we
 significant_family <-read_tsv("data/cafe/cafe_results/Base_family_results.txt") %>%
   filter(`Significant at 0.05`=='y')
 
-write_lines(changes_significant$FamilyID,file = "CAFE5_significant_families.txt")
+write_lines(significant_family$`#FamilyID`,file = "CAFE5_significant_families.txt")
 ```
 
 ## Step 5: Run enrichment
@@ -170,6 +170,21 @@ write_lines(changes_significant$FamilyID,file = "CAFE5_significant_families.txt"
 * Either copy/paste the content of "CAFE5_significant_families.txt" or use **Upload query** to upload the file.
 * Click **Run query** and the results should show up underneath.
 
+> Optional: It is also possible to run the enrichment in R using the "gprofiler2" package (Python package is also available). Under the hood this uses the g:Profiler web API.
+
+```
+library(gprofiler2)
+
+# upload GMT file and get token
+token <- upload_GMT_file("~/Downloads/HOG_GOtbl_reannotated.gmt")
+
+# use the token as organism
+gostres <- gost(query = significant_family$`#FamilyID`, organism = "gp__ESQE_rrG8_0cw")
+
+# The result is a named list where “result” is a data.frame with the enrichment analysis results
+# and “meta” containing a named list with all the metadata for the query.
+head(gostres$result)
+```
 
 ## Step 6: Looking at results
 
