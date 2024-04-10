@@ -128,7 +128,7 @@ write_tsv(HOG_GOtbl, "HOG_GOtbl.tsv")
 
 There are many available tools for performing GO enrichment analysis. In this tutorial we will use [g:Profiler](https://biit.cs.ut.ee/gprofiler/gost) which is easy to use and allows for uploading custom annotation with GMT files.
 
-We currently have our custom GO annotations in tabular format and need to convert these to GMT format to use them in g:Profiler. 
+We currently have our custom GO annotations in long tabular format and need to convert these to GMT format to use them in g:Profiler. 
 
 > Note: The gmt format is a tab delimited format for describing gene sets. Each row is one gene set with first column being the gene set identifier (in our case GO term ids), second column containing a description (GO term description) and the following columns are the gene identifiers (ther can be different number of columns in each row). A description of the gmt format can be found [here](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GMT:_Gene_Matrix_Transposed_file_format_.28.2A.gmt.29)
 
@@ -165,15 +165,19 @@ write_lines(changes_significant$FamilyID,file = "CAFE5_significant_families.txt"
 * Go to [g:Profiler website](https://biit.cs.ut.ee/gprofiler/gost)
 * Under options there should be button with **Bring your own data (Custom GMT)**. Use this to upload the GMT file you got from the reannotation.
 
-> Note: After succesfully uploading a GMT the "Organism" should change to weird unique identifier.
+> Note: After succesfully uploading a GMT the "Organism" should change to unique token instead.
 
 * Either copy/paste the content of "CAFE5_significant_families.txt" or use **Upload query** to upload the file.
 * Click **Run query** and the results should show up underneath.
 
 
-## Step 6: Analyse results
+## Step 6: Looking at results
 
-> You can copy the significant terms and view them in [QuickGO](https://www.ebi.ac.uk/QuickGO/) by adding them to basket...
+Take your time to explore the results and get a bit familiar with the user interface of g:Profiler.
 
-**To be continued...**
+> A nice feature is that you can share your results by clicking the **show short link** button in the overview part of the results. Here are some pre-generated results: (https://biit.cs.ut.ee/gplink/l/6aRIEd1TRG)
+
+Notice that a lot of the significant terms are rather similar. If you look at the detailed results you can see that many of the genes have similar pattern of GO terms. This is common with GO analysis because of the GO hierarchy. One way to view the GO hierarchy is with QuickGO. You can copy the significant terms (there is a copy to clipboard icon in the GO terms column) and view them in [QuickGO](https://www.ebi.ac.uk/QuickGO/) by adding them to **basket** and then clicking the tiny round button with hierarchy like logo.
+
+
  
