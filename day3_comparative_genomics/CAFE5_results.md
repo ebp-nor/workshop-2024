@@ -168,7 +168,6 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install(version = "3.18")
 BiocManager::install("treeio")
 BiocManager::install("ggtree")
-install.packages('ggplot')
 install.packages('tidyverse')
 ```
 
