@@ -129,6 +129,6 @@ cp /cluster/projects/nn9984k/scripts/cafe/run_cafe.sh ./
 sbatch run_cafe.sh
 ```
 
-Running CAFE5 on our whole mucoromycota dataset would take a couple of hours. If everything goes well, you would have the results this evening and we can look at the results tomorrow morning.
+Running CAFE5 on our whole mucoromycota dataset would take a couple of hours. If everything goes well, you would have the results this evening and we can look at the results tomorrow morning. Sometime if the data is too large, it is not able to find appropriate initial values to start. In this case you need to reduce your input data, either by removing species, or by removing gene families. For example in our case, you can remove the outgroups species `AspNid`, `SacCer`, `Concor` from the species tree, and try to run again.
 
 For tommorow, we will use your local RStudio. Please make sure to have those R packages installed beforehand: `tidyverse`, `ggplot2`, `ggtree`, `treeio`.
