@@ -4,7 +4,7 @@ If you have submitted the cafe job yesterday, you should now have the results in
 
 We are going to look at the results on your local Rstudio, so if you haven't already done, please first copy/download the `data` folder on your local computer.
 
-Make sure that you have the R packages `treeio, ggtree, ggplot2, tidyverse` installed.
+Make sure that you have the R packages `treeio, ggtree, ggplot2, tidyverse` [installed](#installing-the-r-packages).
 
 ### The asr gene family trees
 
