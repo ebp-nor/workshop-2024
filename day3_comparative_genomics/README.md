@@ -25,7 +25,7 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
 ### 12:00-13:00 Lunch
 
 ### 13:00-16:00 Genomic repeats
-* 13:00-14:00 [Biology of transposable elements](Suh_EBP-Nor_Biology_of_TEs_2024.pdf), presentation by Alexander Suh
+* 13:00-14:00 Biology of transposable elements, presentation by Alexander Suh
 * 14:00-14:15 Break
 * 14:15-15:45 Visualization and analyses of repeats in R
 * 15:45-16:00 Evaluation and final words
