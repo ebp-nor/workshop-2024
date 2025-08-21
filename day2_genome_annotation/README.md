@@ -33,7 +33,7 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
 ### 12:00-13:00 Lunch
 
 ### 13:00-14:00 
-* [Introduction to OrthoFinder](slides_afternoon.pdf)
+* [Introduction to OrthoFinder](Introduction_to_CAFE.pdf)
 * [Setting up and running OrthoFinder](orthofinder.md)
 
 ### 14:00-14:15 Break
