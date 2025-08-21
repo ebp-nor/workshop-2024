@@ -22,7 +22,7 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
     * [Repeat mask](01_repeatmasking.md)
     * [Mapping protein sets](02_miniprot.md)
     * [_Ab initio_ gene prediction](03_galba.md)
-* 09:30-11:55 [Introduction to genome annotation](slides_morning.pdf)
+* 09:30-11:55 [Introduction to genome annotation](Genome_assembly_annotation_and_comparative_genomics_day_2_morning.pdf)
   * Work through the rest of the programs
     * [EvidenceModeler](04_evm.md)
     * [BUSCO](05_busco.md)
@@ -33,7 +33,7 @@ This workshop is sponsored by [EBP-Nor](https://www.ebpnor.org/), [Norbis](https
 ### 12:00-13:00 Lunch
 
 ### 13:00-14:00 
-* [Introduction to OrthoFinder](Introduction_to_CAFE.pdf)
+* [Introduction to OrthoFinder]Genome_assembly_annotation_and_comparative_genomics_day_2_afternoon.pdf)
 * [Setting up and running OrthoFinder](orthofinder.md)
 
 ### 14:00-14:15 Break
